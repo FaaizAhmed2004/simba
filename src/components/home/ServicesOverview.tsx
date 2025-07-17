@@ -45,7 +45,7 @@ export default function ServicesOverview() {
             Complete Logistics Solutions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From small packages to full truckloads, we provide comprehensive logistics services 
+            From small packages to full truckloads, we provide comprehensive logistics services
             tailored to your business needs across the United States.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function ServicesOverview() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <div className="text-lg font-semibold text-blue-600 mb-4">{service.price}</div>
-                
+
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">
@@ -76,8 +76,8 @@ export default function ServicesOverview() {
                     </li>
                   ))}
                 </ul>
-                
-                <Link 
+
+                <Link
                   href={service.href}
                   className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors"
                 >
@@ -89,8 +89,8 @@ export default function ServicesOverview() {
         </div>
 
         <div className="text-center mt-12">
-          <Link 
-            href="/services" 
+          <Link
+            href="/services"
             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
           >
             View All Services

@@ -10,6 +10,25 @@ interface ExtendedUser {
   status: string;
 }
 
+interface ExtendedToken {
+  sub?: string;
+  role?: string;
+  status?: string;
+  [key: string]: unknown;
+}
+
+interface ExtendedSession {
+  user: {
+    id: string;
+    email?: string;
+    name?: string;
+    role?: string;
+    status?: string;
+    [key: string]: unknown;
+  };
+  [key: string]: unknown;
+}
+
 export const authOptions = {
   providers: [
     CredentialsProvider({
@@ -55,22 +74,21 @@ export const authOptions = {
     })
   ],
   session: {
-    strategy: 'jwt'
+    strategy: 'jwt' as const
   },
   callbacks: {
-    async jwt({ token, user }: { token: any; user: any }) {
+    async jwt({ token, user }: { token: ExtendedToken; user?: ExtendedUser }) {
       if (user) {
-        const extendedUser = user as ExtendedUser;
-        token.role = extendedUser.role;
-        token.status = extendedUser.status;
+        token.role = user.role;
+        token.status = user.status;
       }
       return token;
     },
-    async session({ session, token }: { session: any; token: unknown }) {
+    async session({ session, token }: { session: ExtendedSession; token: ExtendedToken }) {
       if (token && session.user) {
-        session.user.id = token.sub!;
-        session.user.role = token.role as string;
-        session.user.status = token.status as string;
+        session.user.id = token.sub || '';
+        session.user.role = token.role;
+        session.user.status = token.status;
       }
       return session;
     }

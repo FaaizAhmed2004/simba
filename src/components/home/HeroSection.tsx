@@ -16,6 +16,8 @@ export default function HeroSection() {
         />
       </div>
       <div className="absolute inset-0 bg-blue-900 opacity-60"></div>
+      
+      {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -26,7 +28,7 @@ export default function HeroSection() {
             From FBA prep to freight shipping, truck dispatching to pallet storage - 
             we handle all your logistics needs across the USA with precision and care.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link 
               href="/quote" 
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg"
@@ -34,29 +36,31 @@ export default function HeroSection() {
               Get Instant Quote
             </Link>
             <Link 
-              href="/tracking" 
+              href="/contact" 
               className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
             >
-              Track Shipment
+              Contact Us
             </Link>
           </div>
         </div>
       </div>
       
-      {/* Floating Cards */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-full max-w-6xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow-xl p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-            <div className="text-gray-600">Customer Support</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">99.9%</div>
-            <div className="text-gray-600">On-Time Delivery</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-            <div className="text-gray-600">States Covered</div>
+      {/* Stats Cards - Positioned at bottom with proper spacing */}
+      <div className="relative pb-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+              <div className="text-gray-600">Customer Support</div>
+            </div>
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2">99.9%</div>
+              <div className="text-gray-600">On-Time Delivery</div>
+            </div>
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
+              <div className="text-gray-600">States Covered</div>
+            </div>
           </div>
         </div>
       </div>

@@ -6,9 +6,9 @@ import {
   Instagram,
   Linkedin,
   Youtube,
-  Package,
   Twitter,
 } from "lucide-react"
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -17,12 +17,17 @@ export function Footer() {
         {/* Left Section */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            {/* Simba Dispatch LLC Logo - Using Lucide Package icon for the box */}
-            <div className="bg-[#2e3192] p-1 rounded-md">
-              <Package className="w-6 h-6 text-white" />
-            </div>
-            <span className ="text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
-            <span className ="text-xs font-semibold text-[#2e3192] tracking-wider">FULFILLMENT</span>
+            <Image
+              src="/simbaDispatch.png"
+              alt="Simba Dispatch LLC Logo"
+              width={65}
+              height={65}
+              className="object-contain"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
+            <span className="text-xs font-semibold text-[#2e3192] tracking-wider">FULFILLMENT</span>
           </div>
           <p className="text-sm text-gray-600 leading-relaxed">Professional freight shipping and logistics services across the USA.</p>
           <div className="flex items-center gap-2 text-gray-800">
@@ -113,7 +118,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-          
+
         {/* Support Section */}
         <div className="flex flex-col gap-4">
           <h3 className="text-base font-bold text-gray-800">Support</h3>
@@ -146,19 +151,19 @@ export function Footer() {
           <h3 className="text-base font-bold text-gray-800">Legal</h3>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>
-              <Link href="/privacy" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 Terms of Service
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      
+
       {/* Bottom Section */}
       <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-200">
         <div className="flex flex-col md:flex-row justify-between items-center">
