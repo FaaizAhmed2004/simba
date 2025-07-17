@@ -92,14 +92,26 @@ export default function FBMFulfillmentPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative text-white py-16 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/assests/download (1).jpeg"
+            alt="FBM Fulfillment Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 FBM Fulfillment Services
               </h1>
-              <p className="text-xl text-purple-100 mb-8">
+              <p className="text-xl text-gray-100 mb-8">
                 Professional fulfillment by merchant services for your e-commerce business. Fast, accurate, and cost-effective order fulfillment that scales with your growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

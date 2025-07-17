@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default  function TruckDispatchingPage() {
   const services = [
@@ -69,26 +70,38 @@ export default  function TruckDispatchingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative text-white py-16 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/assests/10050.jpeg"
+            alt="Truck Dispatching Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Professional Truck Dispatching Services
               </h1>
-              <p className="text-xl text-green-100 mb-8">
+              <p className="text-xl text-gray-100 mb-8">
                 Maximize your earning potential with our expert dispatch services. We find the best loads, handle negotiations, and manage all the paperwork so you can focus on driving.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/auth/register"
-                  className="bg-white text-green-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors text-center"
+                  className="bg-white text-gray-800 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors text-center"
                 >
                   Join Our Network
                 </Link>
                 <Link
                   href="/contact"
-                  className="border border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-green-600 transition-colors text-center"
+                  className="border border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-gray-800 transition-colors text-center"
                 >
                   Learn More
                 </Link>
@@ -96,7 +109,7 @@ export default  function TruckDispatchingPage() {
             </div>
             <div className="text-center">
               <div className="text-8xl mb-4">🚛</div>
-              <p className="text-green-100">Professional Dispatch Services</p>
+              <p className="text-gray-100">Professional Dispatch Services</p>
             </div>
           </div>
         </div>
