@@ -3,8 +3,8 @@ import FaqSection from '@/components/providers/Faq-section';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How It Works - Simba Logistics',
-  description: 'Learn how Simba Logistics streamlines your shipping process with our step-by-step logistics solutions for FBA, FBM, freight, and storage services.',
+  title: 'How It Works - Simba Dispatch LLC',
+  description: 'Learn how Simba Dispatch LLC streamlines your shipping process with our step-by-step logistics solutions for FBA, FBM, freight, and storage services.',
   keywords: 'how it works, logistics process, shipping steps, FBA prep, freight shipping, fulfillment process',
 };
 
@@ -16,7 +16,7 @@ export default function HowItWorksPage() {
       <section className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            How Simba Logistics Works
+            How Simba Dispatch LLC Works
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Streamlined logistics solutions that simplify your shipping process from quote to delivery

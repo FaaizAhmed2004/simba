@@ -151,7 +151,7 @@ export default function ServicesPage() {
             Ready to Streamline Your Logistics?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Get started with Simba Logistics today and experience the difference professional logistics services can make for your business.
+            Get started with Simba Dispatch LLC today and experience the difference professional logistics services can make for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

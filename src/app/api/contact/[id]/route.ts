@@ -16,14 +16,14 @@ function verifyAuth(request: NextRequest) {
   try {
     jwt.verify(token, JWT_SECRET);
     return true;
-  } catch (error) {
+  } catch {
     return false;
   }
 }
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     if (!verifyAuth(request)) {
@@ -33,7 +33,7 @@ export async function GET(
       );
     }
 
-    const { id } = params;
+    const { id } = await params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json(
@@ -70,7 +70,7 @@ export async function GET(
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     if (!verifyAuth(request)) {
@@ -80,7 +80,7 @@ export async function PATCH(
       );
     }
 
-    const { id } = params;
+    const { id } = await params;
     const updates = await request.json();
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -103,7 +103,7 @@ export async function PATCH(
 
     // Update allowed fields
     const allowedUpdates = ['status', 'notes', 'assignedTo', 'followUpDate'];
-    const updateData: unknown = {};
+    const updateData: Record<string, unknown> = {};
 
     for (const key of allowedUpdates) {
       if (updates[key] !== undefined) {
@@ -135,7 +135,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     if (!verifyAuth(request)) {
@@ -145,7 +145,7 @@ export async function DELETE(
       );
     }
 
-    const { id } = params;
+    const { id } = await params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json(

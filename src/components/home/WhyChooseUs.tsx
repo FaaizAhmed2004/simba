@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Simba Logistics?
+            Why Choose Simba Dispatch LLC?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We combine industry expertise with cutting-edge technology to deliver 
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
                 Ready to Streamline Your Logistics?
               </h3>
               <p className="text-gray-600 mb-6">
-                Join thousands of businesses who trust Simba Logistics for their shipping and fulfillment needs. 
+                Join thousands of businesses who trust Simba Dispatch LLC for their shipping and fulfillment needs. 
                 Get started today with a free quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Contact Simba Logistics
+            Contact Simba Dispatch LLC
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Get in touch with our logistics experts for personalized shipping solutions

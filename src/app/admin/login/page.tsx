@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
       } else {
         setError(data.message || 'Login failed');
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
             Admin Login
           </CardTitle>
           <p className="text-gray-600">
-            Sign in to access the Simba Logistics admin dashboard
+            Sign in to access the Simba Dispatch LLC admin dashboard
           </p>
         </CardHeader>
         <CardContent>

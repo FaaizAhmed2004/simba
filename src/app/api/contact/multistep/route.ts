@@ -140,38 +140,4 @@ async function sendNotificationEmail(contactData: MultiStepContactData & { submi
   */
 }
 
-function generateEmailTemplate(data: MultiStepContactData & { submittedAt: Date }): string {
-  return `
-    <h2>New Multistep Contact Form Submission</h2>
-    
-    <h3>Contact Information</h3>
-    <ul>
-      <li><strong>Name:</strong> ${data.name}</li>
-      <li><strong>Email:</strong> ${data.email}</li>
-      <li><strong>Company:</strong> ${data.companyName}</li>
-      <li><strong>Years in Business:</strong> ${data.yearsInBusiness}</li>
-      <li><strong>Phone:</strong> ${data.countryCode} ${data.phone}${data.extension ? ` ext. ${data.extension}` : ''}</li>
-    </ul>
-
-    <h3>Sales Channels</h3>
-    <ul>
-      ${data.channels.map(channel => `<li>${channel}</li>`).join('')}
-    </ul>
-
-    <h3>Product Types</h3>
-    <ul>
-      ${data.productTypes.map(product => `<li>${product}</li>`).join('')}
-    </ul>
-
-    <h3>Requirements</h3>
-    <p>${data.requirements || 'No specific requirements provided'}</p>
-
-    <h3>Additional Needs</h3>
-    <ul>
-      ${data.additionalNeeds.map(need => `<li>${need}</li>`).join('')}
-    </ul>
-
-    <hr>
-    <p><small>Submitted at: ${data.submittedAt.toLocaleString()}</small></p>
-  `;
-}
+// Removed unused generateEmailTemplate function

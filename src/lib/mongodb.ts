@@ -27,22 +27,27 @@ if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-async function connectToDatabase() {
+async function connectDB() {
   // Ensure cached is defined
   if (!cached) {
     cached = global.mongoose = { conn: null, promise: null };
   }
 
   if (cached.conn) {
-    return { db: cached.conn.connection.db };
+    return cached.conn;
   }
 
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      maxPoolSize: 10,
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+      family: 4
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      console.log('MongoDB connected successfully');
       return mongoose;
     });
   }
@@ -51,11 +56,18 @@ async function connectToDatabase() {
     cached.conn = await cached.promise;
   } catch (e) {
     cached.promise = null;
-    throw e;
+    console.error('MongoDB connection error:', e);
+    throw new Error(`Failed to connect to MongoDB: ${e instanceof Error ? e.message : 'Unknown error'}`);
   }
 
-  return { db: cached.conn.connection.db };
+  return cached.conn;
+}
+
+// Legacy function for backward compatibility
+async function connectToDatabase() {
+  const conn = await connectDB();
+  return { db: conn.connection.db };
 }
 
 export { connectToDatabase };
-export default connectToDatabase;
+export default connectDB;

@@ -1,14 +1,12 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { useSession } from '@/lib/session';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
-import { 
-  HomeIcon, 
-  TruckIcon, 
-  CreditCardIcon, 
-  UserIcon, 
+import {
+  HomeIcon,
+  TruckIcon,
   BellIcon,
   Bars3Icon,
   XMarkIcon
@@ -17,8 +15,6 @@ import {
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'Shipments', href: '/dashboard/shipments', icon: TruckIcon },
-  { name: 'Billing', href: '/dashboard/billing', icon: CreditCardIcon },
-  { name: 'Profile', href: '/dashboard/profile', icon: UserIcon },
   { name: 'Notifications', href: '/dashboard/notifications', icon: BellIcon },
 ];
 
@@ -50,7 +46,7 @@ export default function DashboardLayout({
         <div className="relative flex w-full max-w-xs flex-1 flex-col bg-white">
           <div className="absolute top-0 right-0 -mr-12 pt-2">
             <button
-            aria-label='btn-1'
+              aria-label='btn-1'
               type="button"
               className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               onClick={() => setSidebarOpen(false)}
@@ -60,7 +56,7 @@ export default function DashboardLayout({
           </div>
           <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
             <div className="flex flex-shrink-0 items-center px-4">
-              <h1 className="text-xl font-bold text-blue-600">Simba Logistics</h1>
+              <h1 className="text-xl font-bold text-blue-600">Simba Dispatch LLC</h1>
             </div>
             <nav className="mt-5 space-y-1 px-2">
               {navigation.map((item) => (
@@ -84,7 +80,7 @@ export default function DashboardLayout({
         <div className="flex min-h-0 flex-1 flex-col bg-white border-r border-gray-200">
           <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
             <div className="flex flex-shrink-0 items-center px-4">
-              <h1 className="text-xl font-bold text-blue-600">Simba Logistics</h1>
+              <h1 className="text-xl font-bold text-blue-600">Simba Dispatch LLC</h1>
             </div>
             <nav className="mt-5 flex-1 space-y-1 px-2">
               {navigation.map((item) => (
@@ -110,7 +106,14 @@ export default function DashboardLayout({
               </div>
               <div className="ml-3">
                 <p className="text-sm font-medium text-gray-700">{session?.user?.name}</p>
-                <p className="text-xs font-medium text-gray-500 capitalize">{session?.user?.role}</p>
+                <p className="text-xs font-medium text-gray-500 capitalize">
+                  {(() => {
+                    interface CustomUser {
+                      role?: string;
+                    }
+                    return ((session?.user as CustomUser)?.role) || 'user';
+                  })()}
+                </p>
               </div>
             </div>
           </div>
@@ -121,7 +124,7 @@ export default function DashboardLayout({
       <div className="lg:pl-64 flex flex-col flex-1">
         <div className="sticky top-0 z-10 bg-white pl-1 pt-1 sm:pl-3 sm:pt-3 lg:hidden">
           <button
-          aria-label='btn'
+            aria-label='btn'
             type="button"
             className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             onClick={() => setSidebarOpen(true)}

@@ -25,8 +25,8 @@ const faqData: FAQItem[] = [
   // General Questions
   {
     id: 'general-1',
-    question: 'What is Simba Logistics?',
-    answer: 'Simba Logistics is a modern logistics company based in Baltimore, MD, specializing in FBA prep services, FBM fulfillment, freight shipping, and pallet storage. We help businesses of all sizes streamline their supply chain operations with reliable, cost-effective solutions.',
+    question: 'What is Simba Dispatch LLC?',
+    answer: 'Simba Dispatch LLC is a modern logistics company based in Baltimore, MD, specializing in FBA prep services, FBM fulfillment, freight shipping, and pallet storage. We help businesses of all sizes streamline their supply chain operations with reliable, cost-effective solutions.',
     category: 'General'
   },
   {
@@ -43,7 +43,7 @@ const faqData: FAQItem[] = [
   },
   {
     id: 'general-4',
-    question: 'How do I get started with Simba Logistics?',
+    question: 'How do I get started with Simba Dispatch LLC?',
     answer: 'Getting started is easy! Simply contact us through our website, phone, or email to discuss your needs. We\'ll provide a custom quote and help you set up your account. Our team will guide you through the onboarding process step by step.',
     category: 'General'
   },

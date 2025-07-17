@@ -8,7 +8,7 @@ const services = [
     price: 'Starting at $0.45/unit',
     features: ['Receiving & Inspection', 'FNSKU Labeling', 'Repackaging', 'Quality Control'],
     href: '/services/fba-prep',
-    image: '/assests/10005.webp'
+    image: '/Warehouse.jpeg'
   },
   {
     title: 'FBM Fulfillment',
@@ -16,7 +16,7 @@ const services = [
     price: 'Starting at $2.00/package',
     features: ['Pick & Pack', 'Direct Shipping', 'Weight-Based Pricing', 'Fast Processing'],
     href: '/services/fbm-fulfillment',
-    image: '/assests/10006.webp'
+    image: '/assests/download%20(1).jpeg'
   },
   {
     title: 'Freight Shipping',
@@ -34,14 +34,6 @@ const services = [
     href: '/services/truck-dispatching',
     image: '/assests/10052.jpeg'
   },
-  {
-    title: 'Pallet Storage',
-    description: 'Secure warehouse storage solutions for your inventory and business needs.',
-    price: '$25/week per pallet',
-    features: ['Climate Controlled', 'Secure Facility', 'Easy Access', 'Flexible Terms'],
-    href: '/services/pallet-storage',
-    image: '/assests/10007.webp'
-  }
 ];
 
 export default function ServicesOverview() {

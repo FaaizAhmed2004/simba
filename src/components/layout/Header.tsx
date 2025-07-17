@@ -37,10 +37,20 @@ export function Header() {
 
       {/* Main Navbar */}
       <nav className="bg-white py-4 shadow-sm">
-        <div className="container mx-auto flex items-center justify-between px-4 flex-wrap gap-4">
+        <div className="container mx-auto flex items-center justify-between px-4 flex-wrap gap-4 ">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/companylogo.png" alt="ShipHype Fulfillment Logo" width={150} height={30} priority />
+            <div className="flex items-center gap-2">
+              <div className="bg-[#2e3192] p-2 rounded-md">
+                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                  <span className="text-[#2e3192] font-bold text-lg">S</span>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-[#2e3192]">Simba Dispatch LLC</span>
+                <span className="text-xs font-semibold text-[#2e3192] tracking-wider">LOGISTICS</span>
+              </div>
+            </div>
           </Link>
 
           {/* Navigation Links */}

@@ -1,6 +1,4 @@
-import { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { JWT } from 'next-auth/jwt';
 import connectDB from './mongodb';
 import User from '@/models/User';
 
@@ -12,7 +10,7 @@ interface ExtendedUser {
   status: string;
 }
 
-export const authOptions: AuthOptions = {
+export const authOptions = {
   providers: [
     CredentialsProvider({
       name: 'credentials',
@@ -60,7 +58,7 @@ export const authOptions: AuthOptions = {
     strategy: 'jwt'
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: { token: any; user: any }) {
       if (user) {
         const extendedUser = user as ExtendedUser;
         token.role = extendedUser.role;
@@ -68,7 +66,7 @@ export const authOptions: AuthOptions = {
       }
       return token;
     },
-    async session({ session, token }) {
+    async session({ session, token }: { session: any; token: unknown }) {
       if (token && session.user) {
         session.user.id = token.sub!;
         session.user.role = token.role as string;

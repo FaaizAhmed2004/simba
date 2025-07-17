@@ -13,9 +13,9 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'About Us - Simba Logistics',
-  description: 'Learn about Simba Logistics, a new innovative logistics company in the USA dedicated to providing exceptional shipping, fulfillment, and freight services.',
-  keywords: 'about simba logistics, logistics company USA, shipping services, fulfillment company, freight transportation',
+  title: 'About Us - Simba Dispatch LLC',
+  description: 'Learn about Simba Dispatch LLC, a new innovative logistics company in the USA dedicated to providing exceptional shipping, fulfillment, and freight services.',
+  keywords: 'about simba dispatch, logistics company USA, shipping services, fulfillment company, freight transportation',
 };
 
 const stats = [
@@ -73,7 +73,7 @@ const milestones = [
   {
     year: '2024',
     title: 'Company Founded',
-    description: 'Simba Logistics was established with a vision to revolutionize logistics services for growing businesses.'
+    description: 'Simba Dispatch LLC was established with a vision to revolutionize logistics services for growing businesses.'
   },
   {
     year: '2024',
@@ -100,7 +100,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About Simba Logistics
+              About Simba Dispatch LLC
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
               A new generation logistics company built for the modern business. 
@@ -152,7 +152,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Simba Logistics was born from a simple observation: growing businesses 
+                  Simba Dispatch LLC was born from a simple observation: growing businesses 
                   need logistics partners who understand their challenges and are agile 
                   enough to adapt to their changing needs.
                 </p>
@@ -177,7 +177,7 @@ export default function AboutPage() {
               <div className="relative h-96 rounded-lg overflow-hidden mb-8">
                 <Image
                   src="/assests/10053.jpeg"
-                  alt="Simba Logistics warehouse and operations"
+                  alt="Simba Dispatch LLC warehouse and operations"
                   fill
                   className="object-cover"
                 />
@@ -363,7 +363,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Simba Logistics?
+              Why Choose Simba Dispatch LLC?
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               As a new company, we bring fresh perspectives and innovative solutions to traditional logistics challenges.
@@ -411,7 +411,7 @@ export default function AboutPage() {
             Ready to Partner With Us?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join the growing number of businesses that trust Simba Logistics with their supply chain needs.
+            Join the growing number of businesses that trust Simba Dispatch LLC with their supply chain needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

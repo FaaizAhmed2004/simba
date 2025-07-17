@@ -10,9 +10,8 @@ import {
   EnvelopeIcon,
   ChartBarIcon,
   Cog6ToothIcon,
-  ArrowRightOnRectangleIcon,
+  ArrowRightStartOnRectangleIcon,
   EyeIcon,
-  PencilIcon,
   TrashIcon
 } from '@heroicons/react/24/outline';
 
@@ -50,12 +49,42 @@ export default function AdminDashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    // Check if user is authenticated
-    const token = localStorage.getItem('adminToken');
-    if (!token) {
-      router.push('/admin/login');
-      return;
-    }
+    const fetchContacts = async () => {
+      try {
+        const token = localStorage.getItem('adminToken');
+        if (!token) {
+          router.push('/admin/login');
+          return;
+        }
+
+        const response = await fetch(`/api/contact/list?status=${statusFilter}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setContacts(data.data.contacts);
+          
+          // Calculate stats
+          const statusSummary = data.data.statusSummary || {};
+          setStats({
+            totalContacts: data.data.pagination.total,
+            newContacts: statusSummary.new || 0,
+            contactedContacts: statusSummary.contacted || 0,
+            convertedContacts: statusSummary.converted || 0
+          });
+        } else if (response.status === 401) {
+          localStorage.removeItem('adminToken');
+          router.push('/admin/login');
+        }
+      } catch (error) {
+        console.error('Error fetching contacts:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
     fetchContacts();
   }, [router, statusFilter]);
@@ -167,10 +196,10 @@ export default function AdminDashboard() {
           <div className="flex justify-between items-center py-4">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-              <p className="text-gray-600">Simba Logistics Management</p>
+              <p className="text-gray-600">Simba Dispatch LLC Management</p>
             </div>
             <Button onClick={logout} variant="outline" className="flex items-center gap-2">
-              <ArrowRightOnRectangleIcon className="h-4 w-4" />
+              <ArrowRightStartOnRectangleIcon className="h-4 w-4" />
               Logout
             </Button>
           </div>
@@ -325,6 +354,7 @@ export default function AdminDashboard() {
                               value={contact.status}
                               onChange={(e) => updateContactStatus(contact._id, e.target.value)}
                               className="text-xs border rounded px-2 py-1"
+                              aria-label={`Update status for ${contact.name}`}
                             >
                               <option value="new">New</option>
                               <option value="contacted">Contacted</option>

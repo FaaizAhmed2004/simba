@@ -62,7 +62,7 @@ export default function MultiStepContactForm() {
         const errorData = await response.json()
         setError(errorData.message || 'Failed to submit form. Please try again.')
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.')
     } finally {
       setIsSubmitting(false)

@@ -9,7 +9,7 @@ export default function CTASection() {
             Ready to Transform Your Logistics?
           </h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
-            Join thousands of businesses who trust Simba Logistics for their shipping, 
+            Join thousands of businesses who trust Simba Dispatch LLC for their shipping, 
             fulfillment, and dispatching needs. Get started today!
           </p>
           

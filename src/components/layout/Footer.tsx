@@ -17,11 +17,11 @@ export function Footer() {
         {/* Left Section */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            {/* Simba Logistics Logo - Using Lucide Package icon for the box */}
+            {/* Simba Dispatch LLC Logo - Using Lucide Package icon for the box */}
             <div className="bg-[#2e3192] p-1 rounded-md">
               <Package className="w-6 h-6 text-white" />
             </div>
-            <span className ="text-lg font-bold text-[#2e3192]">Simba Logistics</span>
+            <span className ="text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
             <span className ="text-xs font-semibold text-[#2e3192] tracking-wider">FULFILLMENT</span>
           </div>
           <p className="text-sm text-gray-600 leading-relaxed">Professional freight shipping and logistics services across the USA.</p>
@@ -163,7 +163,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-200">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
-            © 2025 Simba Logistics. All rights reserved.
+            © 2025 Simba Dispatch LLC. All rights reserved.
           </p>
           <p className="text-sm text-gray-500 mt-2 md:mt-0">
             Professional logistics services across the USA
