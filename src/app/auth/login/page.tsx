@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { signIn, getSession } from 'next-auth/react';
+import { signIn } from '@/lib/session';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -29,19 +29,8 @@ export default function LoginPage() {
       if (result?.error) {
         setError('Invalid email or password');
       } else {
-        // Get session to determine redirect based on role
-        const session = await getSession();
-        interface CustomUser {
-          role?: string;
-        }
-        const userRole = (session?.user as CustomUser)?.role;
-        if (userRole === 'admin') {
-          router.push('/admin');
-        } else if (userRole === 'operator') {
-          router.push('/dispatch');
-        } else {
-          router.push('/dashboard');
-        }
+        // For now, redirect to dashboard - in production you'd check user role
+        router.push('/dashboard');
       }
     } catch {
       setError('An error occurred. Please try again.');

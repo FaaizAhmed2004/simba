@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
     const token = authHeader.substring(7);
     try {
       jwt.verify(token, JWT_SECRET);
-    } catch (error) {
+    } catch {
       return NextResponse.json(
         { success: false, message: 'Invalid token' },
         { status: 401 }
@@ -79,11 +79,11 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Error fetching contacts:', error);
-    
+
     return NextResponse.json(
-      { 
-        success: false, 
-        message: 'Failed to fetch contacts' 
+      {
+        success: false,
+        message: 'Failed to fetch contacts'
       },
       { status: 500 }
     );

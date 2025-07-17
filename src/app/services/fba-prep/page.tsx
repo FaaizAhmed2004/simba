@@ -218,7 +218,7 @@ export default function FBAPrepPage() {
           <div className="space-y-6">
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What's included in the per-unit price?
+                What&apos;s included in the per-unit price?
               </h3>
               <p className="text-gray-600">
                 Our per-unit price includes receiving, inspection, FNSKU labeling, repackaging (if needed), and creating shipments to Amazon. Box charges are additional based on the size of boxes required.

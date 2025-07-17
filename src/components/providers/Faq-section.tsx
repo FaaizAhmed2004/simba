@@ -7,11 +7,11 @@ export default function FaqSection() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
       <div className="container px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
-          {"SHIPHYPE makes direct-to-consumer fulfillment easy"}
+          {"SIMBA DISPATCH makes direct-to-consumer fulfillment easy"}
         </h2>
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-20">
           <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold mb-4">WITHOUT SHIPHYPE</h3>
+            <h3 className="text-xl font-semibold mb-4">WITHOUT Simba</h3>
             <div className="flex items-start gap-2">
               <CircleX className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
               <p className="text-gray-700">Team-less Knowledge Required</p>

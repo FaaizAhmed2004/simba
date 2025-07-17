@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Simba Logistics - Freight Shipping & Logistics Services",
+  title: "Simba Dispatch LLC - Freight Shipping & Logistics Services",
   description: "Professional freight shipping, FBA prep, truck dispatching, and logistics services across the USA. Get instant quotes and track your shipments.",
   keywords: "freight shipping, logistics, FBA prep, truck dispatching, pallet storage, USA shipping",
 };

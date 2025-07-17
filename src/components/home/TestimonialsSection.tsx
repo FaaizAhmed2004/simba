@@ -7,7 +7,7 @@ const testimonials = [
     name: 'Sarah Johnson',
     company: 'E-commerce Solutions Inc.',
     role: 'Operations Manager',
-    content: 'Simba Logistics transformed our FBA prep process. Their attention to detail and competitive pricing helped us scale our Amazon business significantly.',
+    content: 'Simba Dispatch LLC transformed our FBA prep process. Their attention to detail and competitive pricing helped us scale our Amazon business significantly.',
     rating: 5
   },
   {
@@ -21,14 +21,14 @@ const testimonials = [
     name: 'Jennifer Chen',
     company: 'Tech Gadgets Plus',
     role: 'CEO',
-    content: 'From freight shipping to pallet storage, Simba Logistics handles all our logistics needs. Their technology platform makes everything seamless.',
+    content: 'From freight shipping to pallet storage, Simba Dispatch LLC handles all our logistics needs. Their technology platform makes everything seamless.',
     rating: 5
   },
   {
     name: 'David Thompson',
     company: 'Thompson Manufacturing',
     role: 'Logistics Director',
-    content: 'Reliable, professional, and cost-effective. Simba Logistics has been our trusted partner for over two years. Excellent service every time.',
+    content: 'Reliable, professional, and cost-effective. Simba Dispatch LLC has been our trusted partner for over two years. Excellent service every time.',
     rating: 5
   }
 ];
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Dont just take our word for it. Heres what businesses across America 
-            are saying about their experience with Simba Logistics.
+            are saying about their experience with Simba Dispatch LLC.
           </p>
         </div>
 

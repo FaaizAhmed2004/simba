@@ -1,49 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
-const quoteSchema = z.object({
-  serviceType: z.enum(['FBA', 'FBM', 'FREIGHT', 'STORAGE']),
-  pickup: z.object({
-    zipCode: z.string().min(5, 'Valid ZIP code required'),
-    state: z.string().min(2, 'State required')
-  }),
-  delivery: z.object({
-    zipCode: z.string().min(5, 'Valid ZIP code required'),
-    state: z.string().min(2, 'State required')
-  }),
-  // FBA specific
-  fbaDetails: z.object({
-    unitCount: z.number().min(1),
-    hasCustomBarcode: z.boolean().optional().default(false)
-  }).optional(),
-  // FBM specific
-  fbmDetails: z.object({
-    packages: z.array(z.object({
-      weight: z.number().min(0.1),
-      dimensions: z.object({
-        length: z.number().min(1).default(12),
-        width: z.number().min(1).default(12),
-        height: z.number().min(1).default(12)
-      }).default({ length: 12, width: 12, height: 12 })
-    }))
-  }).optional(),
-  // Storage specific
-  storageDetails: z.object({
-    palletCount: z.number().min(1),
-    duration: z.number().min(1) // weeks
-  }).optional(),
-  // Freight specific
-  freightDetails: z.object({
-    weight: z.number().min(1),
-    dimensions: z.object({
-      length: z.number().min(1).default(48),
-      width: z.number().min(1).default(48),
-      height: z.number().min(1).default(48)
-    }).default({ length: 48, width: 48, height: 48 }),
-    freightClass: z.string().optional()
-  }).optional()
-});
-
 // USA ZIP code validation
 const isValidUSAZipCode = (zipCode: string): boolean => {
   const zipRegex = /^\d{5}(-\d{4})?$/;

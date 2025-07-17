@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Pricing - Simba Logistics',
+  title: 'Pricing - Simba Dispatch LLC',
   description: 'Transparent pricing for FBA prep, FBM fulfillment, freight shipping, and storage services. Get competitive rates for all your logistics needs.',
   keywords: 'logistics pricing, shipping rates, FBA prep costs, freight shipping prices, fulfillment pricing',
 };
@@ -241,7 +241,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose Simba Logistics?
+              Why Choose Simba Dispatch LLC?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We provide exceptional value with transparent pricing and reliable service
