@@ -1,33 +1,33 @@
 const benefits = [
   {
-    title: 'USA-Only Operations',
-    description: 'Focused exclusively on the United States market, ensuring deep local expertise and compliance.',
-    icon: '🇺🇸'
-  },
-  {
-    title: 'Real-Time Tracking',
-    description: 'Track your shipments in real-time with detailed updates and delivery confirmations.',
-    icon: '📍'
-  },
-  {
-    title: 'Competitive Pricing',
-    description: 'Transparent, competitive pricing with no hidden fees. Get exactly what you pay for.',
-    icon: '💰'
-  },
-  {
-    title: 'Expert Support',
-    description: '24/7 customer support from logistics experts who understand your business needs.',
+    title: 'Load Finding & Booking',
+    description: 'We find the highest-paying loads that match your truck specifications and route preferences.',
     icon: '🎯'
   },
   {
-    title: 'Scalable Solutions',
-    description: 'From startup to enterprise, our solutions grow with your business requirements.',
-    icon: '📈'
+    title: 'Route Planning & Optimization',
+    description: 'Optimize routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
+    icon: '🗺️'
   },
   {
-    title: 'Technology Driven',
-    description: 'Modern technology platform for seamless booking, tracking, and management.',
-    icon: '💻'
+    title: 'Document Management',
+    description: 'Complete paperwork handling including BOLs, invoices, and compliance documentation.',
+    icon: '📋'
+  },
+  {
+    title: 'Billing & Invoicing',
+    description: 'Professional billing services with timely invoicing and payment tracking.',
+    icon: '💳'
+  },
+  {
+    title: 'Driver Support',
+    description: '24/7 driver support for emergencies, route changes, and customer communications.',
+    icon: '📞'
+  },
+  {
+    title: 'Certified & Insured',
+    description: 'Fully certified and insured dispatch services for your peace of mind.',
+    icon: '✅'
   }
 ];
 
@@ -37,11 +37,11 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Simba Dispatch LLC?
+            Why Choose Simba Dispatch Services LLC?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We combine industry expertise with cutting-edge technology to deliver 
-            exceptional logistics solutions that drive your business forward.
+            We combine industry expertise with professional dispatch services to maximize 
+            your earnings and streamline your trucking operations.
           </p>
         </div>
 
@@ -61,32 +61,32 @@ export default function WhyChooseUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Ready to Streamline Your Logistics?
+                Ready to Maximize Your Earnings?
               </h3>
               <p className="text-gray-600 mb-6">
-                Join thousands of businesses who trust Simba Dispatch LLC for their shipping and fulfillment needs. 
-                Get started today with a free quote.
+                Join 50+ satisfied truck operators who trust Simba Dispatch Services LLC for their dispatching needs. 
+                Contact us today for discussion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="/quote" 
+                  href="mailto:simbadispatchservices@gmail.com" 
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center"
                 >
-                  Get Free Quote
+                  Email Us Directly
                 </a>
                 <a 
                   href="/contact" 
                   className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center"
                 >
-                  Contact Sales
+                  Send Query
                 </a>
               </div>
             </div>
             <div className="text-center lg:text-right">
               <div className="inline-block bg-white rounded-xl shadow-lg p-6">
                 <div className="text-3xl font-bold text-blue-600 mb-2 pl-1.5">Free Consultation</div>
-                <div className="text-gray-600">Speak with our logistics experts</div>
-                <div className="text-2xl font-bold text-gray-900 mt-2">1-410-831-1883</div>
+                <div className="text-gray-600">Orlando, FL Office</div>
+                <div className="text-2xl font-bold text-gray-900 mt-2">8AM-5PM EST</div>
               </div>
             </div>
           </div>

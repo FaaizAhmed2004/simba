@@ -3,74 +3,74 @@ import Link from 'next/link';
 export default function ServicesPage() {
   const services = [
     {
-      title: 'FBA Prep Services',
-      description: 'Complete Amazon FBA preparation and fulfillment services to get your products ready for Amazon warehouses.',
+      title: 'Load Finding & Booking',
+      description: 'We find the best paying loads that match your truck specifications and route preferences.',
       features: [
-        'Receiving and inspection',
-        'FNSKU labeling and application',
-        'Repackaging and bundling',
-        'Quality control checks',
-        'Inventory management'
+        'High-paying load matching',
+        'Route-specific searches',
+        'Load verification',
+        'Quick booking process',
+        'Negotiation support'
       ],
-      pricing: 'Starting at $0.45/unit',
-      href: '/services/fba-prep',
-      icon: '📦'
+      pricing: 'Flexible % - Contact for Discussion',
+      href: '/contact',
+      icon: '🎯'
     },
     {
-      title: 'FBM Fulfillment',
-      description: 'Direct-to-customer fulfillment services for merchants who want to handle their own shipping.',
+      title: 'Route Planning & Optimization',
+      description: 'Optimize your routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
       features: [
-        'Order processing',
-        'Pick and pack services',
-        'Direct shipping to customers',
-        'Weight-based pricing',
-        'Fast turnaround times'
+        'Fuel cost optimization',
+        'Time-efficient routing',
+        'Traffic pattern analysis',
+        'Weather considerations',
+        'Rest stop planning'
       ],
-      pricing: 'Starting at $2.00/package',
-      href: '/services/fbm-fulfillment',
-      icon: '🚚'
+      pricing: 'Included in Service',
+      href: '/contact',
+      icon: '🗺️'
     },
     {
-      title: 'Freight Shipping',
-      description: 'Comprehensive freight transportation solutions for businesses of all sizes across the USA.',
+      title: 'Document Management',
+      description: 'Complete paperwork handling including BOLs, invoices, and compliance documentation.',
       features: [
-        'Less-than-truckload (LTL)',
-        'Full truckload (FTL)',
-        'Expedited shipping',
-        'Nationwide coverage',
-        'Real-time tracking'
+        'BOL management',
+        'Invoice processing',
+        'Compliance documentation',
+        'Digital record keeping',
+        'Document tracking'
       ],
-      pricing: 'Competitive rates',
-      href: '/services/freight-shipping',
-      icon: '🚛'
+      pricing: 'Included in Service',
+      href: '/contact',
+      icon: '📋'
     },
     {
-      title: 'Truck Dispatching',
-      description: 'Professional dispatching services connecting truck operators with profitable loads.',
+      title: 'Billing & Invoicing',
+      description: 'Professional billing services with timely invoicing and payment tracking.',
       features: [
-        'Load matching and assignment',
-        'Route optimization',
-        '24/7 dispatch support',
-        'Paperwork handling',
-        'Performance tracking'
+        'Quick invoicing',
+        'Payment tracking',
+        'Financial reporting',
+        'Dispute resolution',
+        'Account management'
       ],
-      pricing: 'Commission-based',
-      href: '/services/truck-dispatching',
-      icon: '📱'
+      pricing: 'Included in Service',
+      href: '/contact',
+      icon: '💳'
     },
     {
-      title: 'Pallet Storage',
-      description: 'Secure, climate-controlled warehouse storage solutions for your inventory needs.',
+      title: 'Driver Support',
+      description: '24/7 driver support for emergencies, route changes, and customer communications.',
       features: [
-        'Climate-controlled facilities',
-        'Flexible storage terms',
-        'Easy access and retrieval',
-        'Inventory management',
-        'Security monitoring'
+        '24/7 availability',
+        'Emergency assistance',
+        'Route change support',
+        'Customer communication',
+        'Problem resolution'
       ],
-      pricing: '$25/pallet/week',
-      href: '/services/pallet-storage',
-      icon: '🏢'
+      pricing: 'Included in Service',
+      href: '/contact',
+      icon: '📞'
     }
   ];
 
@@ -81,10 +81,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Logistics Services
+              Our Truck Dispatching Services
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Comprehensive shipping and logistics solutions designed to streamline your business operations across the USA
+              Professional truck dispatching services designed to maximize your earnings and streamline your operations across the USA
             </p>
           </div>
         </div>
@@ -148,23 +148,23 @@ export default function ServicesPage() {
       <div className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Ready to Streamline Your Logistics?
+            Ready to Maximize Your Earnings?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Get started with Simba Dispatch LLC today and experience the difference professional logistics services can make for your business.
+            Contact Simba Dispatch Services LLC today and let our professional dispatching team help you find the best loads and optimize your trucking operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/quote"
+              href="mailto:simbadispatchservices@gmail.com"
               className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition-colors"
             >
-              Get Instant Quote
+              Email Us Directly
             </Link>
             <Link
               href="/contact"
               className="border border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-gray-900 transition-colors"
             >
-              Contact Us
+              Send Query
             </Link>
           </div>
         </div>

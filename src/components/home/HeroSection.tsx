@@ -21,12 +21,11 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Professional Logistics
-            <span className="block text-blue-300">Made Simple</span>
+            Professional Dispatching
+            <span className="block text-blue-300">Services</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
-            From FBA prep to freight shipping, truck dispatching to pallet storage - 
-            we handle all your logistics needs across the USA with precision and care.
+            Expert dispatching services including load finding, route planning, document management, billing, and driver support - we handle everything so you can focus on driving.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link 
@@ -59,7 +58,7 @@ export default function HeroSection() {
             </div>
             <div className="bg-white rounded-lg shadow-xl p-6 text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-              <div className="text-gray-600">States Covered</div>
+              <div className="text-gray-600">Satisfied Customers</div>
             </div>
           </div>
         </div>

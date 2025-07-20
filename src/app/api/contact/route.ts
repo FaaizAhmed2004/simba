@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import connectDB from '@/lib/mongodb';
 
 interface ContactFormData {
   name: string;
@@ -32,11 +31,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Connect to database
-    await connectDB();
-
-    // For now, we'll just log the contact form submission
-    // In a real application, you would save this to a database
+    // Log the contact form submission
     console.log('Contact form submission:', {
       name: body.name,
       email: body.email,

@@ -5,29 +5,21 @@ import { useState } from 'react';
 const testimonials = [
   {
     name: 'Sarah Johnson',
-    company: 'E-commerce Solutions Inc.',
-    role: 'Operations Manager',
     content: 'Simba Dispatch LLC transformed our FBA prep process. Their attention to detail and competitive pricing helped us scale our Amazon business significantly.',
     rating: 5
   },
   {
     name: 'Mike Rodriguez',
-    company: 'Rodriguez Trucking',
-    role: 'Owner-Operator',
     content: 'The dispatching service is outstanding. They consistently find high-paying loads and their support team is available 24/7. Highly recommended!',
     rating: 5
   },
   {
     name: 'Jennifer Chen',
-    company: 'Tech Gadgets Plus',
-    role: 'CEO',
     content: 'From freight shipping to pallet storage, Simba Dispatch LLC handles all our logistics needs. Their technology platform makes everything seamless.',
     rating: 5
   },
   {
     name: 'David Thompson',
-    company: 'Thompson Manufacturing',
-    role: 'Logistics Director',
     content: 'Reliable, professional, and cost-effective. Simba Dispatch LLC has been our trusted partner for over two years. Excellent service every time.',
     rating: 5
   }
@@ -76,12 +68,6 @@ export default function TestimonialsSection() {
                 <div className="text-center">
                   <div className="font-bold text-gray-900 text-lg">
                     {testimonials[currentTestimonial].name}
-                  </div>
-                  <div className="text-gray-600">
-                    {testimonials[currentTestimonial].role}
-                  </div>
-                  <div className="text-blue-600 font-medium">
-                    {testimonials[currentTestimonial].company}
                   </div>
                 </div>
               </div>

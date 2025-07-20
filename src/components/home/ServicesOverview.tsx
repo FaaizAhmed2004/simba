@@ -3,36 +3,44 @@ import Image from 'next/image';
 
 const services = [
   {
-    title: 'FBA Prep Services',
-    description: 'Complete Amazon FBA preparation including receiving, labeling, and repackaging with FNSKU.',
-    price: 'Starting at $0.45/unit',
-    features: ['Receiving & Inspection', 'FNSKU Labeling', 'Repackaging', 'Quality Control'],
-    href: '/services/fba-prep',
-    image: '/Warehouse.jpeg'
+    title: 'Load Finding and Booking',
+    description: 'We find the best paying loads that match your truck specifications and route preferences.',
+    price: 'Flexible % - Contact for Discussion',
+    features: ['High-Paying Loads', 'Route Matching', 'Load Verification', 'Quick Booking'],
+    href: '/services/load-finding',
+    image: '/assests/10016.jpeg'
   },
   {
-    title: 'FBM Fulfillment',
-    description: 'Direct-to-customer fulfillment services for merchants with weight-based pricing.',
-    price: 'Starting at $2.00/package',
-    features: ['Pick & Pack', 'Direct Shipping', 'Weight-Based Pricing', 'Fast Processing'],
-    href: '/services/fbm-fulfillment',
-    image: '/assests/download%20(1).jpeg'
+    title: 'Route Planning and Optimization',
+    description: 'Optimize your routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
+    price: 'Included in Service',
+    features: ['Fuel Optimization', 'Time Efficiency', 'Traffic Avoidance', 'Best Routes'],
+    href: '/services/route-planning',
+    image: '/assests/10018.jpeg'
   },
   {
-    title: 'Freight Shipping',
-    description: 'Reliable freight shipping solutions for businesses across the United States.',
-    price: 'Custom Quotes',
-    features: ['LTL & FTL Options', 'Real-Time Tracking', 'Nationwide Coverage', 'Competitive Rates'],
-    href: '/services/freight-shipping',
-    image: '/assests/10051.jpeg'
+    title: 'Document Management',
+    description: 'Complete paperwork handling including BOLs, invoices, and compliance documentation.',
+    price: 'Included in Service',
+    features: ['BOL Management', 'Invoice Processing', 'Compliance Docs', 'Digital Records'],
+    href: '/services/document-management',
+    image: '/assests/10050.jpeg'
   },
   {
-    title: 'Truck Dispatching',
-    description: 'Professional truck dispatching services to optimize routes and maximize earnings.',
-    price: 'Performance Based',
-    features: ['Load Matching', 'Route Optimization', '24/7 Support', 'Performance Tracking'],
-    href: '/services/truck-dispatching',
-    image: '/assests/10052.jpeg'
+    title: 'Billing and Invoicing',
+    description: 'Professional billing services with timely invoicing and payment tracking.',
+    price: 'Included in Service',
+    features: ['Quick Invoicing', 'Payment Tracking', 'Financial Reports', 'Dispute Resolution'],
+    href: '/services/billing-invoicing',
+    image: '/assests/10008.webp'
+  },
+  {
+    title: 'Driver Support',
+    description: '24/7 driver support for emergencies, route changes, and customer communications.',
+    price: 'Included in Service',
+    features: ['24/7 Support', 'Emergency Help', 'Route Changes', 'Customer Communication'],
+    href: '/contact',
+    image: '/assests/10055.jpeg'
   },
 ];
 
@@ -42,11 +50,11 @@ export default function ServicesOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete Logistics Solutions
+            Professional  Dispatching Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From small packages to full truckloads, we provide comprehensive logistics services
-            tailored to your business needs across the United States.
+            We handle all aspects of  dispatching so you can focus on driving. From load finding to billing, 
+            we provide complete support for truck operators across the United States.
           </p>
         </div>
 

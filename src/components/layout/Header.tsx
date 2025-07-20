@@ -2,12 +2,21 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Phone } from "lucide-react"
+import { Phone, ChevronDown } from "lucide-react"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function Header() {
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+
+  const services = [
+    { name: 'Truck Dispatching', href: '/services/truck-dispatching' },
+    { name: 'Load Finding', href: '/services/load-finding' },
+    { name: 'Route Planning', href: '/services/route-planning' },
+    { name: 'Billing & Invoicing', href: '/services/billing-invoicing' }
+  ]
+
   return (
     <header className="w-full">
       {/* Top Bar */}
@@ -17,17 +26,17 @@ export function Header() {
             <Image src="/flag.png" alt="US Flag" width={24} height={16} className="rounded" />
             <span>USA</span>
           </div>
-          <Link href="#" className="hover:underline">
-            Locations
-          </Link>
-          <Link href="/auth/login" className="hover:underline">
-            login
-          </Link>
           <Link href="/services" className="hover:underline">
-            services
+            Services
           </Link>
           <Link href="/about" className="hover:underline">
             About Us
+          </Link>
+          <Link href="/quote" className="hover:underline">
+            Get Quote
+          </Link>
+          <Link href="/contact" className="hover:underline">
+            Contact
           </Link>
           <Link href="/faq" className="hover:underline">
             FAQs
@@ -52,8 +61,9 @@ export function Header() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xl font-bold text-[#2e3192]">Simba Dispatch LLC</span>
-                  <span className="text-xs font-semibold text-[#2e3192] tracking-wider">LOGISTICS</span>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-xl font-bold text-[#2e3192]">Simba Dispatch Services LLC</span>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -63,27 +73,46 @@ export function Header() {
               <Link href="/how-it-works" className="hover:text-[#4270F5] whitespace-nowrap">
                 How it works
               </Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center hover:text-[#4270F5] whitespace-nowrap">
-                  Services <span className="ml-1">▼</span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <Link href="/services/fba-prep">
-                    <DropdownMenuItem>FBA Prep Services</DropdownMenuItem>
-                  </Link>
-                  <Link href="/services/fbm-fulfillment">
-                    <DropdownMenuItem>FBM Fulfillment</DropdownMenuItem>
-                  </Link>
-                  <Link href="/services/truck-dispatching">
-                    <DropdownMenuItem>Truck Dispatching</DropdownMenuItem>
-                  </Link>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Link href="/pricing" className="hover:text-[#4270F5] whitespace-nowrap">
-                Pricing
-              </Link>
-              <Link href="/quote" className="hover:text-[#4270F5] whitespace-nowrap">
-                Get Quote
+              
+              {/* Services Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap"
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isServicesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+                    <div className="py-2">
+                      {services.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#4270F5]"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                      <div className="border-t border-gray-100 mt-2 pt-2">
+                        <Link
+                          href="/services"
+                          className="block px-4 py-2 text-sm text-[#4270F5] font-medium hover:bg-gray-100"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          View All Services
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              <Link href="/about" className="hover:text-[#4270F5] whitespace-nowrap">
+                About Us
               </Link>
             </div>
 
@@ -92,9 +121,9 @@ export function Header() {
               <div className="hidden md:flex items-center space-x-2">
                 <Phone className="text-[#4270F5] w-5 h-5" />
                 <div className="flex flex-col text-sm">
-                  <span className="font-bold text-gray-800 whitespace-nowrap">1.410.831.1883</span>
+                  <span className="font-bold text-gray-800 whitespace-nowrap">Orlando, FL Office</span>
                   <span className="text-gray-600 whitespace-nowrap">
-                    Mon-Fri | <span className="text-[#4270F5]">10AM-5PM EST</span>
+                    7 Days | <span className="text-[#4270F5]">8AM-5PM EST</span>
                   </span>
                 </div>
               </div>
@@ -112,14 +141,11 @@ export function Header() {
               <Link href="/how-it-works" className="text-gray-700 hover:text-[#4270F5] text-sm">
                 How it works
               </Link>
-              <Link href="/services" className="text-gray-700 hover:text-[#4270F5] text-sm">
+              <Link href="/services/truck-dispatching" className="text-gray-700 hover:text-[#4270F5] text-sm">
                 Services
               </Link>
-              <Link href="/pricing" className="text-gray-700 hover:text-[#4270F5] text-sm">
-                Pricing
-              </Link>
-              <Link href="/quote" className="text-gray-700 hover:text-[#4270F5] text-sm">
-                Get Quote
+              <Link href="/about" className="text-gray-700 hover:text-[#4270F5] text-sm">
+                About Us
               </Link>
             </div>
           </div>

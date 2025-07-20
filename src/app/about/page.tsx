@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { label: 'Founded', value: '2024' },
+  { label: 'Founded', value: '2025' },
   { label: 'Headquarters', value: 'Baltimore, MD' },
   { label: 'Services', value: '4+' },
   { label: 'Focus', value: 'Customer Success' }
@@ -71,24 +71,24 @@ const team = [
 
 const milestones = [
   {
-    year: '2024',
+    year: '2025',
     title: 'Company Founded',
     description: 'Simba Dispatch LLC was established with a vision to revolutionize logistics services for growing businesses.'
   },
   {
-    year: '2024',
-    title: 'First Fulfillment Center',
-    description: 'Opened our state-of-the-art fulfillment center in Baltimore, MD, equipped with modern technology.'
+    year: '2025',
+    title: 'Operations Launch',
+    description: 'Launched our truck dispatching services with a focus on reliability and efficiency.'
   },
   {
-    year: '2024',
-    title: 'Service Launch',
-    description: 'Launched comprehensive FBA prep, FBM fulfillment, freight shipping, and storage services.'
+    year: '2025',
+    title: 'Technology Platform',
+    description: 'Deployed our modern logistics management platform to streamline operations and enhance customer experience.'
   },
   {
     year: 'Future',
     title: 'Expansion Plans',
-    description: 'Planning to expand to multiple locations across the USA to serve customers nationwide.'
+    description: 'Planning to expand our network and add more specialized logistics services across the USA.'
   }
 ];
 
@@ -157,7 +157,7 @@ export default function AboutPage() {
                   enough to adapt to their changing needs.
                 </p>
                 <p>
-                  Founded in 2024, we set out to build a logistics company that combines 
+                  Founded in 2025, we set out to build a logistics company that combines 
                   the reliability of established players with the innovation and 
                   customer focus that modern businesses deserve.
                 </p>

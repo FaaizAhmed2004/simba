@@ -1,70 +1,84 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default  function TruckDispatchingPage() {
-  const services = [
+export default function BillingInvoicingPage() {
+  const features = [
     {
-      title: 'Load Matching',
-      description: 'Advanced algorithms match available loads with qualified truck operators based on location, capacity, and preferences.',
-      icon: '🎯'
+      title: 'Quick Invoicing',
+      description: 'Generate professional invoices immediately after load completion with all necessary details.',
+      icon: '⚡'
     },
     {
-      title: 'Route Optimization',
-      description: 'Optimize routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
-      icon: '🗺️'
+      title: 'Payment Tracking',
+      description: 'Monitor payment status in real-time and get alerts for overdue payments.',
+      icon: '📊'
     },
     {
-      title: '24/7 Support',
-      description: 'Round-the-clock dispatch support to handle emergencies, route changes, and customer communications.',
-      icon: '📞'
+      title: 'Financial Reports',
+      description: 'Detailed financial reports to help you track earnings and manage your business.',
+      icon: '📈'
     },
     {
-      title: 'Real-time Tracking',
-      description: 'GPS tracking and real-time updates for complete visibility of load status and location.',
-      icon: '📍'
+      title: 'Dispute Resolution',
+      description: 'Professional handling of payment disputes and rate negotiations.',
+      icon: '⚖️'
     },
     {
-      title: 'Payment Processing',
-      description: 'Secure and timely payment processing for completed loads with detailed invoicing.',
-      icon: '💳'
+      title: 'Account Management',
+      description: 'Dedicated account management to ensure smooth payment processes.',
+      icon: '👥'
     },
     {
-      title: 'Compliance Management',
-      description: 'Ensure all loads meet DOT regulations, HOS requirements, and safety standards.',
-      icon: '✅'
+      title: 'Tax Documentation',
+      description: 'Organized tax documents and 1099 forms for easy tax preparation.',
+      icon: '📋'
     }
   ];
 
   const benefits = [
     {
-      title: 'Maximize Revenue',
-      description: 'Find the highest-paying loads that match your truck specifications and route preferences.',
+      title: 'Faster Payments',
+      description: 'Get paid faster with our streamlined invoicing and follow-up process.',
       icon: '💰'
     },
     {
-      title: 'Reduce Empty Miles',
-      description: 'Minimize deadhead miles with strategic load planning and backhaul opportunities.',
-      icon: '⛽'
+      title: 'Professional Image',
+      description: 'Present a professional image with branded invoices and documentation.',
+      icon: '✨'
     },
     {
-      title: 'Professional Support',
-      description: 'Dedicated dispatch team handles customer communications and load coordination.',
-      icon: '👥'
+      title: 'Reduced Paperwork',
+      description: 'Eliminate manual paperwork and focus on driving while we handle billing.',
+      icon: '📄'
     },
     {
-      title: 'Flexible Schedule',
-      description: 'Choose loads that fit your schedule and preferred operating areas.',
-      icon: '📅'
+      title: 'Better Cash Flow',
+      description: 'Improve cash flow with consistent follow-up and payment tracking.',
+      icon: '💳'
     }
   ];
 
-  const requirements = [
-    'Valid CDL (Class A, B, or C)',
-    'Commercial truck insurance',
-    'DOT number and MC authority',
-    'Clean driving record',
-    'Reliable truck and trailer',
-    'Smartphone for tracking and communication'
+  const processSteps = [
+    {
+      step: 1,
+      title: 'Load Completion',
+      description: 'Complete your delivery and submit required documentation'
+    },
+    {
+      step: 2,
+      title: 'Invoice Generation',
+      description: 'We create and send professional invoices immediately'
+    },
+    {
+      step: 3,
+      title: 'Payment Follow-up',
+      description: 'We handle all payment follow-up and communication'
+    },
+    {
+      step: 4,
+      title: 'Payment Processing',
+      description: 'Receive your payment minus our agreed commission'
+    }
   ];
 
   return (
@@ -75,7 +89,7 @@ export default  function TruckDispatchingPage() {
         <div className="absolute inset-0">
           <Image
             src="/assests/10050.jpeg"
-            alt="Truck Dispatching Background"
+            alt="Billing and Invoicing Background"
             fill
             className="object-cover"
             priority
@@ -87,10 +101,10 @@ export default  function TruckDispatchingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Professional Truck Dispatching Services
+                Professional Billing & Invoicing Services
               </h1>
               <p className="text-xl text-gray-100 mb-8">
-                Maximize your earning potential with our expert dispatch services. We find the best loads, handle negotiations, and manage all the paperwork so you can focus on driving.
+                Let us handle all your billing and invoicing needs so you can focus on driving. Professional, timely, and accurate financial management for truck operators.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -108,34 +122,34 @@ export default  function TruckDispatchingPage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-8xl mb-4">🚛</div>
-              <p className="text-gray-100">Professional Dispatch Services</p>
+              <div className="text-8xl mb-4">💳</div>
+              <p className="text-gray-100">Professional Billing Services</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Services Section */}
+      {/* Features Section */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Complete Dispatch Services
+              Complete Billing & Invoicing Services
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to run a successful trucking operation
+              Professional financial management for truck operators
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {features.map((feature, index) => (
               <div key={index} className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{service.icon}</div>
+                <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {service.title}
+                  {feature.title}
                 </h3>
                 <p className="text-gray-600">
-                  {service.description}
+                  {feature.description}
                 </p>
               </div>
             ))}
@@ -148,10 +162,10 @@ export default  function TruckDispatchingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose Our Dispatch Service?
+              Why Choose Our Billing Services?
             </h2>
             <p className="text-xl text-gray-600">
-              Proven results that help owner-operators succeed
+              Focus on driving while we handle your finances
             </p>
           </div>
 
@@ -173,27 +187,34 @@ export default  function TruckDispatchingPage() {
         </div>
       </div>
 
-      {/* Requirements Section */}
+      {/* Process Section */}
       <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Requirements to Join
+              How Our Billing Process Works
             </h2>
             <p className="text-xl text-gray-600">
-              Basic requirements to become part of our dispatch network
+              Simple, efficient, and transparent billing process
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {requirements.map((requirement, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <div className="text-green-600">✓</div>
-                  <span className="text-gray-700">{requirement}</span>
+          <div className="space-y-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  {step.step}
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -202,20 +223,21 @@ export default  function TruckDispatchingPage() {
       <div className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
+            Transparent Pricing
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            We only succeed when you succeed
+            Our billing services are included in your dispatch commission
           </p>
 
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
-            <div className="text-4xl font-bold text-green-600 mb-2">Flexible %</div>
-            <div className="text-lg text-gray-900 mb-4">Commission per load</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">Included</div>
+            <div className="text-lg text-gray-900 mb-4">In dispatch service</div>
             <div className="text-sm text-gray-600 space-y-2">
-              <p>• No upfront fees</p>
-              <p>• No monthly charges</p>
-              <p>• Pay only when you get paid</p>
-              <p>• Contact for discussion on %</p>
+              <p>• No additional fees</p>
+              <p>• No setup charges</p>
+              <p>• Professional invoicing included</p>
+              <p>• Payment tracking included</p>
+              <p>• Financial reports included</p>
             </div>
           </div>
         </div>
@@ -233,37 +255,37 @@ export default  function TruckDispatchingPage() {
           <div className="space-y-6">
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                How do I get started?
+                How quickly do you send invoices?
               </h3>
               <p className="text-gray-600">
-                Simply register as a truck operator on our platform, complete your profile with truck specifications and credentials, and our dispatch team will start finding loads for you within 24 hours.
+                We send professional invoices within 24 hours of load completion, ensuring faster payment processing.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What types of loads do you handle?
+                What if there is a payment dispute?
               </h3>
               <p className="text-gray-600">
-                We handle all types of freight including dry van, refrigerated, flatbed, and specialized loads. Our network includes both LTL and FTL opportunities across all 50 states.
+                Our experienced team handles all payment disputes professionally, working directly with brokers and shippers to resolve issues quickly.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                How quickly do I get paid?
+                Do you provide tax documents?
               </h3>
               <p className="text-gray-600">
-                We offer quick pay options with payments processed within 24-48 hours of load completion. Standard payment terms are also available based on customer requirements.
+                Yes, we provide organized financial records and 1099 forms at year-end to make tax preparation easier for you.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Can I choose my own loads?
+                How do I track my payments?
               </h3>
               <p className="text-gray-600">
-                Absolutely! While our dispatch team finds and negotiates loads for you, you always have the final say on which loads to accept based on your preferences and schedule.
+                We provide regular updates on payment status and can set up a system for you to track all your invoices and payments in real-time.
               </p>
             </div>
           </div>
@@ -271,24 +293,24 @@ export default  function TruckDispatchingPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-green-600 text-white py-16">
+      <div className="bg-blue-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Ready to Maximize Your Earnings?
+            Ready to Streamline Your Billing?
           </h2>
-          <p className="text-xl text-green-100 mb-8">
-            Contact us today to discuss how we can help optimize your trucking operations.
+          <p className="text-xl text-blue-100 mb-8">
+            Let us handle your billing and invoicing so you can focus on what you do best - driving.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="mailto:simbadispatchservices@gmail.com"
-              className="bg-white text-green-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors"
             >
               Email Us Directly
             </Link>
             <Link
               href="/contact"
-              className="border border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-green-600 transition-colors"
+              className="border border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-blue-600 transition-colors"
             >
               Send Query
             </Link>
@@ -298,6 +320,3 @@ export default  function TruckDispatchingPage() {
     </div>
   );
 }
-
-
- 
