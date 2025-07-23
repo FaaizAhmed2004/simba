@@ -23,7 +23,7 @@ export function Footer() {
               <span className="text-base sm:text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
             </div>
           </div>
-          <p className="text-sm text-gray-600 leading-relaxed">Professional logistics & fulfillment services including truck dispatching, FBA prep, and FBM fulfillment. Office in Orlando, FL. Business hours: 7 days a week, 8am - 5pm EST.</p>
+          <p className="text-sm text-gray-600 leading-relaxed">Professional Dispatch & fulfillment services including truck dispatching, FBA prep, and FBM fulfillment. Office in Orlando, FL. Business hours: 7 days a week, 8am - 5pm EST.</p>
           <div className="flex items-center gap-2 text-gray-800">
             <Mail className="w-5 h-5 text-gray-600" />
             <Link href="mailto:Simbadispatchservllc@gmail.com" className="text-sm hover:underline">
