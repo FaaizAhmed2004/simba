@@ -42,8 +42,6 @@ const features = [
 const pricingTiers = [
   {
     name: 'Basic FBA Prep',
-    price: '$0.25',
-    unit: 'USDT per unit',
     features: [
       'Product receiving',
       'Basic inspection',
@@ -54,8 +52,6 @@ const pricingTiers = [
   },
   {
     name: 'Premium FBA Prep',
-    price: '$0.35',
-    unit: 'USDT per unit',
     features: [
       'Everything in Basic',
       'Detailed quality inspection',
@@ -68,8 +64,6 @@ const pricingTiers = [
   },
   {
     name: 'Custom FBA Solutions',
-    price: 'Custom',
-    unit: 'USDT quote',
     features: [
       'Tailored prep services',
       'Bulk processing discounts',
@@ -274,8 +268,6 @@ export default function FBAPrepPage() {
                 )}
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                  <div className="text-4xl font-bold text-gray-800 mb-1">{tier.price}</div>
-                  <div className="text-gray-600">{tier.unit}</div>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (

@@ -29,13 +29,6 @@ export default function CTASection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="bg-blue-700 rounded-lg p-6 mb-4">
-                <div className="text-3xl mb-2">🎯</div>
-                <div className="font-semibold">Load Finding</div>
-              </div>
-              <p className="text-blue-200">High-paying loads matched to your truck</p>
-            </div>
             
             <div className="text-center">
               <div className="bg-blue-700 rounded-lg p-6 mb-4">

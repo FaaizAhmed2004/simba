@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 const stats = [
-  { number: 500, suffix: '+', label: 'Loads Dispatched', duration: 2000 },
+  { number: 10000, suffix: '+', label: 'Loads Dispatched', duration: 2000 },
   { number: 50, suffix: '+', label: 'Happy Customers', duration: 2500 },
   { number: 99.9, suffix: '%', label: 'On-Time Delivery', duration: 2200 },
   { number: 25, suffix: '+', label: 'States Covered', duration: 1800 }

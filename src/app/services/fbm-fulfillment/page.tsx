@@ -45,8 +45,6 @@ const features = [
 const pricingTiers = [
   {
     name: 'Starter FBM',
-    price: '$0.25',
-    unit: 'USDT per order',
     features: [
       'Order processing',
       'Pick & pack',
@@ -58,29 +56,23 @@ const pricingTiers = [
   },
   {
     name: 'Professional FBM',
-    price: '$0.35',
-    unit: 'USDT per order',
     features: [
       'Everything in Starter',
       'Custom packaging',
       'Expedited shipping',
       'Multi-channel integration',
       'Priority support',
-      'Up to 500 orders/month'
     ],
     popular: true
   },
   {
     name: 'Enterprise FBM',
-    price: '$0.50',
-    unit: 'USDT per order',
     features: [
       'Everything in Professional',
       'Dedicated account manager',
       'Custom integrations',
       'SLA guarantees',
       'Bulk discounts',
-      'Unlimited orders'
     ]
   }
 ];
@@ -338,8 +330,6 @@ export default function FBMFulfillmentPage() {
                 )}
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                  <div className="text-4xl font-bold text-blue-600 mb-1">{tier.price}</div>
-                  <div className="text-gray-600">{tier.unit}</div>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (

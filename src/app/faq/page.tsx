@@ -112,78 +112,6 @@ const faqData: FAQItem[] = [
     category: 'FBM Fulfillment'
   },
 
-  // Freight Shipping
-  {
-    id: 'freight-1',
-    question: 'What types of freight shipping do you offer?',
-    answer: 'We offer both Less-than-Truckload (LTL) and Full Truckload (FTL) freight shipping services. Whether you\'re shipping a few pallets or need a full truck, we can provide competitive rates and reliable service nationwide.',
-    category: 'Freight Shipping'
-  },
-  {
-    id: 'freight-2',
-    question: 'How do you calculate freight shipping costs?',
-    answer: 'Freight shipping costs are based on several factors including weight, dimensions, distance, freight class, and any special services required. We provide custom quotes for each shipment to ensure you get the best possible rate.',
-    category: 'Freight Shipping'
-  },
-  {
-    id: 'freight-3',
-    question: 'Do you offer expedited freight services?',
-    answer: 'Yes, we offer expedited freight options for time-sensitive shipments. This includes guaranteed delivery dates and priority handling. Contact us with your timeline requirements for expedited freight quotes.',
-    category: 'Freight Shipping'
-  },
-  {
-    id: 'freight-4',
-    question: 'What additional freight services do you provide?',
-    answer: 'We offer various additional services including liftgate service ($75), inside delivery ($125), residential delivery ($85), and appointment delivery ($45). These services can be added based on your specific delivery requirements.',
-    category: 'Freight Shipping'
-  },
-
-  // Storage Solutions
-  {
-    id: 'storage-1',
-    question: 'What storage options do you offer?',
-    answer: 'We offer secure pallet storage in our climate-controlled facilities. Storage is priced at $25 per pallet per week with flexible terms. Our facilities feature 24/7 security monitoring and easy access for inventory management.',
-    category: 'Storage'
-  },
-  {
-    id: 'storage-2',
-    question: 'Is there a minimum storage commitment?',
-    answer: 'No, we don\'t require long-term storage commitments. Our storage is flexible and can be adjusted based on your changing needs. You only pay for the space you use for the time you need it.',
-    category: 'Storage'
-  },
-  {
-    id: 'storage-3',
-    question: 'How do you track my stored inventory?',
-    answer: 'We provide real-time inventory tracking through our management system. You can access current inventory levels, receive low-stock alerts, and get detailed monthly reports. We also offer photo documentation services for additional peace of mind.',
-    category: 'Storage'
-  },
-
-  // Pricing & Billing
-  {
-    id: 'pricing-1',
-    question: 'Are there any setup fees or monthly minimums?',
-    answer: 'No, we don\'t charge setup fees or require monthly minimums. We believe in transparent pricing where you only pay for the services you actually use. This makes it easy for businesses of all sizes to get started.',
-    category: 'Pricing'
-  },
-  {
-    id: 'pricing-2',
-    question: 'Do you offer volume discounts?',
-    answer: 'Yes, we offer competitive volume discounts for high-volume customers. The more you ship, the better rates you can receive. Contact us to discuss custom pricing based on your expected volume.',
-    category: 'Pricing'
-  },
-  {
-    id: 'pricing-3',
-    question: 'What payment terms do you offer?',
-    answer: 'We offer flexible payment terms including net 30 for qualified businesses. New customers typically start with payment upon service completion or prepaid accounts. We accept various payment methods for your convenience.',
-    category: 'Pricing'
-  },
-  {
-    id: 'pricing-4',
-    question: 'How do I get a custom quote?',
-    answer: 'You can get a custom quote by using our online quote form, calling us directly, or sending us an email with your requirements. We typically provide quotes within a few hours during business hours.',
-    category: 'Pricing'
-  },
-
   // Support & Service
   {
     id: 'support-1',
@@ -216,11 +144,7 @@ const categories = [
   { name: 'General', icon: QuestionMarkCircleIcon, count: faqData.filter(faq => faq.category === 'General').length },
   { name: 'FBA Prep', icon: ArchiveBoxIcon, count: faqData.filter(faq => faq.category === 'FBA Prep').length },
   { name: 'FBM Fulfillment', icon: TruckIcon, count: faqData.filter(faq => faq.category === 'FBM Fulfillment').length },
-  { name: 'Freight Shipping', icon: BuildingStorefrontIcon, count: faqData.filter(faq => faq.category === 'Freight Shipping').length },
-  { name: 'Storage', icon: CubeIcon, count: faqData.filter(faq => faq.category === 'Storage').length },
-  { name: 'Pricing', icon: QuestionMarkCircleIcon, count: faqData.filter(faq => faq.category === 'Pricing').length },
-  { name: 'Support', icon: QuestionMarkCircleIcon, count: faqData.filter(faq => faq.category === 'Support').length }
-];
+]
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');

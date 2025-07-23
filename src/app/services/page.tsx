@@ -26,7 +26,7 @@ export default function ServicesPage() {
         'Amazon warehouse shipment',
         'Photo documentation'
       ],
-      pricing: 'Starting at $0.25 USDT/unit',
+      pricing: 'Flexible  - Contact for Discussion',
       href: '/services/fba-prep',
       icon: '📦'
     },
@@ -40,53 +40,11 @@ export default function ServicesPage() {
         'Multi-channel support',
         'Real-time tracking'
       ],
-      pricing: 'Starting at $0.25 USDT/order',
+      pricing: 'Flexible  - Contact for Discussion',
       href: '/services/fbm-fulfillment',
       icon: '🛒'
     },
-    {
-      title: 'Load Finding',
-      description: 'Find profitable loads that match your truck specifications and route preferences.',
-      features: [
-        'High-paying load matching',
-        'Route-specific searches',
-        'Load verification',
-        'Quick booking process',
-        'Negotiation support'
-      ],
-      pricing: 'Included in Dispatching',
-      href: '/services/load-finding',
-      icon: '🎯'
-    },
-    {
-      title: 'Route Planning',
-      description: 'Optimize your routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
-      features: [
-        'Fuel cost optimization',
-        'Time-efficient routing',
-        'Traffic pattern analysis',
-        'Weather considerations',
-        'Rest stop planning'
-      ],
-      pricing: 'Included in Service',
-      href: '/services/route-planning',
-      icon: '🗺️'
-    },
-    {
-      title: 'Billing & Invoicing',
-      description: 'Professional billing services with timely invoicing and payment tracking.',
-      features: [
-        'Quick invoicing',
-        'Payment tracking',
-        'Financial reporting',
-        'Dispute resolution',
-        'Account management'
-      ],
-      pricing: 'Included in Service',
-      href: '/services/billing-invoicing',
-      icon: '💳'
-    }
-  ];
+  ]
 
   return (
     <div className="min-h-screen bg-gray-50">

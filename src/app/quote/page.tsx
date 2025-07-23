@@ -3,13 +3,10 @@
 import { useState } from 'react';
 import {
   TruckIcon,
-  MapPinIcon,
   CheckCircleIcon,
-  DocumentTextIcon,
   CubeIcon,
   ShoppingCartIcon
 } from '@heroicons/react/24/outline';
-import { MapIcon } from 'lucide-react';
 
 interface QuoteFormData {
   name: string;
@@ -162,7 +159,6 @@ export default function QuotePage() {
             <p>• Product receiving & inspection</p>
             <p>• FNSKU labeling</p>
             <p>• Amazon warehouse shipment</p>
-            <p>• Starting at $0.25 USDT/unit</p>
           </div>
         </div>
 
@@ -180,7 +176,6 @@ export default function QuotePage() {
             <p>• Order processing</p>
             <p>• Pick & pack services</p>
             <p>• Direct-to-customer shipping</p>
-            <p>• Starting at $0.25 USDT/order</p>
           </div>
         </div>
       </div>

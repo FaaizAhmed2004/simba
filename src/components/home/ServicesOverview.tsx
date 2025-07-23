@@ -13,7 +13,7 @@ const services = [
   {
     title: 'FBA Prep Services',
     description: 'Complete Amazon FBA preparation including receiving, labeling, and shipment to Amazon.',
-    price: 'Starting at $0.25 USDT/unit',
+    price: 'Flexible % - Contact for Discussion',
     features: ['Product Receiving', 'FNSKU Labeling', 'Quality Inspection', 'Amazon Shipment'],
     href: '/services/fba-prep',
     image: '/assests/10018.jpeg'
@@ -21,7 +21,7 @@ const services = [
   {
     title: 'FBM Fulfillment',
     description: 'Professional fulfillment by merchant services with same-day processing.',
-    price: 'Starting at $0.25 USDT/order',
+    price: 'Flexible % - Contact for Discussion',
     features: ['Order Processing', 'Pick & Pack', 'Direct Shipping', 'Multi-Channel Support'],
     href: '/services/fbm-fulfillment',
     image: '/assests/10050.jpeg'
@@ -34,7 +34,7 @@ export default function ServicesOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Logistics Services
+            Comprehensive Dispatch Services
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             From truck dispatching to Amazon fulfillment, we provide complete logistics solutions 

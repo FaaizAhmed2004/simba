@@ -66,14 +66,7 @@ export function Header() {
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-1 sm:space-x-2">
-                    <Image
-                      src="/simbaDispatch.png"
-                      alt="Simba Logo"
-                      width={20}
-                      height={20}
-                      className="object-contain sm:w-6 sm:h-6"
-                    />
-                    <span className="text-lg sm:text-xl font-bold text-[#2e3192]">Simba Dispatch LLC</span>
+                    <span className="text-lg sm:text-xl font-bold text-[#2e3192]">Simba Dispatch Service LLC</span>
                   </div>
                 </div>
               </Link>

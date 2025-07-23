@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 interface ContactFormData {
   name: string;
@@ -43,8 +44,50 @@ export async function POST(request: NextRequest) {
       submittedAt: new Date().toISOString()
     });
 
-    // Here you could also send an email notification
-    // using a service like SendGrid, Nodemailer, etc.
+    // Create a simple transporter using SMTP
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      secure: process.env.EMAIL_SECURE === 'true',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+    });
+
+    // Create email content
+    const emailContent = `
+New Contact Form Submission - Simba Dispatch LLC
+
+CONTACT INFORMATION:
+Name: ${body.name}
+Email: ${body.email}
+Phone: ${body.phone || 'Not provided'}
+Company: ${body.company || 'Not provided'}
+Service Interest: ${body.serviceInterest || 'Not specified'}
+
+SUBJECT: ${body.subject}
+
+MESSAGE:
+${body.message}
+
+---
+This message was submitted through the Simba Dispatch LLC website contact form.
+    `;
+
+    try {
+      // Send email
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_TO,
+        subject: `Contact Form: ${body.subject}`,
+        text: emailContent,
+        replyTo: body.email
+      });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      // Continue execution even if email fails
+    }
 
     return NextResponse.json(
       { 

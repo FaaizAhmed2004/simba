@@ -2,6 +2,7 @@ import Link from "next/link"
 import {
   Mail,
   Phone,
+  Instagram,
 } from "lucide-react"
 import Image from "next/image";
 
@@ -20,7 +21,7 @@ export function Footer() {
                 height={18}
                 className="object-contain sm:w-5 sm:h-5"
               />
-              <span className="text-base sm:text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
+              <span className="text-base sm:text-lg font-bold text-[#2e3192]">Simba Dispatch Service LLC</span>
             </div>
           </div>
           <p className="text-sm text-gray-600 leading-relaxed">Professional Dispatch & fulfillment services including truck dispatching, FBA prep, and FBM fulfillment. Office in Orlando, FL. Business hours: 7 days a week, 8am - 5pm EST.</p>
@@ -33,6 +34,12 @@ export function Footer() {
           <div className="flex items-center gap-2 text-gray-800">
             <Phone className="w-5 h-5 text-gray-600" />
             <span className="text-sm">Business Hours: 8am - 5pm EST</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-800">
+            <Instagram className="w-5 h-5 text-gray-600" />
+            <Link href="https://www.instagram.com/simbadispatchservices" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
+              @simbadispatchservices
+            </Link>
           </div>
         </div>
 
@@ -141,9 +148,14 @@ export function Footer() {
           <p className="text-sm text-gray-500">
             © 2025 Simba Dispatch LLC. All rights reserved.
           </p>
-          <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            Professional Dispatch & fulfillment services across the USA
-          </p>
+          <div className="flex items-center gap-4 mt-4 md:mt-0">
+            <Link href="https://www.instagram.com/simbadispatchservices" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Instagram className="w-5 h-5 text-gray-500 hover:text-[#E1306C]" />
+            </Link>
+            <p className="text-sm text-gray-500">
+              Professional Dispatch & fulfillment services across the USA
+            </p>
+          </div>
         </div>
       </div>
     </footer>

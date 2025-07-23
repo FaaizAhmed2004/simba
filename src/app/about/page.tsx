@@ -13,14 +13,14 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'About Us - Simba Dispatch LLC',
-  description: 'Learn about Simba Dispatch LLC, a new innovative logistics company in the USA dedicated to providing exceptional shipping, fulfillment, and freight services.',
+  title: 'About Us - Simba Dispatch Service LLC',
+  description: 'Learn about Simba  Dispatch Service LLC, a new innovative logistics company in the USA dedicated to providing exceptional shipping, fulfillment, and freight services.',
   keywords: 'about simba dispatch, logistics company USA, shipping services, fulfillment company, freight transportation',
 };
 
 const stats = [
   { label: 'Founded', value: '2025' },
-  { label: 'Headquarters', value: 'Baltimore, MD' },
+  { label: 'Headquarters', value: 'Orlando, FL' },
   { label: 'Services', value: '4+' },
   { label: 'Focus', value: 'Customer Success' }
 ];
@@ -48,26 +48,6 @@ const values = [
   }
 ];
 
-const team = [
-  {
-    name: 'Leadership Team',
-    role: 'Experienced Professionals',
-    description: 'Our leadership brings decades of combined experience from major logistics and e-commerce companies.',
-    image: '/placeholder.svg?height=300&width=300'
-  },
-  {
-    name: 'Operations Team',
-    role: 'Logistics Experts',
-    description: 'Skilled professionals who ensure every package is handled with care and delivered on time.',
-    image: '/placeholder.svg?height=300&width=300'
-  },
-  {
-    name: 'Customer Success',
-    role: 'Your Advocates',
-    description: 'Dedicated support specialists who are always ready to help you succeed and grow your business.',
-    image: '/placeholder.svg?height=300&width=300'
-  }
-];
 
 const milestones = [
   {
@@ -100,7 +80,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About Simba Dispatch LLC
+              About Simba Dispatch Services LLC
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
               A new generation logistics company built for the modern business. 
@@ -181,7 +161,6 @@ export default function AboutPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
               </div>
               <div className="bg-blue-100 rounded-lg p-8">
                 <div className="grid grid-cols-2 gap-6">
@@ -193,7 +172,7 @@ export default function AboutPage() {
                   <div className="text-center">
                     <BuildingOfficeIcon className="h-12 w-12 text-blue-600 mx-auto mb-3" />
                     <h3 className="font-semibold text-gray-900">Strategic Location</h3>
-                    <p className="text-sm text-gray-600">Baltimore hub for nationwide reach</p>
+                    <p className="text-sm text-gray-600">Orlando, FL</p>
                   </div>
                   <div className="text-center">
                     <GlobeAmericasIcon className="h-12 w-12 text-blue-600 mx-auto mb-3" />
@@ -334,27 +313,6 @@ export default function AboutPage() {
               Experienced professionals dedicated to your success and committed to excellence in logistics.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="h-64 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                  <UsersIcon className="h-24 w-24 text-blue-600" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 font-medium mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600">
-                    {member.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -363,7 +321,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Simba Dispatch LLC?
+              Why Choose Simba Dispatch Service LLC?
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               As a new company, we bring fresh perspectives and innovative solutions to traditional logistics challenges.

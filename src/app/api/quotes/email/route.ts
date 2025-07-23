@@ -79,26 +79,29 @@ This quote request was submitted through the Simba Dispatch LLC website.
 Please respond within 24 hours.
     `;
 
-    // Configure email transporter
+    // Create a simple transporter using SMTP
     const transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE || 'gmail',
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      secure: process.env.EMAIL_SECURE === 'true',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
       }
     });
 
-    // Send email to business
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO,
-      subject: `New Quote Request - ${quoteData.serviceType.replace('_', ' ')}`,
-      text: emailContent,
-      replyTo: quoteData.email
-    });
+    try {
+      // Send email to business
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_TO,
+        subject: `New Quote Request - ${quoteData.serviceType.replace('_', ' ')}`,
+        text: emailContent,
+        replyTo: quoteData.email
+      });
 
-    // Send confirmation email to customer
-    const confirmationEmail = `
+      // Send confirmation email to customer
+      const confirmationEmail = `
 Dear ${quoteData.name},
 
 Thank you for your quote request with Simba Dispatch LLC!
@@ -115,19 +118,23 @@ If you have any immediate questions, please don't hesitate to contact us.
 
 Best regards,
 Simba Dispatch LLC Team
-Phone: (407) 555-0123
+Phone: (410) 831-1883
 Email: ${process.env.EMAIL_TO}
 
 ---
 This is an automated confirmation. Please do not reply to this email.
-    `;
+      `;
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: quoteData.email,
-      subject: 'Quote Request Confirmation - Simba Dispatch LLC',
-      text: confirmationEmail
-    });
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: quoteData.email,
+        subject: 'Quote Request Confirmation - Simba Dispatch LLC',
+        text: confirmationEmail
+      });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      // Continue execution even if email fails
+    }
 
     return NextResponse.json({
       success: true,
