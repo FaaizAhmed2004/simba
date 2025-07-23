@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/simbaDispatch.png" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
         <Providers>
           <div className="flex flex-col min-h-screen">
             <Header />

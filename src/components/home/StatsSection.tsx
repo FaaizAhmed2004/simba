@@ -45,13 +45,25 @@ function AnimatedNumber({ number, suffix, duration }: { number: number; suffix: 
 
 export default function StatsSection() {
   return (
-    <section className="py-24 bg-blue-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0">
+          <svg width="100%" height="100%">
+            <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="1" fill="white" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#dots)" />
+          </svg>
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Trusted by Businesses Nationwide
           </h2>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Our track record speaks for itself. Here are the numbers that showcase
             our commitment to excellence in logistics services.
           </p>
@@ -59,30 +71,32 @@ export default function StatsSection() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-orange-400 mb-2">
+            <div key={index} className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">
                 <AnimatedNumber
                   number={stat.number}
                   suffix={stat.suffix}
                   duration={stat.duration}
                 />
               </div>
-              <div className="text-blue-200 font-medium">{stat.label}</div>
+              <div className="text-gray-300 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="text-center">
-            <div className="bg-blue-800 rounded-lg p-6">
-              <div className="text-2xl font-bold mb-2">Industry Leading</div>
-              <div className="text-blue-200">Technology & Innovation</div>
+          <div className="text-center transform hover:scale-105 transition-transform duration-300">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 h-full shadow-lg">
+              <div className="text-4xl mb-4">🚀</div>
+              <div className="text-2xl font-bold mb-2 text-white">Industry Leading</div>
+              <div className="text-gray-300">Technology & Innovation</div>
             </div>
           </div>
-          <div className="text-center">
-            <div className="bg-blue-800 rounded-lg p-6">
-              <div className="text-2xl font-bold mb-2">24/7 Support</div>
-              <div className="text-blue-200">Always Here When You Need Us</div>
+          <div className="text-center transform hover:scale-105 transition-transform duration-300">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 h-full shadow-lg">
+              <div className="text-4xl mb-4">📞</div>
+              <div className="text-2xl font-bold mb-2 text-white">24/7 Support</div>
+              <div className="text-gray-300">Always Here When You Need Us</div>
             </div>
           </div>
         </div>
