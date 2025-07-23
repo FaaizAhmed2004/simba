@@ -5,7 +5,6 @@ const services = [
   {
     title: 'Truck Dispatching',
     description: 'Professional truck dispatching services for owner-operators with 24/7 support.',
-    price: 'Flexible % - Contact for Discussion',
     features: ['Load Finding', 'Route Optimization', '24/7 Support', 'Competitive Rates'],
     href: '/services/truck-dispatching',
     image: '/assests/10016.jpeg'
@@ -13,7 +12,6 @@ const services = [
   {
     title: 'FBA Prep Services',
     description: 'Complete Amazon FBA preparation including receiving, labeling, and shipment to Amazon.',
-    price: 'Flexible % - Contact for Discussion',
     features: ['Product Receiving', 'FNSKU Labeling', 'Quality Inspection', 'Amazon Shipment'],
     href: '/services/fba-prep',
     image: '/assests/10018.jpeg'
@@ -21,7 +19,6 @@ const services = [
   {
     title: 'FBM Fulfillment',
     description: 'Professional fulfillment by merchant services with same-day processing.',
-    price: 'Flexible % - Contact for Discussion',
     features: ['Order Processing', 'Pick & Pack', 'Direct Shipping', 'Multi-Channel Support'],
     href: '/services/fbm-fulfillment',
     image: '/assests/10050.jpeg'
@@ -56,7 +53,6 @@ export default function ServicesOverview() {
               <div className="p-4 sm:p-6 lg:p-8">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{service.title}</h3>
                 <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{service.description}</p>
-                <div className="text-base sm:text-lg font-semibold text-blue-600 mb-3 sm:mb-4">{service.price}</div>
 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, featureIndex) => (
