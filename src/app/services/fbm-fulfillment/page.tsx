@@ -134,13 +134,11 @@ const benefits = [
 const testimonials = [
   {
     name: 'David Rodriguez',
-    company: 'Rodriguez Retail',
     rating: 5,
     text: 'Switching to Simba Dispatch for FBM fulfillment was the best decision for our business. Their speed and accuracy have improved our customer satisfaction significantly.'
   },
   {
     name: 'Lisa Thompson',
-    company: 'Thompson Goods',
     rating: 5,
     text: 'Professional service with excellent communication. They handle our multi-channel fulfillment seamlessly, allowing us to focus on marketing and growth.'
   }
@@ -150,63 +148,39 @@ export default function FBMFulfillmentPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-600 to-green-800 text-white py-20">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
+      <section className="relative text-white py-16 sm:py-20 lg:py-24">
+        <div className="absolute inset-0">
+          <Image
+            src="/assests/10008.webp"
+            alt="FBM Fulfillment Services Background"
+            fill
+            className="object-cover"
+          />
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
                 Professional FBM Fulfillment Services
               </h1>
-              <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 leading-relaxed">
                 Scale your Amazon FBM business with our comprehensive fulfillment services. 
                 From order processing to customer delivery, we handle it all with precision and speed.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   href="/quote"
-                  className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-600 bg-white hover:bg-gray-50 transition-colors"
+                  className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-50 transition-colors"
                 >
                   Get Quote
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-green-700 transition-colors"
+                  className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-gray-700 transition-colors"
                 >
                   Learn More
                 </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative h-96 rounded-lg overflow-hidden mb-8">
-                <Image
-                  src="/assests/10008.webp"
-                  alt="FBM Fulfillment Services - Professional order fulfillment"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-green-900 bg-opacity-20"></div>
-              </div>
-              <div className="bg-white bg-opacity-10 rounded-lg p-8">
-                <div className="grid grid-cols-2 gap-6 text-center">
-                  <div>
-                    <div className="text-3xl font-bold mb-2">$0.25</div>
-                    <div className="text-green-200">Starting Price USDT</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold mb-2">Same Day</div>
-                    <div className="text-green-200">Processing</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold mb-2">99.8%</div>
-                    <div className="text-green-200">Accuracy Rate</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold mb-2">Multi-Channel</div>
-                    <div className="text-green-200">Support</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -230,8 +204,8 @@ export default function FBMFulfillmentPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="h-8 w-8 text-green-600" />
+                  <div className="bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <feature.icon className="h-8 w-8 text-gray-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {feature.title}
@@ -250,7 +224,6 @@ export default function FBMFulfillmentPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-green-900 bg-opacity-10"></div>
               </div>
             </div>
           </div>
@@ -272,8 +245,8 @@ export default function FBMFulfillmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="h-6 w-6 text-green-600" />
+                <div className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="h-6 w-6 text-gray-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
                   {benefit.title}
@@ -303,7 +276,7 @@ export default function FBMFulfillmentPage() {
             {process.map((step, index) => (
               <div key={index} className="relative">
                 <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                  <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                  <div className="bg-gray-800 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-lg font-bold">
                     {step.step}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -315,7 +288,7 @@ export default function FBMFulfillmentPage() {
                 </div>
                 {index < process.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRightIcon className="h-6 w-6 text-green-600" />
+                    <ArrowRightIcon className="h-6 w-6 text-gray-600" />
                   </div>
                 )}
               </div>
@@ -329,7 +302,7 @@ export default function FBMFulfillmentPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-green-900 bg-opacity-30 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
               <div className="text-center text-white">
                 <h3 className="text-2xl font-bold mb-2">Professional FBM Fulfillment</h3>
                 <p className="text-lg">From order to delivery - seamless fulfillment process</p>
@@ -351,27 +324,27 @@ export default function FBMFulfillmentPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {pricingTiers.map((tier, index) => (
-              <div key={index} className={`relative bg-white rounded-lg shadow-lg p-8 ${
-                tier.popular ? 'ring-2 ring-green-600 transform scale-105' : ''
+              <div key={index} className={`relative bg-white rounded-lg shadow-lg p-6 sm:p-8 ${
+                tier.popular ? 'ring-2 ring-blue-600 md:transform md:scale-105' : ''
               }`}>
                 {tier.popular && (
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
                       Most Popular
                     </span>
                   </div>
                 )}
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                  <div className="text-4xl font-bold text-green-600 mb-1">{tier.price}</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-1">{tier.price}</div>
                   <div className="text-gray-600">{tier.unit}</div>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
-                      <CheckCircleIcon className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -380,7 +353,7 @@ export default function FBMFulfillmentPage() {
                   href="/quote"
                   className={`block w-full text-center py-3 px-6 rounded-md font-medium transition-colors ${
                     tier.popular
-                      ? 'bg-green-600 text-white hover:bg-green-700'
+                      ? 'bg-blue-600 text-white hover:bg-blue-700'
                       : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
@@ -415,7 +388,6 @@ export default function FBMFulfillmentPage() {
                 <p className="text-gray-700 mb-6 italic">&quot;{testimonial.text}&quot;</p>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-gray-600">{testimonial.company}</div>
                 </div>
               </div>
             ))}
@@ -424,8 +396,17 @@ export default function FBMFulfillmentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/assests/10054.jpeg"
+            alt="FBM Fulfillment CTA Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Scale Your FBM Business?
           </h2>
@@ -435,14 +416,14 @@ export default function FBMFulfillmentPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/quote"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-600 bg-white hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-50 transition-colors"
             >
               Get Free Quote
               <ArrowRightIcon className="ml-2 h-5 w-5" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-green-700 transition-colors"
+              className="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-gray-700 transition-colors"
             >
               Contact Us
             </Link>
