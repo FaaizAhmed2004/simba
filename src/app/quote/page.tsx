@@ -16,7 +16,7 @@ interface QuoteFormData {
   email: string;
   phone: string;
   company?: string;
-  serviceType: 'TRUCK_DISPATCHING' | 'LOAD_FINDING' | 'ROUTE_PLANNING' | 'BILLING_INVOICING' | 'FBA_PREP' | 'FBM_FULFILLMENT' | '';
+  serviceType: 'TRUCK_DISPATCHING' | 'FBA_PREP' | 'FBM_FULFILLMENT' | '';
   pickup: {
     address: string;
     city: string;
@@ -126,10 +126,10 @@ export default function QuotePage() {
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Select Your Service</h2>
-        <p className="text-gray-600">Choose the truck dispatching service you need</p>
+        <p className="text-gray-600">Choose from our comprehensive logistics services</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div
           onClick={() => {
             handleInputChange('serviceType', 'TRUCK_DISPATCHING');
@@ -138,67 +138,13 @@ export default function QuotePage() {
           className="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
         >
           <TruckIcon className="h-12 w-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Truck Dispatching</h3>
-          <p className="text-gray-600 mb-4">Professional truck dispatching services for owner-operators</p>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">Complete Truck Dispatching</h3>
+          <p className="text-gray-600 mb-4">All-in-one dispatching solution for owner-operators</p>
           <div className="text-sm text-gray-500">
-            <p>• Load finding and booking</p>
-            <p>• Route optimization</p>
+            <p>• Load finding & booking</p>
+            <p>• Route planning & optimization</p>
+            <p>• Billing & invoicing services</p>
             <p>• 24/7 dispatch support</p>
-            <p>• Competitive rates</p>
-          </div>
-        </div>
-
-        <div
-          onClick={() => {
-            handleInputChange('serviceType', 'LOAD_FINDING');
-            setStep(2);
-          }}
-          className="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
-        >
-          <MapPinIcon className="h-12 w-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Load Finding</h3>
-          <p className="text-gray-600 mb-4">Find profitable loads for your routes</p>
-          <div className="text-sm text-gray-500">
-            <p>• Access to load boards</p>
-            <p>• High-paying freight</p>
-            <p>• Verified shippers</p>
-            <p>• Quick turnaround</p>
-          </div>
-        </div>
-
-        <div
-          onClick={() => {
-            handleInputChange('serviceType', 'ROUTE_PLANNING');
-            setStep(2);
-          }}
-          className="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
-        >
-          <MapIcon className="h-12 w-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Route Planning</h3>
-          <p className="text-gray-600 mb-4">Optimize your routes for maximum efficiency</p>
-          <div className="text-sm text-gray-500">
-            <p>• Fuel-efficient routes</p>
-            <p>• Time optimization</p>
-            <p>• Traffic analysis</p>
-            <p>• Cost reduction</p>
-          </div>
-        </div>
-
-        <div
-          onClick={() => {
-            handleInputChange('serviceType', 'BILLING_INVOICING');
-            setStep(2);
-          }}
-          className="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
-        >
-          <DocumentTextIcon className="h-12 w-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Billing & Invoicing</h3>
-          <p className="text-gray-600 mb-4">Professional billing and invoicing services</p>
-          <div className="text-sm text-gray-500">
-            <p>• Automated invoicing</p>
-            <p>• Payment tracking</p>
-            <p>• Financial reporting</p>
-            <p>• Quick payments</p>
           </div>
         </div>
 
@@ -494,9 +440,9 @@ export default function QuotePage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Get Your Free Quote</h1>
-          <p className="text-xl text-gray-600">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get Your Free Quote</h1>
+          <p className="text-lg sm:text-xl text-gray-600">
             Professional logistics services tailored to your needs - from truck dispatching to Amazon fulfillment
           </p>
         </div>
@@ -519,7 +465,7 @@ export default function QuotePage() {
           </div>
         )}
 
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
           {step === 1 && renderServiceSelection()}
           {step === 2 && renderContactForm()}
           {step === 3 && renderLoadDetails()}

@@ -7,29 +7,20 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-white py-12 px-4 md:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer className="bg-white py-8 sm:py-12 px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
         {/* Left Section */}
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/simbaDispatch.png"
-              alt="Simba Dispatch LLC Logo"
-              width={65}
-              height={65}
-              className="object-contain"
-            />
-          </div>
+        <div className="flex flex-col gap-3 sm:gap-4 sm:col-span-2 lg:col-span-1">
           <div className="flex flex-col">
             <div className="flex items-center space-x-2">
               <Image
                 src="/simbaDispatch.png"
                 alt="Simba Logo"
-                width={20}
-                height={20}
-                className="object-contain"
+                width={18}
+                height={18}
+                className="object-contain sm:w-5 sm:h-5"
               />
-              <span className="text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
+              <span className="text-base sm:text-lg font-bold text-[#2e3192]">Simba Dispatch LLC</span>
             </div>
           </div>
           <p className="text-sm text-gray-600 leading-relaxed">Professional logistics & fulfillment services including truck dispatching, FBA prep, and FBM fulfillment. Office in Orlando, FL. Business hours: 7 days a week, 8am - 5pm EST.</p>
@@ -151,7 +142,7 @@ export function Footer() {
             © 2025 Simba Dispatch LLC. All rights reserved.
           </p>
           <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            Professional logistics & fulfillment services across the USA
+            Professional Dispatch & fulfillment services across the USA
           </p>
         </div>
       </div>

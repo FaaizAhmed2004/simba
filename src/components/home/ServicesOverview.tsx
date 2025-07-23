@@ -26,50 +26,26 @@ const services = [
     href: '/services/fbm-fulfillment',
     image: '/assests/10050.jpeg'
   },
-  {
-    title: 'Load Finding',
-    description: 'Find profitable loads that match your truck specifications and route preferences.',
-    price: 'Included in Dispatching',
-    features: ['High-Paying Loads', 'Route Matching', 'Load Verification', 'Quick Booking'],
-    href: '/services/load-finding',
-    image: '/assests/10008.webp'
-  },
-  {
-    title: 'Route Planning',
-    description: 'Optimize your routes for maximum efficiency and reduced fuel costs.',
-    price: 'Included in Service',
-    features: ['Fuel Optimization', 'Time Efficiency', 'Traffic Avoidance', 'Best Routes'],
-    href: '/services/route-planning',
-    image: '/assests/10055.jpeg'
-  },
-  {
-    title: 'Billing & Invoicing',
-    description: 'Professional billing services with timely invoicing and payment tracking.',
-    price: 'Included in Service',
-    features: ['Quick Invoicing', 'Payment Tracking', 'Financial Reports', 'Dispute Resolution'],
-    href: '/services/billing-invoicing',
-    image: '/assests/10050.jpeg'
-  },
 ];
 
 export default function ServicesOverview() {
   return (
-    <section className="py-24 bg-gray-50 mt-16">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gray-50 mt-8 sm:mt-12 lg:mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Comprehensive Logistics Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             From truck dispatching to Amazon fulfillment, we provide complete logistics solutions 
             to help your business grow and succeed across multiple channels.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <div className="relative h-48 w-full">
+              <div className="relative h-40 sm:h-48 w-full">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -77,10 +53,10 @@ export default function ServicesOverview() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className="text-lg font-semibold text-blue-600 mb-4">{service.price}</div>
+              <div className="p-4 sm:p-6 lg:p-8">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{service.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{service.description}</p>
+                <div className="text-base sm:text-lg font-semibold text-blue-600 mb-3 sm:mb-4">{service.price}</div>
 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, featureIndex) => (

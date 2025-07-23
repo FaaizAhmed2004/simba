@@ -24,11 +24,6 @@ const benefits = [
     description: '24/7 driver support for emergencies, route changes, and customer communications.',
     icon: '📞'
   },
-  {
-    title: 'Certified & Insured',
-    description: 'Fully certified and insured dispatch services for your peace of mind.',
-    icon: '✅'
-  }
 ];
 
 export default function WhyChooseUs() {

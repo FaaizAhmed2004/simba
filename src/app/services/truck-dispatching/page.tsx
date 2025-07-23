@@ -4,17 +4,22 @@ import Image from 'next/image';
 export default  function TruckDispatchingPage() {
   const services = [
     {
-      title: 'Load Matching',
-      description: 'Advanced algorithms match available loads with qualified truck operators based on location, capacity, and preferences.',
+      title: 'Load Finding & Matching',
+      description: 'Find profitable loads that match your truck specifications and route preferences. High-paying load matching with route-specific searches and quick booking process.',
       icon: '🎯'
     },
     {
-      title: 'Route Optimization',
-      description: 'Optimize routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
+      title: 'Route Planning & Optimization',
+      description: 'Optimize your routes for maximum efficiency, reduced fuel costs, and improved delivery times. Fuel cost optimization, time-efficient routing, and traffic pattern analysis.',
       icon: '🗺️'
     },
     {
-      title: '24/7 Support',
+      title: 'Billing & Invoicing Services',
+      description: 'Professional billing services with timely invoicing and payment tracking. Quick invoicing, payment tracking, financial reporting, and dispute resolution.',
+      icon: '💳'
+    },
+    {
+      title: '24/7 Dispatch Support',
       description: 'Round-the-clock dispatch support to handle emergencies, route changes, and customer communications.',
       icon: '📞'
     },
@@ -22,11 +27,6 @@ export default  function TruckDispatchingPage() {
       title: 'Real-time Tracking',
       description: 'GPS tracking and real-time updates for complete visibility of load status and location.',
       icon: '📍'
-    },
-    {
-      title: 'Payment Processing',
-      description: 'Secure and timely payment processing for completed loads with detailed invoicing.',
-      icon: '💳'
     },
     {
       title: 'Compliance Management',
@@ -87,10 +87,10 @@ export default  function TruckDispatchingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Professional Truck Dispatching Services
+                Complete Truck Dispatching Solutions
               </h1>
               <p className="text-xl text-gray-100 mb-8">
-                Maximize your earning potential with our expert dispatch services. We find the best loads, handle negotiations, and manage all the paperwork so you can focus on driving.
+                All-in-one dispatching service including load finding, route planning, and billing & invoicing. We handle everything so you can focus on driving and maximizing your profits.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -120,10 +120,10 @@ export default  function TruckDispatchingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Complete Dispatch Services
+              All-in-One Dispatching Package
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to run a successful trucking operation
+              Load Finding + Route Planning + Billing & Invoicing - Everything you need in one comprehensive service
             </p>
           </div>
 
