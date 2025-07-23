@@ -5,7 +5,9 @@ import {
   TruckIcon,
   MapPinIcon,
   CheckCircleIcon,
-  DocumentTextIcon
+  DocumentTextIcon,
+  CubeIcon,
+  ShoppingCartIcon
 } from '@heroicons/react/24/outline';
 import { MapIcon } from 'lucide-react';
 
@@ -14,7 +16,7 @@ interface QuoteFormData {
   email: string;
   phone: string;
   company?: string;
-  serviceType: 'TRUCK_DISPATCHING' | 'LOAD_FINDING' | 'ROUTE_PLANNING' | 'BILLING_INVOICING' | '';
+  serviceType: 'TRUCK_DISPATCHING' | 'LOAD_FINDING' | 'ROUTE_PLANNING' | 'BILLING_INVOICING' | 'FBA_PREP' | 'FBM_FULFILLMENT' | '';
   pickup: {
     address: string;
     city: string;
@@ -127,7 +129,7 @@ export default function QuotePage() {
         <p className="text-gray-600">Choose the truck dispatching service you need</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           onClick={() => {
             handleInputChange('serviceType', 'TRUCK_DISPATCHING');
@@ -197,6 +199,42 @@ export default function QuotePage() {
             <p>• Payment tracking</p>
             <p>• Financial reporting</p>
             <p>• Quick payments</p>
+          </div>
+        </div>
+
+        <div
+          onClick={() => {
+            handleInputChange('serviceType', 'FBA_PREP');
+            setStep(2);
+          }}
+          className="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
+        >
+          <CubeIcon className="h-12 w-12 text-blue-600 mb-4" />
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">FBA Prep Services</h3>
+          <p className="text-gray-600 mb-4">Amazon FBA preparation and fulfillment services</p>
+          <div className="text-sm text-gray-500">
+            <p>• Product receiving & inspection</p>
+            <p>• FNSKU labeling</p>
+            <p>• Amazon warehouse shipment</p>
+            <p>• Starting at $0.25 USDT/unit</p>
+          </div>
+        </div>
+
+        <div
+          onClick={() => {
+            handleInputChange('serviceType', 'FBM_FULFILLMENT');
+            setStep(2);
+          }}
+          className="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
+        >
+          <ShoppingCartIcon className="h-12 w-12 text-blue-600 mb-4" />
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">FBM Fulfillment</h3>
+          <p className="text-gray-600 mb-4">Fulfillment by Merchant shipping services</p>
+          <div className="text-sm text-gray-500">
+            <p>• Order processing</p>
+            <p>• Pick & pack services</p>
+            <p>• Direct-to-customer shipping</p>
+            <p>• Starting at $0.25 USDT/order</p>
           </div>
         </div>
       </div>
@@ -459,7 +497,7 @@ export default function QuotePage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Get Your Free Quote</h1>
           <p className="text-xl text-gray-600">
-            Professional truck dispatching services tailored to your needs
+            Professional logistics services tailored to your needs - from truck dispatching to Amazon fulfillment
           </p>
         </div>
 

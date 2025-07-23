@@ -3,8 +3,50 @@ import Link from 'next/link';
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Load Finding & Booking',
-      description: 'We find the best paying loads that match your truck specifications and route preferences.',
+      title: 'Truck Dispatching',
+      description: 'Professional truck dispatching services for owner-operators with 24/7 support.',
+      features: [
+        'Load finding and booking',
+        'Route optimization',
+        '24/7 dispatch support',
+        'Competitive rates',
+        'Professional communication'
+      ],
+      pricing: 'Flexible % - Contact for Discussion',
+      href: '/services/truck-dispatching',
+      icon: '🚛'
+    },
+    {
+      title: 'FBA Prep Services',
+      description: 'Complete Amazon FBA preparation including receiving, labeling, and shipment to Amazon.',
+      features: [
+        'Product receiving & inspection',
+        'FNSKU labeling',
+        'Quality assurance',
+        'Amazon warehouse shipment',
+        'Photo documentation'
+      ],
+      pricing: 'Starting at $0.25 USDT/unit',
+      href: '/services/fba-prep',
+      icon: '📦'
+    },
+    {
+      title: 'FBM Fulfillment',
+      description: 'Professional fulfillment by merchant services with same-day processing.',
+      features: [
+        'Order processing',
+        'Pick & pack services',
+        'Direct-to-customer shipping',
+        'Multi-channel support',
+        'Real-time tracking'
+      ],
+      pricing: 'Starting at $0.25 USDT/order',
+      href: '/services/fbm-fulfillment',
+      icon: '🛒'
+    },
+    {
+      title: 'Load Finding',
+      description: 'Find profitable loads that match your truck specifications and route preferences.',
       features: [
         'High-paying load matching',
         'Route-specific searches',
@@ -12,12 +54,12 @@ export default function ServicesPage() {
         'Quick booking process',
         'Negotiation support'
       ],
-      pricing: 'Flexible % - Contact for Discussion',
-      href: '/contact',
+      pricing: 'Included in Dispatching',
+      href: '/services/load-finding',
       icon: '🎯'
     },
     {
-      title: 'Route Planning & Optimization',
+      title: 'Route Planning',
       description: 'Optimize your routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
       features: [
         'Fuel cost optimization',
@@ -27,22 +69,8 @@ export default function ServicesPage() {
         'Rest stop planning'
       ],
       pricing: 'Included in Service',
-      href: '/contact',
+      href: '/services/route-planning',
       icon: '🗺️'
-    },
-    {
-      title: 'Document Management',
-      description: 'Complete paperwork handling including BOLs, invoices, and compliance documentation.',
-      features: [
-        'BOL management',
-        'Invoice processing',
-        'Compliance documentation',
-        'Digital record keeping',
-        'Document tracking'
-      ],
-      pricing: 'Included in Service',
-      href: '/contact',
-      icon: '📋'
     },
     {
       title: 'Billing & Invoicing',
@@ -55,22 +83,8 @@ export default function ServicesPage() {
         'Account management'
       ],
       pricing: 'Included in Service',
-      href: '/contact',
+      href: '/services/billing-invoicing',
       icon: '💳'
-    },
-    {
-      title: 'Driver Support',
-      description: '24/7 driver support for emergencies, route changes, and customer communications.',
-      features: [
-        '24/7 availability',
-        'Emergency assistance',
-        'Route change support',
-        'Customer communication',
-        'Problem resolution'
-      ],
-      pricing: 'Included in Service',
-      href: '/contact',
-      icon: '📞'
     }
   ];
 
@@ -81,10 +95,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Truck Dispatching Services
+              Our Comprehensive Logistics Services
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Professional truck dispatching services designed to maximize your earnings and streamline your operations across the USA
+              From truck dispatching to Amazon fulfillment, we provide complete logistics solutions to help your business grow and succeed
             </p>
           </div>
         </div>

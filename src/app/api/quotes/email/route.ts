@@ -106,7 +106,7 @@ Thank you for your quote request with Simba Dispatch LLC!
 We have received your request for ${quoteData.serviceType.replace('_', ' ')} services and our team will review your requirements shortly.
 
 WHAT'S NEXT:
-• Our dispatch team will review your requirements
+• Our logistics team will review your requirements
 • We'll prepare a customized quote for your needs  
 • You'll receive a detailed proposal within 24 hours
 • We'll schedule a call to discuss your specific needs

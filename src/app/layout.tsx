@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Simba Dispatch Services LLC - Professional Truck Dispatching Services",
-  description: "Professional truck dispatching services including load finding, route planning, document management, billing, and driver support across the USA.",
-  keywords: "truck dispatching, load finding, route optimization, driver support, truck operators, dispatch services",
+  title: "Simba Dispatch LLC - Professional Logistics & Fulfillment Services",
+  description: "Professional truck dispatching, FBA prep, FBM fulfillment, load finding, route planning, and logistics services across the USA.",
+  keywords: "truck dispatching, FBA prep, FBM fulfillment, logistics, load finding, route optimization, Amazon services, dispatch services",
 };
 
 export default function RootLayout({
@@ -23,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/simbaDispatch.png" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Providers>
           <div className="flex flex-col min-h-screen">

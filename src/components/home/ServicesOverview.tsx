@@ -3,44 +3,52 @@ import Image from 'next/image';
 
 const services = [
   {
-    title: 'Load Finding and Booking',
-    description: 'We find the best paying loads that match your truck specifications and route preferences.',
+    title: 'Truck Dispatching',
+    description: 'Professional truck dispatching services for owner-operators with 24/7 support.',
     price: 'Flexible % - Contact for Discussion',
-    features: ['High-Paying Loads', 'Route Matching', 'Load Verification', 'Quick Booking'],
-    href: '/services/load-finding',
+    features: ['Load Finding', 'Route Optimization', '24/7 Support', 'Competitive Rates'],
+    href: '/services/truck-dispatching',
     image: '/assests/10016.jpeg'
   },
   {
-    title: 'Route Planning and Optimization',
-    description: 'Optimize your routes for maximum efficiency, reduced fuel costs, and improved delivery times.',
-    price: 'Included in Service',
-    features: ['Fuel Optimization', 'Time Efficiency', 'Traffic Avoidance', 'Best Routes'],
-    href: '/services/route-planning',
+    title: 'FBA Prep Services',
+    description: 'Complete Amazon FBA preparation including receiving, labeling, and shipment to Amazon.',
+    price: 'Starting at $0.25 USDT/unit',
+    features: ['Product Receiving', 'FNSKU Labeling', 'Quality Inspection', 'Amazon Shipment'],
+    href: '/services/fba-prep',
     image: '/assests/10018.jpeg'
   },
   {
-    title: 'Document Management',
-    description: 'Complete paperwork handling including BOLs, invoices, and compliance documentation.',
-    price: 'Included in Service',
-    features: ['BOL Management', 'Invoice Processing', 'Compliance Docs', 'Digital Records'],
-    href: '/services/document-management',
+    title: 'FBM Fulfillment',
+    description: 'Professional fulfillment by merchant services with same-day processing.',
+    price: 'Starting at $0.25 USDT/order',
+    features: ['Order Processing', 'Pick & Pack', 'Direct Shipping', 'Multi-Channel Support'],
+    href: '/services/fbm-fulfillment',
     image: '/assests/10050.jpeg'
   },
   {
-    title: 'Billing and Invoicing',
+    title: 'Load Finding',
+    description: 'Find profitable loads that match your truck specifications and route preferences.',
+    price: 'Included in Dispatching',
+    features: ['High-Paying Loads', 'Route Matching', 'Load Verification', 'Quick Booking'],
+    href: '/services/load-finding',
+    image: '/assests/10008.webp'
+  },
+  {
+    title: 'Route Planning',
+    description: 'Optimize your routes for maximum efficiency and reduced fuel costs.',
+    price: 'Included in Service',
+    features: ['Fuel Optimization', 'Time Efficiency', 'Traffic Avoidance', 'Best Routes'],
+    href: '/services/route-planning',
+    image: '/assests/10055.jpeg'
+  },
+  {
+    title: 'Billing & Invoicing',
     description: 'Professional billing services with timely invoicing and payment tracking.',
     price: 'Included in Service',
     features: ['Quick Invoicing', 'Payment Tracking', 'Financial Reports', 'Dispute Resolution'],
     href: '/services/billing-invoicing',
-    image: '/assests/10008.webp'
-  },
-  {
-    title: 'Driver Support',
-    description: '24/7 driver support for emergencies, route changes, and customer communications.',
-    price: 'Included in Service',
-    features: ['24/7 Support', 'Emergency Help', 'Route Changes', 'Customer Communication'],
-    href: '/contact',
-    image: '/assests/10055.jpeg'
+    image: '/assests/10050.jpeg'
   },
 ];
 
@@ -50,11 +58,11 @@ export default function ServicesOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Professional  Dispatching Services
+            Comprehensive Logistics Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We handle all aspects of  dispatching so you can focus on driving. From load finding to billing, 
-            we provide complete support for truck operators across the United States.
+            From truck dispatching to Amazon fulfillment, we provide complete logistics solutions 
+            to help your business grow and succeed across multiple channels.
           </p>
         </div>
 

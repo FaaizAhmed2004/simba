@@ -14,7 +14,9 @@ export function Header() {
     { name: 'Truck Dispatching', href: '/services/truck-dispatching' },
     { name: 'Load Finding', href: '/services/load-finding' },
     { name: 'Route Planning', href: '/services/route-planning' },
-    { name: 'Billing & Invoicing', href: '/services/billing-invoicing' }
+    { name: 'Billing & Invoicing', href: '/services/billing-invoicing' },
+    { name: 'FBA Prep Services', href: '/services/fba-prep' },
+    { name: 'FBM Fulfillment', href: '/services/fbm-fulfillment' }
   ]
 
   return (
@@ -62,8 +64,16 @@ export function Header() {
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xl font-bold text-[#2e3192]">Simba Dispatch Services LLC</span>
+                    <Image
+                      src="/simbaDispatch.png"
+                      alt="Simba Logo"
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
+                    <span className="text-xl font-bold text-[#2e3192]">Simba Dispatch LLC</span>
                   </div>
+                  <span className="text-xs font-semibold text-[#2e3192] tracking-wider">LOGISTICS & FULFILLMENT</span>
                 </div>
               </Link>
             </div>
@@ -73,7 +83,7 @@ export function Header() {
               <Link href="/how-it-works" className="hover:text-[#4270F5] whitespace-nowrap">
                 How it works
               </Link>
-              
+
               {/* Services Dropdown */}
               <div className="relative">
                 <button
@@ -83,7 +93,7 @@ export function Header() {
                   <span>Services</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
-                
+
                 {isServicesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 z-50">
                     <div className="py-2">
@@ -110,7 +120,7 @@ export function Header() {
                   </div>
                 )}
               </div>
-              
+
               <Link href="/about" className="hover:text-[#4270F5] whitespace-nowrap">
                 About Us
               </Link>

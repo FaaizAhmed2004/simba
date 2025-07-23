@@ -61,7 +61,6 @@ export default function ContactPage() {
             <p className="text-gray-600 mb-2">7 days a week</p>
             <div className="text-gray-800 text-sm">
               <p>7 Days: 8AM-5PM EST</p>
-              <p>Certified and Insured</p>
             </div>
           </div>
         </div>
@@ -74,7 +73,7 @@ export default function ContactPage() {
               Send us an email with your truck details and we will get back to you within 2-4 hours during business hours.
             </p>
             <a 
-              href="mailto:simbadispatchservices@gmail.com?subject=Truck Dispatching Inquiry"
+              href="mailto:simbadispatchservices@gmail.com? Dispatching Inquiry"
               className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
             >
               <EnvelopeIcon className="h-5 w-5 mr-2" />
