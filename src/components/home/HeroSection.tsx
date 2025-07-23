@@ -20,12 +20,12 @@ export default function HeroSection() {
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Professional 3pl and Truck Dispatching 
+          <h1 className="text-3xl md:text-6xl font-bold mb-6">
+          Professional Truck Dispatch Services and 3PL Services Provider in the USA
             <span className="block text-blue-300">Services</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
-            Expert 3pl and Truck Dispatching Services  - we handle everything .
+          We professional handle everything for you
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link 

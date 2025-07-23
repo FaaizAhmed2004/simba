@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default  function TruckDispatchingPage() {
+export default function TruckDispatchingPage() {
   const services = [
     {
       title: 'Load Finding & Matching',
@@ -58,14 +58,14 @@ export default  function TruckDispatchingPage() {
     }
   ];
 
-  const requirements = [
-    'Valid CDL (Class A, B, or C)',
-    'Commercial truck insurance',
-    'DOT number and MC authority',
-    'Clean driving record',
-    'Reliable truck and trailer',
-    'Smartphone for tracking and communication'
-  ];
+  // const requirements = [
+  //   'Valid CDL (Class A, B, or C)',
+  //   'Commercial truck insurance',
+  //   'DOT number and MC authority',
+  //   'Clean driving record',
+  //   'Reliable truck and trailer',
+  //   'Smartphone for tracking and communication'
+  // ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -82,12 +82,12 @@ export default  function TruckDispatchingPage() {
           />
         </div>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Complete Truck Dispatching Solutions
+                Complete Truck Dispatch Solutions
               </h1>
               <p className="text-xl text-gray-100 mb-8">
                 All-in-one dispatching service including load finding, route planning, and billing & invoicing. We handle everything so you can focus on driving and maximizing your profits.
@@ -120,7 +120,7 @@ export default  function TruckDispatchingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              All-in-One Dispatching Package
+              All-in-One Dispatch Package
             </h2>
             <p className="text-xl text-gray-600">
               Load Finding + Route Planning + Billing & Invoicing - Everything you need in one comprehensive service
@@ -173,7 +173,7 @@ export default  function TruckDispatchingPage() {
         </div>
       </div>
 
-      {/* Requirements Section */}
+      {/* Requirements Section
       <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -196,7 +196,7 @@ export default  function TruckDispatchingPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Pricing Section */}
       <div className="py-16 bg-gray-50">
@@ -221,7 +221,7 @@ export default  function TruckDispatchingPage() {
         </div>
       </div>
 
-      {/* FAQ Section */}
+      {/* FAQ Section
       <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -229,49 +229,20 @@ export default  function TruckDispatchingPage() {
               Frequently Asked Questions
             </h2>
           </div>
-
-          <div className="space-y-6">
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                How do I get started?
-              </h3>
-              <p className="text-gray-600">
-                Simply register as a truck operator on our platform, complete your profile with truck specifications and credentials, and our dispatch team will start finding loads for you within 24 hours.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What types of loads do you handle?
-              </h3>
-              <p className="text-gray-600">
-                We handle all types of freight including dry van, refrigerated, flatbed, and specialized loads. Our network includes both LTL and FTL opportunities across all 50 states.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                How quickly do I get paid?
-              </h3>
-              <p className="text-gray-600">
-                We offer quick pay options with payments processed within 24-48 hours of load completion. Standard payment terms are also available based on customer requirements.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Can I choose my own loads?
-              </h3>
-              <p className="text-gray-600">
-                Absolutely! While our dispatch team finds and negotiates loads for you, you always have the final say on which loads to accept based on your preferences and schedule.
-              </p>
-            </div>
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Can I choose my own loads?
+            </h3>
+            <p className="text-gray-600">
+              Absolutely! While our dispatch team finds and negotiates loads for you, you always have the final say on which loads to accept based on your preferences and schedule.
+            </p>
           </div>
         </div>
       </div>
+      */}
 
       {/* CTA Section */}
-      <div className="bg-green-600 text-white py-16">
+      <div className="bg-blue-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Maximize Your Earnings?
@@ -282,7 +253,7 @@ export default  function TruckDispatchingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="mailto:simbadispatchservices@gmail.com"
-              className="bg-white text-green-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors"
             >
               Email Us Directly
             </Link>
@@ -300,4 +271,3 @@ export default  function TruckDispatchingPage() {
 }
 
 
- 

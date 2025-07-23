@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const services = [
   {
-    title: 'Truck Dispatching',
-    description: 'Professional truck dispatching services for owner-operators with 24/7 support.',
-    features: ['Load Finding', 'Route Optimization', '24/7 Support', 'Competitive Rates'],
+    title: 'Truck Dispatch Service',
+    description: 'Professional truck dispatch ',
+    features: [ 'Service For Carriers with 24/7', 'Dispatcher Support',' Flexible % or weekly fee'],
     href: '/services/truck-dispatching',
     image: '/assests/10016.jpeg'
   },
@@ -31,11 +31,11 @@ export default function ServicesOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Dispatch Services
+        Professional Services
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            From truck dispatching to Amazon fulfillment, we provide complete logistics solutions 
-            to help your business grow and succeed across multiple channels.
+              From 3PL solutions to dedicated Truck Dispatch Services, we offer comprehensive support designed to help your business grow and succeed across multiple channels.
+              <br /> Our end-to-end services ensure efficiency, reliability, and seamless operations tailored to your logistics needs.
           </p>
         </div>
 

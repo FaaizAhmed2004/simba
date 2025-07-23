@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
-  TruckIcon, 
   BuildingOfficeIcon, 
   UsersIcon, 
   GlobeAmericasIcon,
@@ -51,17 +50,17 @@ const values = [
 
 const milestones = [
   {
-    year: '2025',
+    year: '2020',
     title: 'Company Founded',
     description: 'Simba Dispatch LLC was established with a vision to revolutionize logistics services for growing businesses.'
   },
   {
-    year: '2025',
+    year: '2020',
     title: 'Operations Launch',
     description: 'Launched our truck dispatching services with a focus on reliability and efficiency.'
   },
   {
-    year: '2025',
+    year: '2020',
     title: 'Technology Platform',
     description: 'Deployed our modern logistics management platform to streamline operations and enhance customer experience.'
   },
@@ -132,17 +131,17 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Simba Dispatch LLC was born from a simple observation: growing businesses 
+                  Simba Dispatch Services LLC was born from a simple observation: growing businesses 
                   need logistics partners who understand their challenges and are agile 
                   enough to adapt to their changing needs.
                 </p>
                 <p>
-                  Founded in 2025, we set out to build a logistics company that combines 
+                  Founded in 2020, we set out to build a logistics company that combines 
                   the reliability of established players with the innovation and 
                   customer focus that modern businesses deserve.
                 </p>
                 <p>
-                  Based in Baltimore, Maryland, we are strategically positioned to serve 
+                  Based in Orlando, Florida, we are strategically positioned to serve 
                   businesses across the United States with efficient, cost-effective 
                   logistics solutions that scale with your growth.
                 </p>
@@ -164,11 +163,6 @@ export default function AboutPage() {
               </div>
               <div className="bg-blue-100 rounded-lg p-8">
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <TruckIcon className="h-12 w-12 text-blue-600 mx-auto mb-3" />
-                    <h3 className="font-semibold text-gray-900">Modern Fleet</h3>
-                    <p className="text-sm text-gray-600">State-of-the-art logistics infrastructure</p>
-                  </div>
                   <div className="text-center">
                     <BuildingOfficeIcon className="h-12 w-12 text-blue-600 mx-auto mb-3" />
                     <h3 className="font-semibold text-gray-900">Strategic Location</h3>
@@ -194,15 +188,6 @@ export default function AboutPage() {
       {/* Mission & Vision Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Mission & Vision
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Driving the future of logistics with innovation, reliability, and customer success at our core.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
@@ -269,7 +254,7 @@ export default function AboutPage() {
               Our Journey
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From startup to your trusted logistics partner - heres our story so far.
+              From startup to your trusted 3pl and Dispatch partner - heres our story so far.
             </p>
           </div>
 
@@ -302,7 +287,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -314,7 +299,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-blue-600 text-white">

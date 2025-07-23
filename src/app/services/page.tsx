@@ -3,14 +3,12 @@ import Link from 'next/link';
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Truck Dispatching',
-      description: 'Professional truck dispatching services for owner-operators with 24/7 support.',
+      title: 'Truck Dispatch Service', 
+      description: 'Professional truck dispatch Service ',
       features: [
-        'Load finding and booking',
-        'Route optimization',
-        '24/7 dispatch support',
-        'Competitive rates',
-        'Professional communication'
+        'Service For Carriers with 24/7',
+         'Dispatcher Support',
+         ' Flexible % or weekly fee'
       ],
       pricing: 'Flexible % - Contact for Discussion',
       href: '/services/truck-dispatching',
@@ -53,10 +51,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Comprehensive Logistics Services
+             Professional Services
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              From truck dispatching to Amazon fulfillment, we provide complete logistics solutions to help your business grow and succeed
+              From 3pl to Truck Dispatch, we provide complete  solutions to help your business grow and succeed
             </p>
           </div>
         </div>
@@ -117,13 +115,13 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gray-900 text-white py-16">
+      <div className="bg-blue-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Maximize Your Earnings?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Contact Simba Dispatch Services LLC today and let our professional dispatching team help you find the best loads and optimize your trucking operations.
+            Contact Simba Dispatch Services LLC today and let our professional dispatch team help you find the best loads and optimize your trucking operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
