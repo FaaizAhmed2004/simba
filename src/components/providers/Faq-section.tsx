@@ -213,7 +213,7 @@ export default function FaqSection() {
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
                 Orders are pulled automatically and continuously throughout the day to ensure same-day shipping for
-                orders placed before our 2PM cutoff time. Our system checks for new orders every 15 minutes, ensuring
+                orders placed before our 4PM cutoff time. Our system checks for new orders every 15 minutes, ensuring
                 minimal delay between order placement and processing.
               </AccordionContent>
             </AccordionItem>
