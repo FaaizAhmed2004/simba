@@ -4,12 +4,18 @@ import {
   ClockIcon
 } from '@heroicons/react/24/outline';
 
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="bg-black text-white py-16 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-black text-white py-16 border-b border-gray-800 relative overflow-hidden">
+        <img
+          src="/assests/10055.jpeg"
+          alt="FAQ and customer support"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Contact Simba Dispatch Services LLC
           </h1>
@@ -35,7 +41,7 @@ export default function ContactPage() {
             <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
             <p className="text-gray-300 mb-2">Send us your query</p>
             <a href="mailto:simbadispatchservices@gmail.com" className="text-blue-400 hover:text-blue-300 font-medium text-sm">
-              simbadispatchservices@gmail.com
+            Cs@simbadispatchservices.com
             </a>
           </div>
 

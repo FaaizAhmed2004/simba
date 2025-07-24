@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <HeroSection/>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -26,10 +26,10 @@ export default function HowItWorksPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Simple, Efficient, Reliable
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Our streamlined process ensures your shipments are handled with care and delivered on time, every time.
             </p>
           </div>
@@ -41,7 +41,7 @@ export default function HowItWorksPage() {
                 <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Get Quote</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Request a quote for your shipping needs with our easy online form
               </p>
             </div>
@@ -51,7 +51,7 @@ export default function HowItWorksPage() {
                 <span className="text-2xl font-bold text-blue-600">2</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Book Service</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Confirm your shipment details and schedule pickup
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function HowItWorksPage() {
                 <span className="text-2xl font-bold text-blue-600">3</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Track & Deliver</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Monitor your shipment in real-time until safe delivery
               </p>
             </div>

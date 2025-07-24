@@ -52,7 +52,7 @@ export default function CTASection() {
             <div className="text-center transform hover:scale-105 transition-transform duration-300">
               <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-4 shadow-lg h-full">
                 <div className="text-3xl mb-2">💰</div>
-                <div className="font-semibold text-white">Flexible %</div>
+                <div className="font-semibold text-white">Flexible % Weekly Fixed Fee</div>
                 <p className="text-gray-300 mt-2">Contact for discussion</p>
               </div>
             </div>

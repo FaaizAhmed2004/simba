@@ -110,13 +110,16 @@ export default function FBAPrepPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative text-white py-16 sm:py-20 lg:py-24">
-        <div className="absolute inset-0">
-          <Image
-            src="/assests/10050.jpeg"
-            alt="FBA Prep Services Background"
-            fill
-            className="object-cover"
-          />
+        <div className="absolute inset-0 bg-black">
+          <video
+            autoPlay
+            loop
+            muted
+          playsInline
+          className="object-cover w-full h-full"
+            src="/fbm.mp4"
+        >
+        </video>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

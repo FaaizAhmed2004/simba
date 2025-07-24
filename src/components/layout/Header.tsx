@@ -120,7 +120,7 @@ export function Header() {
               <Link href="/about" className="hover:text-[#4270F5] whitespace-nowrap">
                 About Us
               </Link>
-              <Link href="/qoute" className="hover:text-[#4270F5] whitespace-nowrap">
+              <Link  href="/quote" className="hover:text-[#4270F5] whitespace-nowrap">
                 Get Qoute
               </Link>
             </div>

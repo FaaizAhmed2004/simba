@@ -72,14 +72,16 @@ export default function TruckDispatchingPage() {
       {/* Hero Section */}
       <div className="relative text-white py-16 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/assests/10050.jpeg"
-            alt="Truck Dispatching Background"
-            fill
-            className="object-cover"
-            priority
-          />
+        <div className="absolute inset-0 bg-black">
+          <video
+            autoPlay
+            loop
+            muted
+          playsInline
+          className="object-cover w-full h-full"
+            src="/maintruck.mp4"
+        >
+        </video>
         </div>
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
@@ -107,10 +109,7 @@ export default function TruckDispatchingPage() {
                 </Link>
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-8xl mb-4">🚛</div>
-              <p className="text-gray-100">Professional Dispatch Services</p>
-            </div>
+          
           </div>
         </div>
       </div>

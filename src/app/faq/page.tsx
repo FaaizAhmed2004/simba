@@ -168,9 +168,9 @@ export default function FAQPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="relative bg-blue-600 text-white py-16 overflow-hidden">
+      <section className="relative  text-white py-16 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/assests/10055.jpeg"

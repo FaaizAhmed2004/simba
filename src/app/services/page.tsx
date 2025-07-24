@@ -1,144 +1,74 @@
+import ServicesOverview from '@/components/home/ServicesOverview';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
+import StatsSection from '@/components/home/StatsSection';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
+import CTASection from '@/components/home/CTASection';
+import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ServicesPage() {
-  const services = [
-    {
-      title: 'Truck Dispatch Service', 
-      description: 'Professional truck dispatch Service ',
-      features: [
-        'Service For Carriers with 24/7',
-         'Dispatcher Support',
-         ' Flexible % or weekly fee'
-      ],
-      pricing: 'Flexible % - Contact for Discussion',
-      href: '/services/truck-dispatching',
-      icon: '🚛'
-    },
-    {
-      title: 'FBA Prep Services',
-      description: 'Complete Amazon FBA preparation including receiving, labeling, and shipment to Amazon.',
-      features: [
-        'Product receiving & inspection',
-        'FNSKU labeling',
-        'Quality assurance',
-        'Amazon warehouse shipment',
-        'Photo documentation'
-      ],
-      pricing: 'Flexible  - Contact for Discussion',
-      href: '/services/fba-prep',
-      icon: '📦'
-    },
-    {
-      title: 'FBM Fulfillment',
-      description: 'Professional fulfillment by merchant services with same-day processing.',
-      features: [
-        'Order processing',
-        'Pick & pack services',
-        'Direct-to-customer shipping',
-        'Multi-channel support',
-        'Real-time tracking'
-      ],
-      pricing: 'Flexible  - Contact for Discussion',
-      href: '/services/fbm-fulfillment',
-      icon: '🛒'
-    },
-  ]
-
+function ServicesHeroSection() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-             Professional Services
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              From 3pl to Truck Dispatch, we provide complete  solutions to help your business grow and succeed
-            </p>
-          </div>
+    <section className="relative text-white overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 bg-black">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
+          src="/trucks.mp4"
+        >
+        </video>
+        {/* Fallback image in case video doesn't load */}
+        <div className="absolute inset-0 z-[-1]">
+          <Image
+            src="/assests/10053.jpeg"
+            alt="Services background"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
+      <div className="absolute inset-0 bg-black opacity-60"></div>
 
-      {/* Services Grid */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <div className="p-6">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {service.description}
-                  </p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Key Features:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center">
-                          <span className="text-green-500 mr-2">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <span className="text-lg font-semibold text-blue-600">
-                      {service.pricing}
-                    </span>
-                  </div>
-                  
-                  <div className="flex space-x-3">
-                    <Link
-                      href={service.href}
-                      className="flex-1 bg-blue-600 text-white text-center py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-                    >
-                      Learn More
-                    </Link>
-                    <Link
-                      href="/quote"
-                      className="flex-1 border border-blue-600 text-blue-600 text-center py-2 px-4 rounded-md hover:bg-blue-50 transition-colors"
-                    >
-                      Get Quote
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-blue-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Maximize Your Earnings?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Contact Simba Dispatch Services LLC today and let our professional dispatch team help you find the best loads and optimize your trucking operations.
+      {/* Main Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div className="text-center">
+          <h1 className="text-3xl md:text-6xl font-bold mb-6">
+            Our Professional Logistics & Dispatch Services
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
+            Explore our full suite of logistics, dispatch, and fulfillment solutions tailored for your business.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link
-              href="mailto:simbadispatchservices@gmail.com"
-              className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition-colors"
+              href="/quote"
+              className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg border border-gray-700"
             >
-              Email Us Directly
+              Get Instant Quote
             </Link>
             <Link
               href="/contact"
-              className="border border-white text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-white hover:text-gray-900 transition-colors"
+              className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
             >
-              Send Query
+              Contact Us
             </Link>
           </div>
         </div>
       </div>
+    </section>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <div className="w-full">
+      <ServicesHeroSection />
+      <ServicesOverview />
+      <WhyChooseUs />
+      <CTASection />
     </div>
   );
 }

@@ -73,7 +73,7 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
