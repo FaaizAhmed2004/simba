@@ -3,15 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  ChevronDownIcon, 
+import {
+  ChevronDownIcon,
   ChevronUpIcon,
   MagnifyingGlassIcon,
   QuestionMarkCircleIcon,
   TruckIcon,
-  ArchiveBoxIcon,
-  BuildingStorefrontIcon,
-  CubeIcon
+  ArchiveBoxIcon
 } from '@heroicons/react/24/outline';
 
 interface FAQItem {
@@ -25,25 +23,25 @@ const faqData: FAQItem[] = [
   // General Questions
   {
     id: 'general-1',
-    question: 'What is Simba Dispatch LLC?',
-    answer: 'Simba Dispatch LLC is a modern logistics company based in Baltimore, MD, specializing in FBA prep services, FBM fulfillment, freight shipping, and pallet storage. We help businesses of all sizes streamline their supply chain operations with reliable, cost-effective solutions.',
+    question: 'What is Simba Dispatch Services LLC?',
+    answer: 'Simba Dispatch LLC is a modern Dispatch Services based in Orlando fl 32821, specializing in FBA prep services, FBM fulfillment, and Truck dispatch service. We help businesses of all sizes streamline  operations with reliable, cost-effective solutions.',
     category: 'General'
   },
   {
     id: 'general-2',
     question: 'Where are you located?',
-    answer: 'Our main fulfillment center and headquarters are located in Baltimore, Maryland. This strategic location allows us to efficiently serve customers across the United States with fast shipping times to major population centers.',
+    answer: 'Our main fulfillment center and headquarters are located in Orlando fl 32821. This strategic location allows us to efficiently serve customers across the United States with fast shipping times to major population centers.',
     category: 'General'
   },
   {
     id: 'general-3',
     question: 'What areas do you serve?',
-    answer: 'We serve customers nationwide across the United States. Our Baltimore location provides excellent access to major shipping routes, allowing us to offer competitive shipping rates and fast delivery times to all 50 states.',
+    answer: 'We serve customers nationwide across the United States. Our Orlando fl 32821, location provides excellent access to major shipping routes, allowing us to offer competitive shipping rates and fast delivery times to all 50 states.',
     category: 'General'
   },
   {
     id: 'general-4',
-    question: 'How do I get started with Simba Dispatch LLC?',
+    question: 'How do I get started with Simba Dispatch Services LLC?',
     answer: 'Getting started is easy! Simply contact us through our website, phone, or email to discuss your needs. We\'ll provide a custom quote and help you set up your account. Our team will guide you through the onboarding process step by step.',
     category: 'General'
   },
@@ -152,8 +150,8 @@ export default function FAQPage() {
   const [openItems, setOpenItems] = useState<string[]>([]);
 
   const toggleItem = (id: string) => {
-    setOpenItems(prev => 
-      prev.includes(id) 
+    setOpenItems(prev =>
+      prev.includes(id)
         ? prev.filter(item => item !== id)
         : [...prev, id]
     );
@@ -161,7 +159,7 @@ export default function FAQPage() {
 
   const filteredFAQs = faqData.filter(faq => {
     const matchesCategory = selectedCategory === 'All' || faq.category === selectedCategory;
-    const matchesSearch = searchTerm === '' || 
+    const matchesSearch = searchTerm === '' ||
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -215,11 +213,10 @@ export default function FAQPage() {
                   <button
                     key={category.name}
                     onClick={() => setSelectedCategory(category.name)}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-left transition-colors ${
-                      selectedCategory === category.name
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-left transition-colors ${selectedCategory === category.name
                         ? 'bg-blue-100 text-blue-700'
                         : 'text-gray-600 hover:bg-gray-100'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center">
                       <category.icon className="h-5 w-5 mr-2" />

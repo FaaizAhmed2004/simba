@@ -46,7 +46,7 @@ export function Header() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-900 rounded flex items-center justify-center shadow-sm border border-gray-800">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded flex items-center justify-center shadow-sm border border-gray-300">
                   <Image
                     src="/simbaDispatch.png"
                     alt="Simba Dispatch LLC Logo"

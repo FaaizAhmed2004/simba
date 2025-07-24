@@ -13,13 +13,15 @@ export function Footer() {
         <div className="flex flex-col gap-3 sm:gap-4 sm:col-span-2 lg:col-span-1">
           <div className="flex flex-col">
             <div className="flex items-center space-x-2">
-              <Image
-                src="/simbaDispatch.png"
-                alt="Simba Logo"
-                width={20}
-                height={20}
-                className="object-contain sm:w-6 sm:h-6"
-              />
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded flex items-center justify-center">
+                <Image
+                  src="/simbaDispatch.png"
+                  alt="Simba Logo"
+                  width={20}
+                  height={20}
+                  className="object-contain sm:w-6 sm:h-6"
+                />
+              </div>
               <span className="text-base sm:text-lg font-bold text-white">Simba Dispatch Services LLC</span>
             </div>
           </div>
@@ -44,15 +46,7 @@ export function Footer() {
               instagram.com/simbadispatchservices
             </a>
           </div>
-          <div className="flex items-center gap-2 text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-gray-400">
-              <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
-              <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path>
-            </svg>
-            <a href="https://wa.me/+14108311883?text=Hello!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
-              WhatsApp: +1 (410) 831-1883
-            </a>
-          </div>
+
         </div>
 
         {/* Company Section */}
@@ -157,12 +151,6 @@ export function Footer() {
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </a>
-              <a href="https://wa.me/+14108311883?text=Hello!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-gray-400 hover:text-blue-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                  <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
-                  <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path>
                 </svg>
               </a>
             </div>

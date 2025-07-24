@@ -123,9 +123,7 @@ export default function QuotePage() {
       if (!formData.mcNumber) {
         return 'Please enter your MC Number';
       }
-      if (!formData.dotNumber) {
-        return 'Please enter your DOT Number';
-      }
+      // DOT Number is now optional
       if (!formData.truckType) {
         return 'Please select your truck type';
       }
@@ -381,13 +379,13 @@ export default function QuotePage() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">DOT Number *</label>
+            <label className="block text-sm font-medium text-gray-300 mb-1">DOT Number (Optional)</label>
             <input
               type="text"
               value={formData.dotNumber || ''}
               onChange={(e) => handleInputChange('dotNumber', e.target.value)}
               className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="Enter DOT Number"
+              placeholder="Enter DOT Number (if available)"
             />
           </div>
         </div>
@@ -414,7 +412,7 @@ export default function QuotePage() {
             <option value="tanker">Tanker</option>
             <option value="box-truck">Box Truck</option>
             <option value="car-hauler">Car Hauler</option>
-            <option value="dump-truck">Dump Truck</option>
+            <option value="dump-truck">other</option>
           </select>
         </div>
       </div>
