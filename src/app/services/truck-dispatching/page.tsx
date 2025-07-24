@@ -79,7 +79,7 @@ export default function TruckDispatchingPage() {
             muted
           playsInline
           className="object-cover w-full h-full"
-            src="/maintruck.mp4"
+            src="/trucking.mp4"
         >
         </video>
         </div>

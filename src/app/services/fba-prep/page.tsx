@@ -117,7 +117,7 @@ export default function FBAPrepPage() {
             muted
           playsInline
           className="object-cover w-full h-full"
-            src="/fbm.mp4"
+            src="/fba.mp4"
         >
         </video>
         </div>

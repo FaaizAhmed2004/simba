@@ -14,7 +14,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'FBM Fulfillment Services - Fulfillment by Merchant | Simba Dispatch LLC',
+  title: 'FBM Fulfillment Services - Fulfillment by Merchant | Simba Dispatch Services LLC',
   description: 'Professional FBM fulfillment services for Amazon sellers. Fast order processing, pick & pack, and direct-to-customer shipping. Scale your FBM business with Simba Dispatch LLC.',
   keywords: 'FBM fulfillment, fulfillment by merchant, Amazon FBM, order fulfillment, pick and pack, direct shipping',
 };
@@ -148,10 +148,11 @@ export default function FBMFulfillmentPage() {
             muted
             playsInline
             className="object-cover w-full h-full"
-            src="/trucks.mp4"
+            src="/FBM-pre.mp4"
           ></video>
         </div>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-black opacity-60">
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -254,7 +255,7 @@ export default function FBMFulfillmentPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div className="absolute inset-0  bg-opacity-40"></div>
               </div>
             </div>
           </div>

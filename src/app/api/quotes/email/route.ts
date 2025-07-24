@@ -9,21 +9,12 @@ interface QuoteRequest {
   serviceType: string;
   additionalNotes: string;
   // Truck dispatching fields
-  pickup?: {
-    address: string;
-    city: string;
-    state: string;
-    zipCode: string;
-    date: string;
-  };
-  delivery?: {
-    address: string;
-    city: string;
-    state: string;
-    zipCode: string;
-    date: string;
-  };
+  mcNumber?: string;
+  dotNumber?: string;
   truckType?: string;
+  useFactoringCompany?: string;
+  truckOperationType?: string[];
+ 
   weight?: number;
   specialRequirements?: string;
   // FBA Prep fields
@@ -56,24 +47,13 @@ export async function POST(request: NextRequest) {
     
     if (quoteData.serviceType === 'TRUCK_DISPATCHING') {
       serviceDetails = `
-PICKUP DETAILS:
-Address: ${quoteData.pickup?.address || 'Not provided'}
-City: ${quoteData.pickup?.city || 'Not provided'}
-State: ${quoteData.pickup?.state || 'Not provided'}
-ZIP Code: ${quoteData.pickup?.zipCode || 'Not provided'}
-Date: ${quoteData.pickup?.date || 'Not specified'}
-
-DELIVERY DETAILS:
-Address: ${quoteData.delivery?.address || 'Not provided'}
-City: ${quoteData.delivery?.city || 'Not provided'}
-State: ${quoteData.delivery?.state || 'Not provided'}
-ZIP Code: ${quoteData.delivery?.zipCode || 'Not provided'}
-Date: ${quoteData.delivery?.date || 'Not specified'}
-
-LOAD INFORMATION:
+BUSINESS INFORMATION:
+MC Number: ${quoteData.mcNumber || 'Not provided'}
+DOT Number: ${quoteData.dotNumber || 'Not provided'}
 Truck Type: ${quoteData.truckType || 'Not specified'}
-Weight: ${quoteData.weight ? `${quoteData.weight} lbs` : 'Not specified'}
-Special Requirements: ${quoteData.specialRequirements || 'None'}`;
+Uses Factoring Company: ${quoteData.useFactoringCompany || 'Not specified'}
+Operation Type: ${quoteData.truckOperationType?.join(', ') || 'Not specified'}
+`;
     } else if (quoteData.serviceType === 'FBA_PREP') {
       serviceDetails = `
 FBA PREP DETAILS:
@@ -109,7 +89,7 @@ ADDITIONAL INFORMATION:
 Additional Notes: ${quoteData.additionalNotes || 'None'}
 
 ---
-This quote request was submitted through the Simba Dispatch LLC website.
+This quote request was submitted through the Simba Dispatch Services LLC website.
 Please respond within 24 hours.
     `;
 
@@ -138,7 +118,7 @@ Please respond within 24 hours.
       const confirmationEmail = `
 Dear ${quoteData.name},
 
-Thank you for your quote request with Simba Dispatch LLC!
+Thank you for your quote request with Simba Dispatch Services LLC!
 
 We have received your request for ${quoteData.serviceType.replace(/_/g, ' ')} services and our team will review your requirements shortly.
 
@@ -151,8 +131,8 @@ WHAT'S NEXT:
 If you have any immediate questions, please don't hesitate to contact us.
 
 Best regards,
-Simba Dispatch LLC Team
-Phone: (410) 831-1883
+Simba Dispatch Services LLC Team
+Phone:+1 4107555627
 Email: ${process.env.EMAIL_TO}
 
 ---

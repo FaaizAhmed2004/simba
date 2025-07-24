@@ -18,6 +18,11 @@ interface QuoteFormData {
   serviceType: ServiceType | '';
   additionalNotes: string;
   // Truck dispatching specific fields
+  mcNumber?: string;
+  dotNumber?: string;
+  truckType?: string;
+  useFactoringCompany?: 'yes' | 'no' | '';
+  truckOperationType?: string[]; // local, regional, otr
   pickup?: {
     address: string;
     city: string;
@@ -32,7 +37,6 @@ interface QuoteFormData {
     zipCode: string;
     date: string;
   };
-  truckType?: string;
   weight?: number;
   specialRequirements?: string;
   // FBA Prep specific fields
@@ -86,6 +90,17 @@ export default function QuotePage() {
     }
   };
 
+  const handleCheckboxChange = (field: string, value: string, checked: boolean) => {
+    setFormData(prev => {
+      const currentArray = (prev[field as keyof QuoteFormData] as string[]) || [];
+      if (checked) {
+        return { ...prev, [field]: [...currentArray, value] };
+      } else {
+        return { ...prev, [field]: currentArray.filter(item => item !== value) };
+      }
+    });
+  };
+
   const validateForm = () => {
     if (!formData.name || !formData.email || !formData.phone || !formData.serviceType) {
       return 'Please fill in all required fields';
@@ -105,11 +120,20 @@ export default function QuotePage() {
 
     // Service-specific validation
     if (formData.serviceType === 'TRUCK_DISPATCHING') {
-      if (!formData.pickup?.address || !formData.pickup?.city || !formData.pickup?.state) {
-        return 'Please fill in pickup location details';
+      if (!formData.mcNumber) {
+        return 'Please enter your MC Number';
       }
-      if (!formData.delivery?.address || !formData.delivery?.city || !formData.delivery?.state) {
-        return 'Please fill in delivery location details';
+      if (!formData.dotNumber) {
+        return 'Please enter your DOT Number';
+      }
+      if (!formData.truckType) {
+        return 'Please select your truck type';
+      }
+      if (!formData.useFactoringCompany) {
+        return 'Please indicate if you use a factoring company';
+      }
+      if (!formData.truckOperationType || formData.truckOperationType.length === 0) {
+        return 'Please select at least one operation type';
       }
     }
 
@@ -165,9 +189,13 @@ export default function QuotePage() {
             setFormData({
               ...formData,
               serviceType: 'TRUCK_DISPATCHING',
+              mcNumber: '',
+              dotNumber: '',
+              truckType: '',
+              useFactoringCompany: '',
+              truckOperationType: [],
               pickup: { address: '', city: '', state: '', zipCode: '', date: '' },
               delivery: { address: '', city: '', state: '', zipCode: '', date: '' },
-              truckType: '',
               weight: 0,
               specialRequirements: ''
             });
@@ -333,140 +361,136 @@ export default function QuotePage() {
   const renderTruckDispatchingDetails = () => (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">Load Details</h2>
-        <p className="text-gray-300">Provide information about your load and requirements</p>
+        <h2 className="text-3xl font-bold text-white mb-4">Truck Dispatching Details</h2>
+        <p className="text-gray-300">Tell us about your truck Dispatch  requirements</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-white">Pickup Location</h3>
-          <input
-            type="text"
-            value={formData.pickup?.address || ''}
-            onChange={(e) => handleInputChange('pickup.address', e.target.value)}
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-            placeholder="Pickup address"
-          />
-          <div className="grid grid-cols-2 gap-4">
+      {/* Business Information */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-white border-b border-gray-700 pb-2">Business Information</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-1">MC Number *</label>
             <input
               type="text"
-              value={formData.pickup?.city || ''}
-              onChange={(e) => handleInputChange('pickup.city', e.target.value)}
+              value={formData.mcNumber || ''}
+              onChange={(e) => handleInputChange('mcNumber', e.target.value)}
               className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="City"
-            />
-            <input
-              type="text"
-              value={formData.pickup?.state || ''}
-              onChange={(e) => handleInputChange('pickup.state', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="State"
+              placeholder="Enter MC Number"
+              required
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-1">DOT Number *</label>
             <input
               type="text"
-              value={formData.pickup?.zipCode || ''}
-              onChange={(e) => handleInputChange('pickup.zipCode', e.target.value)}
+              value={formData.dotNumber || ''}
+              onChange={(e) => handleInputChange('dotNumber', e.target.value)}
               className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="ZIP Code"
-            />
-            <input
-              type="date"
-              value={formData.pickup?.date || ''}
-              onChange={(e) => handleInputChange('pickup.date', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              title="Pickup Date"
-            />
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-white">Delivery Location</h3>
-          <input
-            type="text"
-            value={formData.delivery?.address || ''}
-            onChange={(e) => handleInputChange('delivery.address', e.target.value)}
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-            placeholder="Delivery address"
-          />
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              value={formData.delivery?.city || ''}
-              onChange={(e) => handleInputChange('delivery.city', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="City"
-            />
-            <input
-              type="text"
-              value={formData.delivery?.state || ''}
-              onChange={(e) => handleInputChange('delivery.state', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="State"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              value={formData.delivery?.zipCode || ''}
-              onChange={(e) => handleInputChange('delivery.zipCode', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              placeholder="ZIP Code"
-            />
-            <input
-              type="date"
-              value={formData.delivery?.date || ''}
-              onChange={(e) => handleInputChange('delivery.date', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-              title="Delivery Date"
+              placeholder="Enter DOT Number"
             />
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Truck Information */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-white border-b border-gray-700 pb-2">Truck Information</h3>
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">Truck Type</label>
+          <label className="block text-sm font-medium text-gray-300 mb-1">Type of Truck *</label>
           <select
+          aria-label='truck'
             value={formData.truckType || ''}
             onChange={(e) => handleInputChange('truckType', e.target.value)}
             className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-            aria-label="Select truck type"
+            required
           >
             <option value="">Select truck type</option>
             <option value="dry-van">Dry Van</option>
             <option value="flatbed">Flatbed</option>
-            <option value="refrigerated">Refrigerated</option>
+            <option value="refrigerated">Refrigerated (Reefer)</option>
             <option value="step-deck">Step Deck</option>
             <option value="lowboy">Lowboy</option>
             <option value="tanker">Tanker</option>
+            <option value="box-truck">Box Truck</option>
+            <option value="car-hauler">Car Hauler</option>
+            <option value="dump-truck">Dump Truck</option>
           </select>
         </div>
+      </div>
+
+      {/* Factoring Company */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-white border-b border-gray-700 pb-2">Financial Information</h3>
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">Weight (lbs)</label>
-          <input
-            type="number"
-            value={formData.weight || ''}
-            onChange={(e) => handleInputChange('weight', parseInt(e.target.value) || 0)}
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-            placeholder="Enter weight"
-            min="0"
-          />
+          <label className="block text-sm font-medium text-gray-300 mb-3">Do you use a factoring company? *</label>
+          <div className="flex space-x-6">
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="useFactoringCompany"
+                value="yes"
+                checked={formData.useFactoringCompany === 'yes'}
+                onChange={(e) => handleInputChange('useFactoringCompany', e.target.value)}
+                className="w-4 h-4 text-blue-600 bg-gray-800 border-gray-700 focus:ring-blue-500"
+                required
+              />
+              <span className="ml-2 text-gray-300">Yes</span>
+            </label>
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="useFactoringCompany"
+                value="no"
+                checked={formData.useFactoringCompany === 'no'}
+                onChange={(e) => handleInputChange('useFactoringCompany', e.target.value)}
+                className="w-4 h-4 text-blue-600 bg-gray-800 border-gray-700 focus:ring-blue-500"
+                required
+              />
+              <span className="ml-2 text-gray-300">No</span>
+            </label>
+          </div>
         </div>
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-gray-300 mb-1">Special Requirements</label>
-        <textarea
-          value={formData.specialRequirements || ''}
-          onChange={(e) => handleInputChange('specialRequirements', e.target.value)}
-          rows={3}
-          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-          placeholder="Any special handling requirements"
-        />
+      {/* Operation Type */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-white border-b border-gray-700 pb-2">Operation Preferences</h3>
+        <div>
+          <label className="block text-sm font-medium text-gray-300 mb-3">How do you plan to run the truck? (Select all that apply) *</label>
+          <div className="space-y-3">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                checked={formData.truckOperationType?.includes('local') || false}
+                onChange={(e) => handleCheckboxChange('truckOperationType', 'local', e.target.checked)}
+                className="w-4 h-4 text-blue-600 bg-gray-800 border-gray-700 rounded focus:ring-blue-500"
+              />
+              <span className="ml-2 text-gray-300">Local </span>
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                checked={formData.truckOperationType?.includes('regional') || false}
+                onChange={(e) => handleCheckboxChange('truckOperationType', 'regional', e.target.checked)}
+                className="w-4 h-4 text-blue-600 bg-gray-800 border-gray-700 rounded focus:ring-blue-500"
+              />
+              <span className="ml-2 text-gray-300">Regional (multi-state)</span>
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                checked={formData.truckOperationType?.includes('otr') || false}
+                onChange={(e) => handleCheckboxChange('truckOperationType', 'otr', e.target.checked)}
+                className="w-4 h-4 text-blue-600 bg-gray-800 border-gray-700 rounded focus:ring-blue-500"
+              />
+              <span className="ml-2 text-gray-300">OTR (Over-the-haul)</span>
+            </label>
+          </div>
+        </div>
       </div>
 
+      {/* Additional Notes */}
       <div>
         <label className="block text-sm font-medium text-gray-300 mb-1">Additional Notes</label>
         <textarea
@@ -474,7 +498,7 @@ export default function QuotePage() {
           onChange={(e) => handleInputChange('additionalNotes', e.target.value)}
           rows={4}
           className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
-          placeholder="Any additional information or comments"
+          placeholder="Tell us more about your business, preferred lanes, experience, or any other information that would help us provide better service"
         />
       </div>
 
@@ -521,7 +545,7 @@ export default function QuotePage() {
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">Monthly Volume</label>
           <select
-          aria-label='volume'
+            aria-label='volume'
             value={formData.monthlyVolume || ''}
             onChange={(e) => handleInputChange('monthlyVolume', e.target.value)}
             className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
@@ -635,7 +659,7 @@ export default function QuotePage() {
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">Monthly Order Volume</label>
           <select
-          aria-label='orderVolume'
+            aria-label='orderVolume'
             value={formData.orderVolume || ''}
             onChange={(e) => handleInputChange('orderVolume', e.target.value)}
             className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
@@ -651,7 +675,7 @@ export default function QuotePage() {
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">Packaging Type</label>
           <select
-          aria-label='packagingtype'
+            aria-label='packagingtype'
             value={formData.packagingType || ''}
             onChange={(e) => handleInputChange('packagingType', e.target.value)}
             className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
@@ -769,7 +793,7 @@ export default function QuotePage() {
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get Your Free Quote</h1>
           <p className="text-lg sm:text-xl text-gray-300">
-            Professional logistics services tailored to your needs - from truck dispatching to Amazon fulfillment
+            Professional logistics services tailored to your needs - from truck dispatch services to 3pl fulfillment
           </p>
         </div>
 

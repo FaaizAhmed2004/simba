@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  BuildingOfficeIcon, 
-  UsersIcon, 
+import {
+  BuildingOfficeIcon,
+  UsersIcon,
   GlobeAmericasIcon,
   CheckCircleIcon,
   ArrowTrendingUpIcon,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { label: 'Founded', value: '2025' },
+  { label: 'Founded', value: '2020' },
   { label: 'Headquarters', value: 'Orlando, FL' },
   { label: 'Services', value: '4+' },
   { label: 'Focus', value: 'Customer Success' }
@@ -82,7 +82,7 @@ export default function AboutPage() {
               About Simba Dispatch Services LLC
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
-              A new generation 3pl and Dispatch services providers ,we built for the modern business. 
+              A new generation 3pl and Dispatch services providers ,we built for the modern business.
               We are here to simplify  and accelerate your growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -131,23 +131,23 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-lg text-white leading-relaxed">
                 <p>
-                  Simba Dispatch Services LLC was born from a simple observation: growing businesses 
-                  need logistics partners who understand their challenges and are agile 
+                  Simba Dispatch Services LLC was born from a simple observation: growing businesses
+                  need logistics partners who understand their challenges and are agile
                   enough to adapt to their changing needs.
                 </p>
                 <p>
-                  Founded in 2020, we set out to build a logistics company that combines 
-                  the reliability of established players with the innovation and 
+                  Founded in 2020, we set out to build a logistics company that combines
+                  the reliability of established players with the innovation and
                   customer focus that modern businesses deserve.
                 </p>
                 <p>
-                  Based in Orlando, Florida, we are strategically positioned to serve 
-                  businesses across the United States with efficient, cost-effective 
+                  Based in Orlando, Florida, we are strategically positioned to serve
+                  businesses across the United States with efficient, cost-effective
                   logistics solutions that scale with your growth.
                 </p>
                 <p>
-                  We believe that logistics should be an enabler of growth, not a 
-                  constraint. Thats why we have built our services around flexibility, 
+                  We believe that logistics should be an enabler of growth, not a
+                  constraint. Thats why we have built our services around flexibility,
                   transparency, and genuine partnership with our clients.
                 </p>
               </div>
@@ -195,8 +195,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To empower businesses of all sizes with reliable, innovative logistics solutions 
-                that remove barriers to growth. We are committed to being the logistics partner 
+                To empower businesses of all sizes with reliable, innovative logistics solutions
+                that remove barriers to growth. We are committed to being the logistics partner
                 that businesses can depend on to scale efficiently and serve their customers better.
               </p>
             </div>
@@ -207,8 +207,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                To become the most trusted logistics partner for growing businesses across America, 
-                known for our innovation, reliability, and genuine commitment to customer success. 
+                To become the most trusted logistics partner for growing businesses across America,
+                known for our innovation, reliability, and genuine commitment to customer success.
                 We envision a future where logistics enables limitless business growth.
               </p>
             </div>
