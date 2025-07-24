@@ -7,24 +7,36 @@ interface QuoteRequest {
   phone: string;
   company?: string;
   serviceType: string;
-  pickup: {
-    address: string;
-    city: string;
-    state: string;
-    zipCode: string;
-    date: string;
-  };
-  delivery: {
-    address: string;
-    city: string;
-    state: string;
-    zipCode: string;
-    date: string;
-  };
-  truckType: string;
-  weight: number;
-  specialRequirements: string;
   additionalNotes: string;
+  // Truck dispatching fields
+  pickup?: {
+    address: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    date: string;
+  };
+  delivery?: {
+    address: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    date: string;
+  };
+  truckType?: string;
+  weight?: number;
+  specialRequirements?: string;
+  // FBA Prep fields
+  monthlyVolume?: string;
+  packagingRequirements?: string;
+  storageNeeded?: boolean;
+  qualityInspection?: boolean;
+  returnProcessing?: boolean;
+  // FBM Fulfillment fields
+  orderVolume?: string;
+  packagingType?: string;
+  returnHandling?: boolean;
+  customBranding?: boolean;
 }
 
 export async function POST(request: NextRequest) {
@@ -39,7 +51,46 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create email content
+    // Create email content based on service type
+    let serviceDetails = '';
+    
+    if (quoteData.serviceType === 'TRUCK_DISPATCHING') {
+      serviceDetails = `
+PICKUP DETAILS:
+Address: ${quoteData.pickup?.address || 'Not provided'}
+City: ${quoteData.pickup?.city || 'Not provided'}
+State: ${quoteData.pickup?.state || 'Not provided'}
+ZIP Code: ${quoteData.pickup?.zipCode || 'Not provided'}
+Date: ${quoteData.pickup?.date || 'Not specified'}
+
+DELIVERY DETAILS:
+Address: ${quoteData.delivery?.address || 'Not provided'}
+City: ${quoteData.delivery?.city || 'Not provided'}
+State: ${quoteData.delivery?.state || 'Not provided'}
+ZIP Code: ${quoteData.delivery?.zipCode || 'Not provided'}
+Date: ${quoteData.delivery?.date || 'Not specified'}
+
+LOAD INFORMATION:
+Truck Type: ${quoteData.truckType || 'Not specified'}
+Weight: ${quoteData.weight ? `${quoteData.weight} lbs` : 'Not specified'}
+Special Requirements: ${quoteData.specialRequirements || 'None'}`;
+    } else if (quoteData.serviceType === 'FBA_PREP') {
+      serviceDetails = `
+FBA PREP DETAILS:
+Monthly Volume: ${quoteData.monthlyVolume || 'Not specified'}
+Packaging Requirements: ${quoteData.packagingRequirements || 'Not specified'}
+Storage Needed: ${quoteData.storageNeeded ? 'Yes' : 'No'}
+Quality Inspection: ${quoteData.qualityInspection ? 'Yes' : 'No'}
+Return Processing: ${quoteData.returnProcessing ? 'Yes' : 'No'}`;
+    } else if (quoteData.serviceType === 'FBM_FULFILLMENT') {
+      serviceDetails = `
+FBM FULFILLMENT DETAILS:
+Monthly Order Volume: ${quoteData.orderVolume || 'Not specified'}
+Packaging Type: ${quoteData.packagingType || 'Not specified'}
+Return Handling: ${quoteData.returnHandling ? 'Yes' : 'No'}
+Custom Branding: ${quoteData.customBranding ? 'Yes' : 'No'}`;
+    }
+
     const emailContent = `
 New Quote Request - Simba Dispatch LLC
 
@@ -50,28 +101,11 @@ Phone: ${quoteData.phone}
 Company: ${quoteData.company || 'Not provided'}
 
 SERVICE REQUESTED:
-Service Type: ${quoteData.serviceType.replace('_', ' ')}
+Service Type: ${quoteData.serviceType.replace(/_/g, ' ')}
 
-PICKUP DETAILS:
-Address: ${quoteData.pickup.address}
-City: ${quoteData.pickup.city}
-State: ${quoteData.pickup.state}
-ZIP Code: ${quoteData.pickup.zipCode}
-Date: ${quoteData.pickup.date || 'Not specified'}
-
-DELIVERY DETAILS:
-Address: ${quoteData.delivery.address}
-City: ${quoteData.delivery.city}
-State: ${quoteData.delivery.state}
-ZIP Code: ${quoteData.delivery.zipCode}
-Date: ${quoteData.delivery.date || 'Not specified'}
-
-LOAD INFORMATION:
-Truck Type: ${quoteData.truckType || 'Not specified'}
-Weight: ${quoteData.weight ? `${quoteData.weight} lbs` : 'Not specified'}
+${serviceDetails}
 
 ADDITIONAL INFORMATION:
-Special Requirements: ${quoteData.specialRequirements || 'None'}
 Additional Notes: ${quoteData.additionalNotes || 'None'}
 
 ---
@@ -106,7 +140,7 @@ Dear ${quoteData.name},
 
 Thank you for your quote request with Simba Dispatch LLC!
 
-We have received your request for ${quoteData.serviceType.replace('_', ' ')} services and our team will review your requirements shortly.
+We have received your request for ${quoteData.serviceType.replace(/_/g, ' ')} services and our team will review your requirements shortly.
 
 WHAT'S NEXT:
 • Our logistics team will review your requirements

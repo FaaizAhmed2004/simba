@@ -4,7 +4,7 @@ import Image from 'next/image';
 const services = [
   {
     title: 'Truck Dispatch Service',
-    description: 'Professional truck dispatch Service for carriers with 24/7 ',
+    description: 'Professional Truck Dispatch Service for Carriers with ',
     features: ['24/7 Dispatcher Support', ' Flexible % or weekly fee'],
     href: '/services/truck-dispatching',
     image: '/assests/10016.jpeg'

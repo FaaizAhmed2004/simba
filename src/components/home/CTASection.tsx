@@ -21,7 +21,7 @@ export default function CTASection() {
             Ready to Maximize Your Earnings?
           </h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
-            Join 50+ satisfied truck operators who trust Simba Dispatch Services LLC for their 
+            Join 50+ satisfied costumers who trust Simba Dispatch Services LLC for their 
             dispatching needs. Contact us today for discussion!
           </p>
           
