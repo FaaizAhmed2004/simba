@@ -82,8 +82,8 @@ export default function AboutPage() {
               About Simba Dispatch Services LLC
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
-              A new generation logistics company built for the modern business. 
-              We are here to simplify your supply chain and accelerate your growth.
+              A new generation 3pl and Dispatch services providers ,we built for the modern business. 
+              We are here to simplify  and accelerate your growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -126,10 +126,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Our Story
               </h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-lg text-white leading-relaxed">
                 <p>
                   Simba Dispatch Services LLC was born from a simple observation: growing businesses 
                   need logistics partners who understand their challenges and are agile 
@@ -186,7 +186,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white rounded-lg shadow-lg p-8">
@@ -220,10 +220,10 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our Core Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               These values guide every decision we make and every service we provide.
             </p>
           </div>
@@ -234,10 +234,10 @@ export default function AboutPage() {
                 <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <value.icon className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-white leading-relaxed">
                   {value.description}
                 </p>
               </div>

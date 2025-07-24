@@ -2,13 +2,32 @@ const benefits = [
   {
     title: 'Safe & Reliable',
     description: 'We prioritize safety in all operations, ensuring your cargo arrives securely and on time.',
-    icon: '�️'
+    icon: '🛡️'
   },
- 
   {
     title: 'Customer Support',
     description: '24/7 Customer support for all your inquiries and assistance needs.',
     icon: '📞'
+  },
+  {
+    title: 'Industry Expertise',
+    description: 'Our team brings years of logistics experience to optimize your operations and routes.',
+    icon: '🏆'
+  },
+  {
+    title: 'Cost Effective',
+    description: 'Maximize your profits with our competitive rates and efficient dispatch solutions.',
+    icon: '💰'
+  },
+  {
+    title: 'Technology Driven',
+    description: 'Advanced tracking and management systems to keep your business running smoothly.',
+    icon: '💻'
+  },
+  {
+    title: 'Nationwide Coverage',
+    description: 'Extensive network of carriers and routes across the entire United States.',
+    icon: '🇺🇸'
   },
 ];
 
