@@ -19,7 +19,7 @@ export default function FaqSection() {
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center mb-16">
-          <span className="bg-blue-500/10 text-blue-400 text-3xl font-medium px-4 py-1.5 rounded-full mb-4">Why Choose Us</span>
+          <span className="bg-blue-500/10 text-blue-400 text-3xl font-medium px-4 py-1.5 rounded-full mb-4 text-center">Why Choose Us</span>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-6 text-white">
             SIMBA Dispatch Services LLC makes direct-to-consumer fulfillment easy
           </h2>
@@ -28,126 +28,129 @@ export default function FaqSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20">
-          <div className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl text-white font-semibold">What Customers Can Achieve Working With You</h3>
-              <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
-                <CircleCheck className="w-6 h-6 text-green-500" />
+        <div className="flex justify-center mb-20">
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl w-full">
+            <div className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl text-white font-semibold">What Customers Can Achieve Working With us</h3>
+                <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
+                  <CircleCheck className="w-6 h-6 text-green-500" />
+                </div>
+              </div>
+              <div className="h-1 w-20 bg-green-500/30 mb-4 rounded-full"></div>
+
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-green-400 mb-2">1. Operational Efficiency & Time Savings</h4>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Handle route planning, load scheduling, and real-time dispatch</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Avoid costly downtime or inefficient deliveries</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-green-400 mb-2">2. Professional Dispatch Management</h4>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Access to professionally trained dispatchers</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Real-time problem-solving during transit</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-green-400 mb-2">3. Cost Control & Scalability</h4>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Avoid overhead of building in-house logistics team</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Flexible solutions based on business growth</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-green-400 mb-2">4. Additional Benefits</h4>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Access to established carrier network</p>
+                  </div>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Compliance & documentation expertise</p>
+                  </div>
+                  <div className="flex items-start gap-3 mb-2">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Modern logistics technology & tracking</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Risk mitigation & issue prevention</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="h-1 w-20 bg-green-500/30 mb-4 rounded-full"></div>
 
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-lg font-semibold text-green-400 mb-2">1. Operational Efficiency & Time Savings</h4>
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Handle route planning, load scheduling, and real-time dispatch</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Avoid costly downtime or inefficient deliveries</p>
+            <div className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl text-white font-semibold">What Customers Can&apos;t Achieve Without Simba</h3>
+                <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
+                  <CircleX className="w-6 h-6 text-red-500" />
                 </div>
               </div>
+              <div className="h-1 w-20 bg-red-500/30 mb-4 rounded-full"></div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-green-400 mb-2">2. Professional Dispatch Management</h4>
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Access to professionally trained dispatchers</p>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-red-400 mb-2">1. Real-Time Support & Issue Resolution</h4>
+                  <div className="flex items-start gap-3">
+                    <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Road issues go unaddressed, resulting in delays and losses</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Real-time problem-solving during transit</p>
-                </div>
-              </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-green-400 mb-2">3. Cost Control & Scalability</h4>
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Avoid overhead of building in-house logistics team</p>
+                <div>
+                  <h4 className="text-lg font-semibold text-red-400 mb-2">2. 24/7 Monitoring & Communication</h4>
+                  <div className="flex items-start gap-3">
+                    <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Lack round-the-clock oversight and dedicated personnel</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Flexible solutions based on business growth</p>
-                </div>
-              </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-green-400 mb-2">4. Additional Benefits</h4>
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Access to established carrier network</p>
+                <div>
+                  <h4 className="text-lg font-semibold text-red-400 mb-2">3. Industry Expertise & Negotiation Power</h4>
+                  <div className="flex items-start gap-3">
+                    <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Often overpay or accept poor terms without market knowledge</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Compliance & documentation expertise</p>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-red-400 mb-2">4. Dedicated Focus on Logistics</h4>
+                  <div className="flex items-start gap-3">
+                    <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Struggle with logistics learning curve and execution</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Modern logistics technology & tracking</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CircleCheck className="w-4 h-4 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Risk mitigation & issue prevention</p>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-red-400 mb-2">5. Speed to Market</h4>
+                  <div className="flex items-start gap-3">
+                    <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-300 text-sm">Slower expansion into new regions without established infrastructure</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl text-white font-semibold">What Customers Can&apos;t Achieve Without Simba</h3>
-              <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
-                <CircleX className="w-6 h-6 text-red-500" />
-              </div>
-            </div>
-            <div className="h-1 w-20 bg-red-500/30 mb-4 rounded-full"></div>
-
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-lg font-semibold text-red-400 mb-2">1. Real-Time Support & Issue Resolution</h4>
-                <div className="flex items-start gap-3">
-                  <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Road issues go unaddressed, resulting in delays and losses</p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-red-400 mb-2">2. 24/7 Monitoring & Communication</h4>
-                <div className="flex items-start gap-3">
-                  <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Lack round-the-clock oversight and dedicated personnel</p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-red-400 mb-2">3. Industry Expertise & Negotiation Power</h4>
-                <div className="flex items-start gap-3">
-                  <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Often overpay or accept poor terms without market knowledge</p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-red-400 mb-2">4. Dedicated Focus on Logistics</h4>
-                <div className="flex items-start gap-3">
-                  <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Struggle with logistics learning curve and execution</p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-red-400 mb-2">5. Speed to Market</h4>
-                <div className="flex items-start gap-3">
-                  <CircleX className="w-4 h-4 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300 text-sm">Slower expansion into new regions without established infrastructure</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-20">

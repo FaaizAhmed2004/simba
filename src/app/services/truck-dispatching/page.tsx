@@ -235,11 +235,11 @@ export default function TruckDispatchingPage() {
           </p>
 
           <div className="bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-8 max-w-md mx-auto">
-            <div className="text-4xl font-bold text-blue-600 mb-2">Flexible % Weekly fixed fee</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">Flexible % or Weekly fixed fee</div>
             <div className="text-lg text-gray-900 mb-4">Commission per load</div>
             <div className="text-sm text-gray-600 space-y-2 mb-6">
               <p>• No upfront fees</p>
-              <p>• No monthly charges</p>
+              <p>• No monthly charges</p> 
               <p>• Pay only when you get paid</p>
               <p>• Contact for discussion on %</p>
             </div>

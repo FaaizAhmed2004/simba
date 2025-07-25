@@ -191,7 +191,7 @@ export default function FBMFulfillmentPage() {
                 <div className="text-gray-300">Order Processing</div>
               </div>
               <div className="bg-gray-900 border border-gray-800 rounded-lg shadow-xl p-6 text-center transform hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-blue-400 mb-2">99.8%</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">99.9%</div>
                 <div className="text-gray-300">Fulfillment Accuracy</div>
               </div>
               <div className="bg-gray-900 border border-gray-800 rounded-lg shadow-xl p-6 text-center transform hover:scale-105 transition-all duration-300">
@@ -417,8 +417,8 @@ export default function FBMFulfillmentPage() {
                 <Link
                   href="/quote"
                   className={`block w-full text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 ${tier.popular
-                      ? 'bg-blue-500 text-white hover:bg-blue-600 transform hover:scale-105'
-                      : 'bg-black border border-gray-700 text-white hover:bg-gray-800 transform hover:scale-105'
+                    ? 'bg-blue-500 text-white hover:bg-blue-600 transform hover:scale-105'
+                    : 'bg-black border border-gray-700 text-white hover:bg-gray-800 transform hover:scale-105'
                     }`}
                 >
                   Get Started

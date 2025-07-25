@@ -147,7 +147,7 @@ export default function AboutPage() {
                   enough to adapt to their changing needs.
                 </p>
                 <p>
-                  Founded in 2020, we set out to build a logistics company that combines
+                  Founded in 2020, we set out to build a Truck Dispatch and 3pl service provider  that combines
                   the reliability of established players with the innovation and
                   customer focus that modern businesses deserve.
                 </p>
@@ -172,10 +172,10 @@ export default function AboutPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center">
-                  <div className="text-center text-white">
+                  {/* <div className="text-center text-white">
                     <h3 className="text-2xl font-bold mb-2">Professional Operations</h3>
                     <p className="text-lg">Orlando, FL Headquarters</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-4">

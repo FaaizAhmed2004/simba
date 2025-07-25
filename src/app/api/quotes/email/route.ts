@@ -14,7 +14,7 @@ interface QuoteRequest {
   truckType?: string;
   useFactoringCompany?: string;
   truckOperationType?: string[];
- 
+
   weight?: number;
   specialRequirements?: string;
   // FBA Prep fields
@@ -33,7 +33,7 @@ interface QuoteRequest {
 export async function POST(request: NextRequest) {
   try {
     const quoteData: QuoteRequest = await request.json();
-    
+
     // Validate required fields
     if (!quoteData.name || !quoteData.email || !quoteData.phone || !quoteData.serviceType) {
       return NextResponse.json(
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     // Create email content based on service type
     let serviceDetails = '';
-    
+
     if (quoteData.serviceType === 'TRUCK_DISPATCHING') {
       serviceDetails = `
 BUSINESS INFORMATION:
