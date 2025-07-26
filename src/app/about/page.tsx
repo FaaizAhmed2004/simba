@@ -2,13 +2,12 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  BuildingOfficeIcon,
   UsersIcon,
-  GlobeAmericasIcon,
   CheckCircleIcon,
   ArrowTrendingUpIcon,
   HeartIcon,
-  ShieldCheckIcon
+  ShieldCheckIcon,
+  CogIcon as Settings
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -18,9 +17,9 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { label: 'Founded', value: '2020' },
+  { label: 'Founded', value: '2022' },
   { label: 'Headquarters', value: 'Orlando, FL' },
-  { label: 'Services', value: '4+' },
+  { label: 'Services', value: '6+' },
   { label: 'Focus', value: 'Customer Success' }
 ];
 
@@ -135,66 +134,122 @@ export default function AboutPage() {
       {/* Our Story Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Simba Dispatch Services LLC was born from a simple observation: growing businesses
-                  need logistics partners who understand their challenges and are agile
-                  enough to adapt to their changing needs.
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              About Simba Dispatch Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our journey from a simple truck dispatching company to a comprehensive logistics partner
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Journey Began in 2022</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  At Simba Dispatch Services, our journey began in 2022 with a simple goal: to make life easier and more profitable for truckers across the country. What started as a truck dispatching company quickly evolved into something much greater—thanks to the hard work of our team, the loyalty of our clients, and a shared commitment to growth.
                 </p>
-                <p>
-                  Founded in 2020, we set out to build a Truck Dispatch and 3pl service provider  that combines
-                  the reliability of established players with the innovation and
-                  customer focus that modern businesses deserve.
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Beginnings: Dispatching with Purpose</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  We started by offering dispatching services to owner-operators and small trucking fleets, helping them navigate the complexities of freight booking, rate negotiations, paperwork, and DOT compliance. In an industry where time is money, we made sure our clients could focus on driving—while we handled the back-end operations.
                 </p>
-                <p>
-                  Based in Orlando, Florida, we are strategically positioned to serve
-                  businesses across the United States with efficient, cost-effective
-                  3pl and truck dispatch solutions that scale with your growth.
-                </p>
-                <p>
-                  We believe that 3pl and truck dispatch service should be an enabler of growth, not a
-                  constraint. That is why we have built our services around flexibility,
-                  transparency, and genuine partnership with our clients.
+                <p className="text-lg text-gray-600 leading-relaxed mt-4">
+                  Over time, we built strong relationships with carriers and brokers alike, consistently securing high-paying loads, optimizing routes, and providing 24/7 support. Our dispatchers became trusted partners—dedicated, reliable, and always working in the best interest of our drivers.
                 </p>
               </div>
             </div>
+
             <div className="relative">
-              <div className="relative h-96 rounded-lg overflow-hidden mb-8">
+              <div className="relative h-96 rounded-xl overflow-hidden mb-8 shadow-lg">
                 <Image
                   src="/assests/10053.jpeg"
-                  alt="Simba Dispatch LLC warehouse and operations"
+                  alt="Simba Dispatch Services operations"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center">
-                  {/* <div className="text-center text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div className="p-6 text-white">
                     <h3 className="text-2xl font-bold mb-2">Professional Operations</h3>
-                    <p className="text-lg">Orlando, FL Headquarters</p>
-                  </div> */}
+                    <p className="text-lg">Serving truckers nationwide since 2022</p>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4 text-center">
-                  <BuildingOfficeIcon className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-semibold text-gray-900 text-sm">Strategic Location</h3>
-                  <p className="text-xs text-gray-600">Orlando, FL</p>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">2022</div>
+                  <p className="text-sm text-gray-600">Founded</p>
                 </div>
-                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4 text-center">
-                  <GlobeAmericasIcon className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-semibold text-gray-900 text-sm">USA Coverage</h3>
-                  <p className="text-xs text-gray-600">Nationwide</p>
-                </div>
-                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4 text-center">
-                  <CheckCircleIcon className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-semibold text-gray-900 text-sm">Quality Focus</h3>
-                  <p className="text-xs text-gray-600">Excellence</p>
+                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+                  <p className="text-sm text-gray-600">Support</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Growing with Our Clients</h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                As our trucking clients expanded their operations, they began looking for more than just dispatch support. They needed a logistics partner who could keep up with their growth—and that&rsquo;s exactly what we became.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mt-4">
+                By 2023, Simba Dispatch Services had evolved into a full-service logistics and 3PL (Third-Party Logistics) provider, offering scalable solutions that go beyond dispatching. We saw the rise of e-commerce and the growing demand for Amazon FBA and FBM fulfillment—and we responded.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Expanded Services: More Than Just Dispatching</h3>
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                Today, our services include comprehensive solutions for both trucking and e-commerce businesses:
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h4 className="text-xl font-bold text-blue-900 mb-4">Truck Dispatching Services</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      Load sourcing and rate negotiation
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      24/7 support and communication
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      Driver management and back-office coordination
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+                  <h4 className="text-xl font-bold text-white mb-4">3PL Services & E-commerce Fulfillment</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
+                      Amazon FBA prep and shipping
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
+                      FBM warehousing and order fulfillment
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
+                      Inventory management and last-mile delivery
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed mt-8">
+                Whether you&#39;re an independent driver, a growing fleet, or an Amazon seller managing hundreds of SKUs, Simba Dispatch Services provides reliable, cost-effective solutions that keep your business running smoothly.
+              </p>
             </div>
           </div>
         </div>
@@ -345,41 +400,51 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Simba Dispatch Services LLC?
+              Why Choose Simba Dispatch?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              As a new company, we bring fresh perspectives and innovative solutions to traditional logistics challenges.
+              We&apos;ve built our reputation on delivering results and building lasting partnerships with our clients.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 sm:p-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 text-center">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <ArrowTrendingUpIcon className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Fresh Innovation</h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                We leverage the latest technology and best practices without legacy constraints.
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Proven Track Record</h3>
+              <p className="text-sm text-gray-600">
+                We&apos;ve helped dozens of carriers scale from single-truck operations to multi-fleet businesses.
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 sm:p-8 text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <HeartIcon className="h-8 w-8 text-blue-600" />
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 text-center">
+              <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Settings className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Personal Attention</h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                As a growing company, every client matters. You get personalized service and direct access to our team.
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Customized Solutions</h3>
+              <p className="text-sm text-gray-600">
+                No two clients are the same. We tailor our services to fit your exact needs.
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 sm:p-8 text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <ShieldCheckIcon className="h-8 w-8 text-blue-600" />
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 text-center">
+              <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <HeartIcon className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Proven Expertise</h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                Our team brings decades of experience from industry leaders, ensuring reliable service from day one.
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Transparent Communication</h3>
+              <p className="text-sm text-gray-600">
+                We believe in honesty, clarity, and being available when you need us.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 p-6 text-center">
+              <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <ShieldCheckIcon className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Experienced Team</h3>
+              <p className="text-sm text-gray-600">
+                Our dispatchers, logistics coordinators, and fulfillment experts are trained professionals with real-world experience.
               </p>
             </div>
           </div>
@@ -399,7 +464,7 @@ export default function AboutPage() {
             <rect width="100%" height="100%" fill="url(#hexagons3)" />
           </svg>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mt-16 bg-gray-900 border border-gray-800 rounded-2xl p-8 md:p-12 shadow-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
