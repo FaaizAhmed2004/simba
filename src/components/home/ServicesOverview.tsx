@@ -7,7 +7,7 @@ const services = [
     description: 'Professional Truck Dispatch Service for Carriers with ',
     features: ['24/7 Dispatcher Support', ' Flexible % or weekly fee'],
     href: '/services/truck-dispatching',
-    image: '/dispatching.jpg'
+    image: '/customer.jpg'
   },
   {
     title: 'FBA Prep Services',
