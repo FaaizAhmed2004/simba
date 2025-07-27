@@ -9,14 +9,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="bg-black text-white py-16 border-b border-gray-800 relative overflow-hidden">
-        <img
-          src="/assests/10055.jpeg"
-          alt="FAQ and customer support"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
-        />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="bg-black text-white py-16 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Contact Simba Dispatch Services LLC
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">

@@ -40,7 +40,7 @@ export function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors">
                   <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                  <a href="mailto:cs@simbadispatchservices.com" className="text-sm sm:text-base hover:underline">
+                  <a href="mailto:cs@simbadispatchservices.com" className="text-sm sm:text-base hover:underline cursor-pointer">
                     cs@simbadispatchservices.com
                   </a>
                 </div>
@@ -54,7 +54,7 @@ export function Footer() {
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
-                  <a href="https://www.instagram.com/simbadispatchservices" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base hover:underline">
+                  <a href="https://www.instagram.com/simbadispatchservices" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base hover:underline cursor-pointer">
                     @simbadispatchservices
                   </a>
                 </div>
@@ -67,22 +67,22 @@ export function Footer() {
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2">Company</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">About Us</span>
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/how-it-works" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">How it Works</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/services" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Services</span>
                 </Link>
               </li>
               <li>
-                <Link href="/quote" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/quote" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Get Quote</span>
                 </Link>
               </li>
@@ -94,17 +94,17 @@ export function Footer() {
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/truck-dispatching" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/services/truck-dispatching" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Truck Dispatch</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services/fba-prep" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/services/fba-prep" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">FBA Prep Services</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services/fbm-fulfillment" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/services/fbm-fulfillment" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">FBM Fulfillment</span>
                 </Link>
               </li>
@@ -116,22 +116,22 @@ export function Footer() {
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2">Support</h3>
             <ul className="space-y-3">
             <li>
-                <Link href="/support" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/support" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Customer Support</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Contact Us</span>
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/faq" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">FAQ</span>
                 </Link>
               </li>
               <li>
-                <Link href="/quote" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                <Link href="/quote" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Get Quote</span>
                 </Link>
               </li>
@@ -147,9 +147,9 @@ export function Footer() {
                 © 2025 Simba Dispatch Services LLC. All rights reserved.
               </p>
               <div className="flex items-center space-x-4 text-sm text-gray-400">
-                <Link href="/" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
+                <Link href="/" className="hover:text-blue-400 transition-colors cursor-pointer">Privacy Policy</Link>
                 <span>•</span>
-                <Link href="/" className="hover:text-blue-400 transition-colors">Terms of Service</Link>
+                <Link href="/" className="hover:text-blue-400 transition-colors cursor-pointer">Terms of Service</Link>
               </div>
             </div>
             
@@ -163,7 +163,7 @@ export function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Instagram" 
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200 transform hover:scale-110"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200 transform hover:scale-110 cursor-pointer"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>

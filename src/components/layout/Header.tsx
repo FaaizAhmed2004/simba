@@ -30,13 +30,13 @@ export function Header() {
             <Image src="/flag.png" alt="US Flag" width={24} height={16} className="rounded" />
             <span>USA</span>
           </div>
-          <Link href="/contact" className="hover:underline">
+          <Link href="/contact" className="hover:underline cursor-pointer">
             Contact
           </Link>
-          <Link href="/support" className="hover:underline">
+          <Link href="/support" className="hover:underline cursor-pointer">
             Customer Support
           </Link>
-          <Link href="/faq" className="hover:underline">
+          <Link href="/faq" className="hover:underline cursor-pointer">
             FAQs
           </Link>
         </div>
@@ -48,7 +48,7 @@ export function Header() {
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+              <Link href="/" className="flex items-center space-x-2 sm:space-x-3 cursor-pointer">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded flex items-center justify-center shadow-sm border border-gray-300">
                   <Image
                     src="/simbaDispatch.png"
@@ -68,7 +68,7 @@ export function Header() {
 
             {/* Navigation Links - Hidden on mobile, shown on desktop */}
             <div className="hidden lg:flex items-center space-x-6 text-gray-300 font-medium">
-              <Link href="/how-it-works" className="hover:text-[#4270F5] whitespace-nowrap">
+              <Link href="/how-it-works" className="hover:text-[#4270F5] whitespace-nowrap cursor-pointer">
                 How it works
               </Link>
 
@@ -78,7 +78,7 @@ export function Header() {
                   type="button"
                   title="btn"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap focus:outline-none"
+                  className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap focus:outline-none cursor-pointer"
                   aria-expanded={isServicesOpen ? "true" : "false"}
                   aria-haspopup="true"
                 >
@@ -100,7 +100,7 @@ export function Header() {
                         <Link
                           key={service.href}
                           href={service.href}
-                          className="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-colors duration-150"
+                          className="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-colors duration-150 cursor-pointer"
                           onClick={() => setIsServicesOpen(false)}
                         >
                           {service.name}
@@ -109,7 +109,7 @@ export function Header() {
                       <div className="border-t border-gray-800 mt-2 pt-2">
                         <Link
                           href="/services"
-                          className="block px-4 py-3 text-sm text-blue-400 font-medium hover:bg-gray-800 transition-colors duration-150"
+                          className="block px-4 py-3 text-sm text-blue-400 font-medium hover:bg-gray-800 transition-colors duration-150 cursor-pointer"
                           onClick={() => setIsServicesOpen(false)}
                         >
                           View All Services
@@ -120,10 +120,10 @@ export function Header() {
                 )}
               </div>
 
-              <Link href="/about" className="hover:text-[#4270F5] whitespace-nowrap">
+              <Link href="/about" className="hover:text-[#4270F5] whitespace-nowrap cursor-pointer">
                 About Us
               </Link>
-              <Link  href="/quote" className="hover:text-[#4270F5] whitespace-nowrap">
+              <Link href="/quote" className="hover:text-[#4270F5] whitespace-nowrap cursor-pointer">
                 Get Qoute
               </Link>
             </div>
@@ -141,8 +141,8 @@ export function Header() {
               </div>
               <div className="flex space-x-2">
 
-                <Link href="/contact">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-md text-sm sm:text-base whitespace-nowrap">
+                <Link href="/contact" className="cursor-pointer">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-md text-sm sm:text-base whitespace-nowrap cursor-pointer">
                     Contact Sales
                   </Button>
                 </Link>
@@ -153,22 +153,22 @@ export function Header() {
           {/* Mobile Navigation - Shown only on mobile */}
           <div className="lg:hidden mt-4 pt-4 border-t border-gray-700">
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
-              <Link href="/how-it-works" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+              <Link href="/how-it-works" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 How it works
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+              <Link href="/services" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Services
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+              <Link href="/about" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 About Us
               </Link>
-              <Link href="/support" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+              <Link href="/support" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Support
               </Link>
-              <Link href="/quote" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+              <Link href="/quote" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Get Quote
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+              <Link href="/contact" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Contact
               </Link>
             </div>

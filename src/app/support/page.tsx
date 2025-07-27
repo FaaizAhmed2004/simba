@@ -51,7 +51,7 @@ const supportCategories = [
     description: 'Report service issues or concerns that need immediate attention',
     icon: ExclamationTriangleIcon,
     formType: 'complaint' as const,
-    responseTime: '24 hours'
+    responseTime: '12-24 hours'
   },
   {
     id: 'feedback',
@@ -59,7 +59,7 @@ const supportCategories = [
     description: 'Share your experience and help us improve our services',
     icon: ChatBubbleLeftRightIcon,
     formType: 'feedback' as const,
-    responseTime: '48 hours'
+    responseTime: '12-24 hours'
   },
   {
     id: 'account',
@@ -67,7 +67,7 @@ const supportCategories = [
     description: 'Get help with billing, account updates, or service modifications',
     icon: UserCircleIcon,
     formType: 'account' as const,
-    responseTime: '24 hours'
+    responseTime: '12-24 hours'
   }
 ];
 
@@ -83,7 +83,7 @@ const contactInfo = [
     icon: EnvelopeIcon,
     title: 'Email Support',
     details: 'Cs@simbadispatchservices.com',
-    description: 'Response within 24 hours',
+    description: 'Response within 12-24 hours',
     urgent: false
   },
   {
@@ -206,34 +206,13 @@ export default function SupportPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white relative">
-      {/* Background Pattern */}
-      <div className="fixed inset-0 z-0 opacity-5">
-        <svg width="100%" height="100%">
-          <defs>
-            <pattern id="support-pattern" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
-              <polygon points="25,0 50,14.4 50,43.4 25,57.8 0,43.4 0,14.4" fill="none" stroke="white" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#support-pattern)" />
-        </svg>
-      </div>
+
 
       {/* Content Overlay */}
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="py-16 sm:py-20 lg:py-24  relative overflow-hidden">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <Image
-              src="/customer.jpg"
-              alt="Customer Support Background"
-              fill
-              className="object-cover opacity-60"
-              priority
-            />
-          </div>
-          <div className="absolute inset-0 bg-gray-900 opacity-40"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section className="py-16 sm:py-20 lg:py-24 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                 Customer Support Center
@@ -358,7 +337,7 @@ export default function SupportPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="bg-gray-900 rounded-xl border border-gray-700 p-6">
                 <h3 className="text-lg font-bold text-white mb-3">How quickly do you respond to support requests?</h3>
-                <p className="text-gray-300">Complaints and account issues: 24 hours. General feedback: 48 hours. Urgent matters: Same day.</p>
+                <p className="text-gray-300">All support requests: 12-24 hours. Urgent matters: Same day.</p>
               </div>
               <div className="bg-gray-900 rounded-xl border border-gray-700 p-6">
                 <h3 className="text-lg font-bold text-white mb-3">What information should I include in my complaint?</h3>
@@ -445,7 +424,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Name *</label>
                         <input
-                        aria-label='complaint'
+                          aria-label='complaint'
                           type="text"
                           required
                           value={complaintForm.name}
@@ -481,7 +460,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Service Type *</label>
                         <select
-                        title='service type'
+                          title='service type'
                           required
                           value={complaintForm.serviceType}
                           onChange={(e) => setComplaintForm({ ...complaintForm, serviceType: e.target.value as ComplaintFormData['serviceType'] })}
@@ -497,7 +476,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Complaint Category *</label>
                         <select
-                        aria-label='category'
+                          aria-label='category'
                           required
                           value={complaintForm.complaintCategory}
                           onChange={(e) => setComplaintForm({ ...complaintForm, complaintCategory: e.target.value as ComplaintFormData['complaintCategory'] })}
@@ -564,7 +543,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
                         <input
-                        aria-label='foam'
+                          aria-label='foam'
                           type="email"
                           required
                           value={feedbackForm.email}
@@ -591,7 +570,7 @@ export default function SupportPage() {
                       <div className="flex gap-2">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <button
-                          title='star'
+                            title='star'
                             key={star}
                             type="button"
                             onClick={() => setFeedbackForm({ ...feedbackForm, rating: star as FeedbackFormData['rating'] })}
@@ -609,7 +588,7 @@ export default function SupportPage() {
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">Feedback Type *</label>
                       <select
-                      aria-label='type'
+                        aria-label='type'
                         required
                         value={feedbackForm.feedbackType}
                         onChange={(e) => setFeedbackForm({ ...feedbackForm, feedbackType: e.target.value as FeedbackFormData['feedbackType'] })}
@@ -673,7 +652,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Name *</label>
                         <input
-                        aria-label ="account"
+                          aria-label="account"
                           type="text"
                           required
                           value={accountForm.name}

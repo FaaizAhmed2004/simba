@@ -114,44 +114,27 @@ export default function AboutPage() {
 
           {/* Main Content */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              {/* Left Side - Text Content */}
-              <div className="text-left">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-black leading-tight">
-                  About Simba Dispatch Services LLC
-                </h1>
-                <p className="text-xl md:text-2xl mb-8 text-gray-700 leading-relaxed">
-                  A Professional 3PL and Dispatch services provider, built for the modern business.
-                  We are here to simplify and accelerate your growth.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  <Link
-                    href="/services"
-                    className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg"
-                  >
-                    Our Services
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="bg-transparent border-2 border-black hover:bg-black hover:text-white text-black px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
-                  >
-                    Get Started
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Side - Logo */}
-              <div className="flex justify-center lg:justify-end">
-                <div className="bg-white rounded-xl p-8 shadow-2xl border border-gray-200 max-w-md w-full">
-                  <Image
-                    src="/simbaDispatch.png"
-                    alt="Simba Dispatch Services Logo"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
+            <div className="text-center mb-16">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-black leading-tight">
+                About Simba Dispatch Services LLC
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                A Professional 3PL and Dispatch services provider, built for the modern business.
+                We are here to simplify and accelerate your growth.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/services"
+                  className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg"
+                >
+                  Our Services
+                </Link>
+                <Link
+                  href="/contact"
+                  className="bg-transparent border-2 border-black hover:bg-black hover:text-white text-black px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+                >
+                  Get Started
+                </Link>
               </div>
             </div>
           </div>
