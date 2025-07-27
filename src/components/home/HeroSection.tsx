@@ -12,7 +12,7 @@ export default function HeroSection() {
           muted
           playsInline
           className="object-cover w-full h-full"
-          src="/herovid.mp4"
+          src="/combine.mp4"
         >
         </video>
         {/* Fallback image in case video doesn't load */}

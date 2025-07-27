@@ -19,10 +19,8 @@ import {
 interface ComplaintFormData {
   name: string;
   email: string;
-  phone: string;
   serviceType: 'truck-dispatch' | '3pl-services' | 'fba-prep' | 'other' | '';
   complaintCategory: 'service-quality' | 'billing' | 'communication' | 'delivery' | 'other' | '';
-  priority: 'low' | 'medium' | 'high' | 'urgent' | '';
   description: string;
   orderNumber: string;
 }
@@ -40,10 +38,8 @@ interface FeedbackFormData {
 interface AccountFormData {
   name: string;
   email: string;
-  phone: string;
   accountNumber: string;
   requestType: 'billing-inquiry' | 'service-modification' | 'account-update' | 'cancellation' | 'other' | '';
-  priority: 'low' | 'medium' | 'high' | '';
   description: string;
   preferredContactMethod: 'email' | 'phone' | '';
 }
@@ -55,8 +51,7 @@ const supportCategories = [
     description: 'Report service issues or concerns that need immediate attention',
     icon: ExclamationTriangleIcon,
     formType: 'complaint' as const,
-    responseTime: '24 hours',
-    priority: 'High Priority'
+    responseTime: '24 hours'
   },
   {
     id: 'feedback',
@@ -64,8 +59,7 @@ const supportCategories = [
     description: 'Share your experience and help us improve our services',
     icon: ChatBubbleLeftRightIcon,
     formType: 'feedback' as const,
-    responseTime: '48 hours',
-    priority: 'Standard'
+    responseTime: '48 hours'
   },
   {
     id: 'account',
@@ -73,8 +67,7 @@ const supportCategories = [
     description: 'Get help with billing, account updates, or service modifications',
     icon: UserCircleIcon,
     formType: 'account' as const,
-    responseTime: '24 hours',
-    priority: 'High Priority'
+    responseTime: '24 hours'
   }
 ];
 
@@ -116,8 +109,8 @@ export default function SupportPage() {
 
   // Form states
   const [complaintForm, setComplaintForm] = useState<ComplaintFormData>({
-    name: '', email: '', phone: '', serviceType: '', complaintCategory: '',
-    priority: '', description: '', orderNumber: ''
+    name: '', email: '', serviceType: '', complaintCategory: '',
+    description: '', orderNumber: ''
   });
 
   const [feedbackForm, setFeedbackForm] = useState<FeedbackFormData>({
@@ -126,8 +119,8 @@ export default function SupportPage() {
   });
 
   const [accountForm, setAccountForm] = useState<AccountFormData>({
-    name: '', email: '', phone: '', accountNumber: '', requestType: '',
-    priority: '', description: '', preferredContactMethod: ''
+    name: '', email: '', accountNumber: '', requestType: '',
+    description: '', preferredContactMethod: ''
   });
 
   const handleFormSubmit = async (formType: 'complaint' | 'feedback' | 'account') => {
@@ -176,8 +169,8 @@ export default function SupportPage() {
         // Reset form
         if (formType === 'complaint') {
           setComplaintForm({
-            name: '', email: '', phone: '', serviceType: '', complaintCategory: '',
-            priority: '', description: '', orderNumber: ''
+            name: '', email: '', serviceType: '', complaintCategory: '',
+            description: '', orderNumber: ''
           });
         } else if (formType === 'feedback') {
           setFeedbackForm({
@@ -186,8 +179,8 @@ export default function SupportPage() {
           });
         } else if (formType === 'account') {
           setAccountForm({
-            name: '', email: '', phone: '', accountNumber: '', requestType: '',
-            priority: '', description: '', preferredContactMethod: ''
+            name: '', email: '', accountNumber: '', requestType: '',
+            description: '', preferredContactMethod: ''
           });
         }
       } else {
@@ -253,13 +246,7 @@ export default function SupportPage() {
                 <p className="text-gray-300 mb-4">
                   <strong className="text-white">Need immediate assistance?</strong>
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="tel:+14075550123"
-                    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center"
-                  >
-                    Emergency: (407) 555-0123
-                  </a>
+                <div className="flex justify-center">
                   <a
                     href="mailto:urgent@simbadispatch.com"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center"
@@ -302,12 +289,7 @@ export default function SupportPage() {
                       <span className="text-sm text-gray-400">Response Time:</span>
                       <span className="text-sm text-blue-400 font-semibold">{category.responseTime}</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-400">Priority:</span>
-                      <span className={`text-sm font-semibold ${category.priority === 'High Priority' ? 'text-red-400' : 'text-green-400'}`}>
-                        {category.priority}
-                      </span>
-                    </div>
+
                   </div>
                   <button
                     onClick={() => setActiveForm(category.formType)}
@@ -443,7 +425,7 @@ export default function SupportPage() {
                   </button>
                 </div>
 
-                {submitStatus ? (
+                {submitStatus && (
                   <div className={`p-4 rounded-lg mb-6 ${submitStatus.success ? 'bg-green-900 border border-green-700' : 'bg-red-900 border border-red-700'}`}>
                     <p className={`${submitStatus.success ? 'text-green-300' : 'text-red-300'}`}>
                       {submitStatus.message}
@@ -454,7 +436,7 @@ export default function SupportPage() {
                       </p>
                     )}
                   </div>
-                ) : null}
+                )}
 
                 {/* Complaint Form */}
                 {activeForm === 'complaint' && (
@@ -463,7 +445,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Name *</label>
                         <input
-                          aria-label='complaint'
+                        aria-label='complaint'
                           type="text"
                           required
                           value={complaintForm.name}
@@ -484,34 +466,22 @@ export default function SupportPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Phone</label>
-                        <input
-                          aria-label='phone'
-                          type="tel"
-                          value={complaintForm.phone}
-                          onChange={(e) => setComplaintForm({ ...complaintForm, phone: e.target.value })}
-                          className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Order Number</label>
-                        <input
-                          aria-label='order no'
-                          type="text"
-                          value={complaintForm.orderNumber}
-                          onChange={(e) => setComplaintForm({ ...complaintForm, orderNumber: e.target.value })}
-                          className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                        />
-                      </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Order Number</label>
+                      <input
+                        aria-label='order no'
+                        type="text"
+                        value={complaintForm.orderNumber}
+                        onChange={(e) => setComplaintForm({ ...complaintForm, orderNumber: e.target.value })}
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Service Type *</label>
                         <select
-                          title='service type'
+                        title='service type'
                           required
                           value={complaintForm.serviceType}
                           onChange={(e) => setComplaintForm({ ...complaintForm, serviceType: e.target.value as ComplaintFormData['serviceType'] })}
@@ -527,7 +497,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Complaint Category *</label>
                         <select
-                          aria-label='category'
+                        aria-label='category'
                           required
                           value={complaintForm.complaintCategory}
                           onChange={(e) => setComplaintForm({ ...complaintForm, complaintCategory: e.target.value as ComplaintFormData['complaintCategory'] })}
@@ -543,22 +513,7 @@ export default function SupportPage() {
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Priority Level *</label>
-                      <select
-                        aria-label='priority'
-                        required
-                        value={complaintForm.priority}
-                        onChange={(e) => setComplaintForm({ ...complaintForm, priority: e.target.value as ComplaintFormData['priority'] })}
-                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                      >
-                        <option value="">Select Priority</option>
-                        <option value="low">Low - General concern</option>
-                        <option value="medium">Medium - Needs attention</option>
-                        <option value="high">High - Urgent issue</option>
-                        <option value="urgent">Urgent - Critical problem</option>
-                      </select>
-                    </div>
+
 
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">Detailed Description *</label>
@@ -609,7 +564,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
                         <input
-                          aria-label='foam'
+                        aria-label='foam'
                           type="email"
                           required
                           value={feedbackForm.email}
@@ -636,7 +591,7 @@ export default function SupportPage() {
                       <div className="flex gap-2">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <button
-                            title='star'
+                          title='star'
                             key={star}
                             type="button"
                             onClick={() => setFeedbackForm({ ...feedbackForm, rating: star as FeedbackFormData['rating'] })}
@@ -654,7 +609,7 @@ export default function SupportPage() {
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">Feedback Type *</label>
                       <select
-                        aria-label='type'
+                      aria-label='type'
                         required
                         value={feedbackForm.feedbackType}
                         onChange={(e) => setFeedbackForm({ ...feedbackForm, feedbackType: e.target.value as FeedbackFormData['feedbackType'] })}
@@ -718,7 +673,7 @@ export default function SupportPage() {
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Name *</label>
                         <input
-                          aria-label="account"
+                        aria-label ="account"
                           type="text"
                           required
                           value={accountForm.name}
@@ -739,62 +694,33 @@ export default function SupportPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Phone</label>
-                        <input
-                          aria-label='phone'
-                          type="tel"
-                          value={accountForm.phone}
-                          onChange={(e) => setAccountForm({ ...accountForm, phone: e.target.value })}
-                          className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Account Number</label>
-                        <input
-                          type="text"
-                          aria-label='accountNumber'
-                          value={accountForm.accountNumber}
-                          onChange={(e) => setAccountForm({ ...accountForm, accountNumber: e.target.value })}
-                          className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                        />
-                      </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Account Number</label>
+                      <input
+                        type="text"
+                        aria-label='accountNumber'
+                        value={accountForm.accountNumber}
+                        onChange={(e) => setAccountForm({ ...accountForm, accountNumber: e.target.value })}
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Request Type *</label>
-                        <select
-                          aria-label="request"
-                          required
-                          value={accountForm.requestType}
-                          onChange={(e) => setAccountForm({ ...accountForm, requestType: e.target.value as AccountFormData['requestType'] })}
-                          className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                        >
-                          <option value="">Select Request Type</option>
-                          <option value="billing-inquiry">Billing Inquiry</option>
-                          <option value="service-modification">Service Modification</option>
-                          <option value="account-update">Account Update</option>
-                          <option value="cancellation">Cancellation Request</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Priority *</label>
-                        <select
-                          aria-label='priority'
-                          required
-                          value={accountForm.priority}
-                          onChange={(e) => setAccountForm({ ...accountForm, priority: e.target.value as AccountFormData['priority'] })}
-                          className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                        >
-                          <option value="">Select Priority</option>
-                          <option value="low">Low</option>
-                          <option value="medium">Medium</option>
-                          <option value="high">High</option>
-                        </select>
-                      </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Request Type *</label>
+                      <select
+                        aria-label="request"
+                        required
+                        value={accountForm.requestType}
+                        onChange={(e) => setAccountForm({ ...accountForm, requestType: e.target.value as AccountFormData['requestType'] })}
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      >
+                        <option value="">Select Request Type</option>
+                        <option value="billing-inquiry">Billing Inquiry</option>
+                        <option value="service-modification">Service Modification</option>
+                        <option value="account-update">Account Update</option>
+                        <option value="cancellation">Cancellation Request</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
 
                     <div>
@@ -822,7 +748,7 @@ export default function SupportPage() {
                           />
                           <span className="text-gray-300">Phone</span>
                         </label>
-                      </div>(407) 555-0123
+                      </div>
                     </div>
 
                     <div>
