@@ -250,7 +250,7 @@ export default function FBMFulfillmentPage() {
             <div className="relative">
               <div className="relative h-96 rounded-xl overflow-hidden border border-gray-800 shadow-lg">
                 <Image
-                  src="/assests/10055.jpeg"
+                  src="/fbm.jpg"
                   alt="FBM Fulfillment Center Operations"
                   fill
                   className="object-cover"

@@ -33,6 +33,9 @@ export function Header() {
           <Link href="/contact" className="hover:underline">
             Contact
           </Link>
+          <Link href="/support" className="hover:underline">
+            Customer Support
+          </Link>
           <Link href="/faq" className="hover:underline">
             FAQs
           </Link>
@@ -158,6 +161,9 @@ export function Header() {
               </Link>
               <Link href="/about" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
                 About Us
+              </Link>
+              <Link href="/support" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
+                Support
               </Link>
               <Link href="/quote" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1">
                 Get Quote

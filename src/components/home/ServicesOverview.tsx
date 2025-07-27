@@ -7,21 +7,21 @@ const services = [
     description: 'Professional Truck Dispatch Service for Carriers with ',
     features: ['24/7 Dispatcher Support', ' Flexible % or weekly fee'],
     href: '/services/truck-dispatching',
-    image: '/assests/10016.jpeg'
+    image: '/dispatching.jpg'
   },
   {
     title: 'FBA Prep Services',
     description: 'Complete Amazon FBA preparation including receiving, labeling, and shipment to Amazon.',
     features: ['Product Receiving', 'FNSKU Labeling', 'Quality Inspection', 'Amazon Shipment'],
     href: '/services/fba-prep',
-    image: '/assests/10018.jpeg'
+    image: '/fulfil.jpg'
   },
   {
     title: 'FBM Fulfillment',
     description: 'Professional fulfillment by merchant services with same-day processing.',
     features: ['Order Processing', 'Pick & Pack', 'Direct Shipping', 'Multi-Channel Support'],
     href: '/services/fbm-fulfillment',
-    image: '/assests/10050.jpeg'
+    image: '/fbm.jpg'
   },
 ];
 

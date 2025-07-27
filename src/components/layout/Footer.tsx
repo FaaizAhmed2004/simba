@@ -115,6 +115,11 @@ export function Footer() {
           <div className="flex flex-col space-y-5">
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2">Support</h3>
             <ul className="space-y-3">
+            <li>
+                <Link href="/support" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                  <span className="group-hover:translate-x-1 transition-transform duration-200">Customer Support</span>
+                </Link>
+              </li>
               <li>
                 <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Contact Us</span>
