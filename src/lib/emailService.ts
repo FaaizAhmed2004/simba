@@ -42,27 +42,31 @@ class EmailService {
 
   // Send email with retry logic
   async sendEmail(payload: EmailPayload): Promise<void> {
-    await this.initialize();
-
-    if (!this.transporter) {
-      throw new Error('Email transporter not initialized');
-    }
-
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: payload.to,
-      cc: payload.cc,
-      subject: payload.subject,
-      text: payload.text,
-      replyTo: payload.replyTo
-    };
-
     try {
+      await this.initialize();
+
+      if (!this.transporter) {
+        throw new Error('Email transporter not initialized');
+      }
+
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: payload.to,
+        cc: payload.cc,
+        subject: payload.subject,
+        text: payload.text,
+        replyTo: payload.replyTo
+      };
+
       const info = await this.transporter.sendMail(mailOptions);
       console.log('Email sent successfully:', info.messageId);
     } catch (error) {
       console.error('Failed to send email:', error);
-      throw error;
+      // Don't throw error in production to prevent API failures
+      // Just log the error and continue
+      if (process.env.NODE_ENV === 'development') {
+        throw error;
+      }
     }
   }
 

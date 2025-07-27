@@ -8,7 +8,6 @@ interface ComplaintRequest {
   phone?: string;
   serviceType: 'truck-dispatch' | '3pl-services' | 'fba-prep' | 'other';
   complaintCategory: 'service-quality' | 'billing' | 'communication' | 'delivery' | 'other';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
   description: string;
   orderNumber?: string;
 }
@@ -47,7 +46,6 @@ Phone: ${complaintData.phone || 'Not provided'}
 COMPLAINT DETAILS:
 Service Type: ${complaintData.serviceType.replace('-', ' ').toUpperCase()}
 Complaint Category: ${complaintData.complaintCategory.replace('-', ' ').toUpperCase()}
-Priority Level: ${complaintData.priority.toUpperCase()}
 Order Number: ${complaintData.orderNumber || 'Not provided'}
 
 COMPLAINT DESCRIPTION:
@@ -61,7 +59,7 @@ REQUIRED ACTIONS:
 4. Update complaint tracking system
 
 This complaint was submitted through the Simba Dispatch Services LLC website.
-Please treat this with appropriate urgency based on priority level: ${complaintData.priority.toUpperCase()}
+Please review and respond promptly.
     `;
 
     // Prepare confirmation email for customer
@@ -73,7 +71,6 @@ Thank you for bringing this matter to our attention. We take all customer compla
 COMPLAINT DETAILS:
 Reference Number: ${referenceNumber}
 Service Type: ${complaintData.serviceType.replace('-', ' ')}
-Priority: ${complaintData.priority.toUpperCase()}
 Submitted: ${new Date().toLocaleString()}
 
 WHAT HAPPENS NEXT:
@@ -101,7 +98,7 @@ Please keep this reference number for your records: ${referenceNumber}
       {
         to: process.env.EMAIL_TO!,
         cc: process.env.EMAIL_MANAGEMENT || process.env.EMAIL_TO,
-        subject: `[COMPLAINT-${complaintData.priority.toUpperCase()}] ${referenceNumber} - ${complaintData.complaintCategory.replace('-', ' ')}`,
+        subject: `[COMPLAINT] ${referenceNumber} - ${complaintData.complaintCategory.replace('-', ' ')}`,
         text: emailContent,
         replyTo: complaintData.email
       },

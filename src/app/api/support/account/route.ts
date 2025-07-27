@@ -7,7 +7,6 @@ interface AccountRequest {
   email: string;
   accountNumber?: string;
   requestType: 'billing-inquiry' | 'service-modification' | 'account-update' | 'cancellation' | 'other';
-  priority: 'low' | 'medium' | 'high';
   description: string;
   preferredContactMethod: 'email' | 'phone';
   phone?: string;
@@ -47,7 +46,6 @@ Account Number: ${accountData.accountNumber || 'Not provided'}
 
 REQUEST DETAILS:
 Request Type: ${accountData.requestType.replace('-', ' ').toUpperCase()}
-Priority Level: ${accountData.priority.toUpperCase()}
 Preferred Contact Method: ${accountData.preferredContactMethod.toUpperCase()}
 
 REQUEST DESCRIPTION:
@@ -66,7 +64,7 @@ ${accountData.requestType === 'cancellation' ? 'RETENTION TEAM: Please follow ca
 ${accountData.requestType === 'service-modification' ? 'OPERATIONS TEAM: Please review current service level and modification feasibility.' : ''}
 
 This request was submitted through the Simba Dispatch Services LLC website.
-Priority Level: ${accountData.priority.toUpperCase()}
+Please review and respond promptly.
     `;
 
     // Prepare confirmation email for customer
@@ -78,7 +76,6 @@ Thank you for contacting us regarding your account. We have received your reques
 REQUEST DETAILS:
 Reference Number: ${referenceNumber}
 Request Type: ${accountData.requestType.replace('-', ' ')}
-Priority: ${accountData.priority.toUpperCase()}
 Submitted: ${new Date().toLocaleString()}
 
 WHAT HAPPENS NEXT:
@@ -116,7 +113,7 @@ Please keep this reference number for your records: ${referenceNumber}
       {
         to: process.env.EMAIL_TO!,
         cc: process.env.EMAIL_MANAGEMENT || process.env.EMAIL_TO,
-        subject: `[ACCOUNT-${accountData.priority.toUpperCase()}] ${referenceNumber} - ${accountData.requestType.replace('-', ' ')}`,
+        subject: `[ACCOUNT] ${referenceNumber} - ${accountData.requestType.replace('-', ' ')}`,
         text: emailContent,
         replyTo: accountData.email
       },
