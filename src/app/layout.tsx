@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Providers from "@/components/providers/SessionProvider";
 import StructuredData from "@/components/seo/StructuredData";
+import LogoStructuredData from "@/components/seo/LogoStructuredData";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import GoogleTagManager from "@/components/analytics/GoogleTagManager";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
@@ -15,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://simbadispatchservices.com'),
   title: {
     default: "Simba Dispatch Services LLC - Professional 3PL Services & Truck Dispatching",
     template: "%s | Simba Dispatch Services LLC"
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Simba Dispatch Services LLC",
     images: [
       {
-        url: "https://simbadispatchservices.com/simba.jpg",
+        url: "https://simbadispatchservices.com/simbaDispatch.png",
         width: 1200,
         height: 630,
         alt: "Simba Dispatch Services LLC - Professional Logistics Services",
@@ -83,7 +85,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* Enhanced Open Graph and Twitter meta tags for better logo display */}
         <meta property="og:image" content="https://simbadispatchservices.com/simba.jpg" />
         <meta property="og:image:secure_url" content="https://simbadispatchservices.com/simba.jpg" />
@@ -91,17 +93,24 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Simba Dispatch Services LLC - Professional 3PL Services & Truck Dispatching" />
         <meta property="og:image:type" content="image/jpeg" />
-        
+
         <meta name="twitter:image" content="https://simbadispatchservices.com/simba.jpg" />
         <meta name="twitter:image:alt" content="Simba Dispatch Services LLC - Professional 3PL Services & Truck Dispatching" />
-        
+
         {/* Additional meta tags for better search appearance */}
         <meta name="application-name" content="Simba Dispatch Services LLC" />
         <meta name="apple-mobile-web-app-title" content="Simba Dispatch" />
         <meta name="msapplication-TileColor" content="#000000" />
-        
+
+        {/* Google-specific logo meta tags */}
+        <link rel="image_src" href="https://simbadispatchservices.com/simba.jpg" />
+        <meta name="thumbnail" content="https://simbadispatchservices.com/simba.jpg" />
+        <meta property="business:contact_data:website" content="https://simbadispatchservices.com" />
+        <meta property="business:contact_data:company_name" content="Simba Dispatch Services LLC" />
+
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
+        <LogoStructuredData />
       </head>
       <body
         className={`${inter.variable} font-sans antialiased bg-black text-white`}
