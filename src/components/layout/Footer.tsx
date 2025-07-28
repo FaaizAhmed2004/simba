@@ -16,13 +16,17 @@ export function Footer() {
             <div className="flex flex-col space-y-6">
               {/* Logo and Company Name */}
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                <div className="w-7 h-7 bg-transparent rounded flex items-center justify-center">
                   <Image
-                    src="/simbaDispatch.png"
-                    alt="Simba Logo"
-                    width={24}
-                    height={24}
-                    className="object-contain sm:w-8 sm:h-8"
+                    src="/simba.jpg"
+                    alt="Simba Dispatch Services LLC"
+                    width={45}
+                    height={45}
+                    className="object-contain"
+                    style={{
+                      filter: 'invert(1) brightness(2) contrast(1)',
+                      mixBlendMode: 'screen'
+                    }}
                   />
                 </div>
                 <div>
@@ -30,12 +34,12 @@ export function Footer() {
                   <p className="text-sm text-blue-400">Professional Truck Dispatch Services and 3PL Services Provider</p>
                 </div>
               </div>
-              
+
               {/* Company Description */}
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-md">
                 Professional 3PL and truck dispatch services designed to streamline your  operations and maximize efficiency across the USA.
               </p>
-              
+
               {/* Contact Information */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors">
@@ -115,7 +119,7 @@ export function Footer() {
           <div className="flex flex-col space-y-5">
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2">Support</h3>
             <ul className="space-y-3">
-            <li>
+              <li>
                 <Link href="/support" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
                   <span className="group-hover:translate-x-1 transition-transform duration-200">Customer Support</span>
                 </Link>
@@ -152,17 +156,17 @@ export function Footer() {
                 <Link href="/" className="hover:text-blue-400 transition-colors cursor-pointer">Terms of Service</Link>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-6">
               <p className="text-sm text-gray-400 hidden md:block">
                 Professional 3PL and Dispatch services across the USA
               </p>
               <div className="flex items-center space-x-4">
-                <a 
-                  href="https://www.instagram.com/simbadispatchservices" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Instagram" 
+                <a
+                  href="https://www.instagram.com/simbadispatchservices"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 transform hover:scale-110 cursor-pointer"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

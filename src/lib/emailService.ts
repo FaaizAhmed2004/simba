@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
 export interface EmailPayload {
   to: string;
@@ -9,90 +9,87 @@ export interface EmailPayload {
 }
 
 class EmailService {
-  private transporter: nodemailer.Transporter | null = null;
-  private isInitialized = false;
+  private transporter: unknown = null;
 
-  // Initialize email transporter (connection pooling)
-  private async initialize() {
-    if (this.isInitialized) return;
-
-    try {
-      this.transporter = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-        port: parseInt(process.env.EMAIL_PORT || '587'),
-        secure: process.env.EMAIL_SECURE === 'true',
-        pool: true, // Enable connection pooling
-        maxConnections: 5, // Maximum concurrent connections
-        maxMessages: 100, // Maximum messages per connection
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
-        }
-      });
-
-      // Verify connection
-      await this.transporter.verify();
-      this.isInitialized = true;
-      console.log('Email service initialized successfully');
-    } catch (error) {
-      console.error('Failed to initialize email service:', error);
-      throw error;
-    }
+  // Create transporter for each email send (more reliable for serverless)
+  private createTransporter() {
+    return nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'smtp.ionos.com',
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      secure: process.env.EMAIL_SECURE === 'true',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      },
+      tls: {
+        rejectUnauthorized: false // For IONOS compatibility
+      }
+    });
   }
 
-  // Send email with retry logic
+  // Send single email
   async sendEmail(payload: EmailPayload): Promise<void> {
     try {
-      await this.initialize();
-
-      if (!this.transporter) {
-        throw new Error('Email transporter not initialized');
-      }
+      const transporter = this.createTransporter();
 
       const mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: `"Simba Dispatch Services LLC" <${process.env.EMAIL_USER}>`,
         to: payload.to,
         cc: payload.cc,
         subject: payload.subject,
         text: payload.text,
-        replyTo: payload.replyTo
+        replyTo: payload.replyTo || process.env.EMAIL_USER
       };
 
-      const info = await this.transporter.sendMail(mailOptions);
+      console.log(`Sending email to: ${payload.to}`);
+      const info = await transporter.sendMail(mailOptions);
       console.log('Email sent successfully:', info.messageId);
+      
+      // Close transporter
+      transporter.close();
     } catch (error) {
       console.error('Failed to send email:', error);
-      // Don't throw error in production to prevent API failures
-      // Just log the error and continue
-      if (process.env.NODE_ENV === 'development') {
-        throw error;
-      }
+      throw error;
     }
   }
 
-  // Send multiple emails (for confirmation + notification)
+  // Send multiple emails
   async sendEmails(payloads: EmailPayload[]): Promise<void> {
-    const promises = payloads.map(payload => this.sendEmail(payload));
-    await Promise.all(promises);
+    const results = [];
+    
+    for (const payload of payloads) {
+      try {
+        await this.sendEmail(payload);
+        results.push({ success: true, to: payload.to });
+      } catch (error) {
+        console.error(`Failed to send email to ${payload.to}:`, error);
+        results.push({ success: false, to: payload.to, error });
+      }
+    }
+
+    const failures = results.filter(r => !r.success);
+    
+    if (failures.length === payloads.length) {
+      throw new Error(`All ${payloads.length} emails failed to send`);
+    }
+
+    console.log(`Successfully sent ${results.length - failures.length}/${payloads.length} emails`);
   }
 
-  // Close email service
-  async close() {
-    if (this.transporter) {
-      this.transporter.close();
-      this.isInitialized = false;
+  // Test connection
+  async testConnection(): Promise<boolean> {
+    try {
+      const transporter = this.createTransporter();
+      await transporter.verify();
+      transporter.close();
+      console.log('Email connection test passed');
+      return true;
+    } catch (error) {
+      console.error('Email connection test failed:', error);
+      return false;
     }
   }
 }
 
-// Singleton instance
+// Export singleton instance
 export const emailService = new EmailService();
-
-// Graceful shutdown
-process.on('SIGTERM', async () => {
-  await emailService.close();
-});
-
-process.on('SIGINT', async () => {
-  await emailService.close();
-});

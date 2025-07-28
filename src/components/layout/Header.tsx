@@ -49,13 +49,17 @@ export function Header() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center space-x-2 sm:space-x-3 cursor-pointer">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded flex items-center justify-center shadow-sm border border-gray-300">
+                <div className="w-8 h-8 bg-transparent rounded flex items-center justify-center">
                   <Image
-                    src="/simbaDispatch.png"
-                    alt="Simba Dispatch LLC Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain sm:w-14 sm:h-14"
+                    src="/simba.jpg"
+                    alt="Simba Dispatch Services LLC"
+                    width={50}
+                    height={50}
+                    className="object-contain hover:opacity-80 transition-opacity"
+                    style={{
+                      filter: 'invert(1) brightness(2) contrast(1)',
+                      mixBlendMode: 'screen'
+                    }}
                   />
                 </div>
                 <div className="flex flex-col">
@@ -74,14 +78,14 @@ export function Header() {
 
               {/* Services Dropdown */}
               <div className="relative">
-                <button
-                  type="button"
-                  title="btn"
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap focus:outline-none cursor-pointer"
-                  aria-expanded={isServicesOpen ? "true" : "false"}
+              <button
+                type="button"
+               title="btn"
+               onClick={() => setIsServicesOpen(!isServicesOpen)}
+                   className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap focus:outline-none cursor-pointer"
+                aria-expanded={isServicesOpen}
                   aria-haspopup="true"
-                >
+                         >
                   <span>Services</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
