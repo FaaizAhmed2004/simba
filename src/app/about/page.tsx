@@ -87,7 +87,7 @@ export default function AboutPage() {
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0">
         <div className="opacity-5">
           <Image
-            src="/simbaDispatch.png"
+            src="/simba.jpg"
             alt="Simba Dispatch Services Logo Background"
             width={800}
             height={600}
@@ -104,7 +104,7 @@ export default function AboutPage() {
           {/* Background Image */}
           {/* <div className="absolute inset-0">
             <Image
-              src="/simbaDispatch.png"
+              src="/simba.jpg"
               alt="Simba Dispatch Services Background"
               fill
               className="object-contain "

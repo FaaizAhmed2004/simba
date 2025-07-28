@@ -24,7 +24,16 @@ export async function POST(request: NextRequest) {
     const missingFields = validateRequiredFields(complaintData, requiredFields);
     
     if (missingFields.length > 0) {
+      console.error('Complaint validation failed:', { missingFields, receivedData: Object.keys(complaintData) });
       const { response, statusCode } = createErrorResponse(`Missing required fields: ${missingFields.join(', ')}`, 400);
+      return NextResponse.json(response, { status: statusCode });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(complaintData.email)) {
+      console.error('Invalid email format:', complaintData.email);
+      const { response, statusCode } = createErrorResponse('Invalid email format', 400);
       return NextResponse.json(response, { status: statusCode });
     }
     timer.log('Validation');
@@ -109,8 +118,9 @@ Please keep this reference number for your records: ${referenceNumber}
       }
     ];
 
-    queueEmails(emailPayloads);
+    const jobIds = queueEmails(emailPayloads);
     timer.log('Email queuing');
+    console.log(`Queued ${emailPayloads.length} emails with job IDs:`, jobIds);
 
     // Return immediate response (fast!)
     const totalTime = timer.elapsed();

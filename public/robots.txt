@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Disallow API endpoints from crawling
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow specific pages
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /services/*
+Allow: /contact
+Allow: /quote
+Allow: /pricing
+Allow: /how-it-works
+Allow: /faq
+Allow: /support
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://simbadispatchservices.com/sitemap.xml

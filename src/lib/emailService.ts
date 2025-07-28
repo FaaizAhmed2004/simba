@@ -30,6 +30,15 @@ class EmailService {
   // Send single email
   async sendEmail(payload: EmailPayload): Promise<void> {
     try {
+      // Validate environment variables
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+        throw new Error('Email credentials not configured. Check EMAIL_USER and EMAIL_PASS environment variables.');
+      }
+
+      if (!process.env.EMAIL_HOST) {
+        throw new Error('Email host not configured. Check EMAIL_HOST environment variable.');
+      }
+
       const transporter = this.createTransporter();
 
       const mailOptions = {
@@ -41,14 +50,23 @@ class EmailService {
         replyTo: payload.replyTo || process.env.EMAIL_USER
       };
 
-      console.log(`Sending email to: ${payload.to}`);
+      console.log(`Attempting to send email to: ${payload.to}`);
+      console.log(`Email subject: ${payload.subject}`);
+      console.log(`Using SMTP host: ${process.env.EMAIL_HOST}:${process.env.EMAIL_PORT}`);
+      
       const info = await transporter.sendMail(mailOptions);
-      console.log('Email sent successfully:', info.messageId);
+      console.log('✅ Email sent successfully:', info.messageId);
+      console.log('Email response:', info.response);
       
       // Close transporter
       transporter.close();
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error('❌ Failed to send email:', error);
+      console.error('Email payload:', {
+        to: payload.to,
+        subject: payload.subject,
+        hasText: !!payload.text
+      });
       throw error;
     }
   }

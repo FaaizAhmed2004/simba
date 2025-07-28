@@ -124,8 +124,9 @@ Please keep this reference number for your records: ${referenceNumber}
       }
     ];
 
-    queueEmails(emailPayloads);
+    const jobIds = queueEmails(emailPayloads);
     timer.log('Email queuing');
+    console.log(`Queued ${emailPayloads.length} emails with job IDs:`, jobIds);
 
     // Return immediate response (fast!)
     const totalTime = timer.elapsed();

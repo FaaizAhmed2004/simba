@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "Simba Dispatch Services LLC",
     images: [
       {
-        url: "/simbaDispatch.png",
+        url: "/simba.jpg",
         width: 1200,
         height: 630,
         alt: "Contact Simba Dispatch Services LLC",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Simba Dispatch Services LLC - Professional Truck Dispatching & 3PL Services",
     description: "Get in touch with Simba Dispatch Services for professional truck dispatching, 3PL logistics, and FBA prep services. Quick response time guaranteed.",
-    images: ["/simbaDispatch.png"],
+    images: ["/simba.jpg"],
   },
   alternates: {
     canonical: "https://simbadispatchservices.com/contact",
