@@ -64,7 +64,7 @@ export function Header() {
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-1 sm:space-x-2">
-                    <span className="text-lg sm:text-xl font-bold text-white">Simba Dispatch Services LLC</span>
+                    <span className="text-lg sm:text-xl font-bold text-white">Simba Dispatch Services</span>
                   </div>
                 </div>
               </Link>

@@ -30,7 +30,7 @@ export function Footer() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Simba Dispatch Services LLC</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Simba Dispatch Services</h3>
                   <p className="text-sm text-blue-400">Professional Truck Dispatch Services and 3PL Services Provider</p>
                 </div>
               </div>
