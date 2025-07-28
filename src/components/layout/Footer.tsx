@@ -134,11 +134,7 @@ export function Footer() {
                   <span className="group-hover:translate-x-1 transition-transform duration-200">FAQ</span>
                 </Link>
               </li>
-              <li>
-                <Link href="/quote" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center group cursor-pointer">
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">Get Quote</span>
-                </Link>
-              </li>
+              
             </ul>
           </div>
         </div>

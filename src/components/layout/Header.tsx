@@ -30,9 +30,6 @@ export function Header() {
             <Image src="/flag.png" alt="US Flag" width={24} height={16} className="rounded" />
             <span>USA</span>
           </div>
-          <Link href="/contact" className="hover:underline cursor-pointer">
-            Contact
-          </Link>
           <Link href="/support" className="hover:underline cursor-pointer">
             Customer Support
           </Link>
@@ -147,7 +144,7 @@ export function Header() {
 
                 <Link href="/contact" className="cursor-pointer">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-md text-sm sm:text-base whitespace-nowrap cursor-pointer">
-                    Contact Sales
+                    Contact Us
                   </Button>
                 </Link>
               </div>
