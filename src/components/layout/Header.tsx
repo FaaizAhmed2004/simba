@@ -75,14 +75,14 @@ export function Header() {
 
               {/* Services Dropdown */}
               <div className="relative">
-              <button
-                type="button"
-               title="btn"
-               onClick={() => setIsServicesOpen(!isServicesOpen)}
-                   className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap focus:outline-none cursor-pointer"
-                aria-expanded={isServicesOpen}
+                <button
+                  type="button"
+                  title="btn"
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="flex items-center space-x-1 hover:text-[#4270F5] whitespace-nowrap focus:outline-none cursor-pointer"
+                  aria-expanded={isServicesOpen}
                   aria-haspopup="true"
-                         >
+                >
                   <span>Services</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -160,14 +160,14 @@ export function Header() {
               <Link href="/services" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Services
               </Link>
+              <Link href="/quote" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
+                Get Quote
+              </Link>
               <Link href="/about" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 About Us
               </Link>
               <Link href="/support" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Support
-              </Link>
-              <Link href="/quote" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
-                Get Quote
               </Link>
               <Link href="/contact" className="text-gray-300 hover:text-blue-400 text-sm px-2 py-1 cursor-pointer">
                 Contact
